@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { RestaurantProvider } from '../providers/restaurant/restaurant';
 //modul http
 import { HttpClientModule } from '@angular/common/http';
+import { Http } from '@angular/http';
 
 @NgModule({
   declarations: [

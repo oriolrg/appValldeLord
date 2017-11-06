@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
+  <!--<ion-card>
   <img src="assets/imgs/prova.png"/>
     <ion-card-content>
         <ion-card-title>
@@ -49,15 +49,15 @@
       </p>
       <button ion-button color="secondary">Com arribar</button>
     </ion-card-content>
-  </ion-card>
+  </ion-card>-->
   <ion-list>
     <!--TODO fer amb dades web-->
-    <ion-item *ngFor="let user of users">
+    <ion-item *ngFor="let restaurant of restaurants">
       <ion-avatar item-start>
-        <img [src]="user.picture.medium">
+        <!--<img [src]="user.picture.medium">-->
       </ion-avatar>
-      <h2>{{ user.name.first | uppercase }}</h2>
-      <p>{{ user.email }}</p>
+      <h2>{{ restaurant.color | uppercase }}</h2>
+      <p>{{ restaurant.marca }}</p>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+//import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
+//import { Http } from '@angular/http';
+
 
 /*
   Generated class for the RestaurantProvider provider.
@@ -12,11 +14,17 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestaurantProvider {
 
-  constructor(
-    public http: HttpClient
-  ) {}
+  constructor(public http: HttpClient)
+  {
+    console.log('Hello HttpProvider Provider');
+  }
   //metode crida get a la web i retorna la resposta
   getUsers() {
-      return this.http.get('https://randomuser.me/api/?results=25');
+      //var url = 'https://randomuser.me/api/?results=25';
+      var url = '/restaurant';
+      var data = this.http.get(url);
+      console.log("getUsers: data => "+ data);
+      //return this.http.get('https://www.reddit.com/r/worldnews/.json').map(res => res.json());
+      return data;
     }
 }
