@@ -8,6 +8,8 @@ import { DatabaseProvider } from '../../providers/database/database';
 import * as Constant from '../../providers/constants';
 import 'rxjs/add/operator/map';
 
+//import { DetailsRestaurantPage } from '../details-restaurant/details-restaurant';
+
 @Component({
   selector: 'page-restaurant',
   templateUrl: 'restaurant.html'
@@ -16,6 +18,7 @@ export class RestaurantPage {
   //restaurants: Array<any>;
   private loading: any;
   public items: any;
+  //restRoot = DetailsRestaurantPage;
   constructor(//private reversePipe: ReversePipe,
     public DatabaseProvider: DatabaseProvider,
     public navCtrl: NavController,

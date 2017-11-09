@@ -56,6 +56,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+//import { InformacioPage } from '../details-restaurant/details-restaurant';
 var TabsPage = (function () {
     function TabsPage() {
         this.tab1Root = __WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */];
@@ -101,7 +102,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+//import { DetailsRestaurantPage } from '../details-restaurant/details-restaurant';
 var RestaurantPage = (function () {
+    //restRoot = DetailsRestaurantPage;
     function RestaurantPage(//private reversePipe: ReversePipe,
         DatabaseProvider, navCtrl, navParams, http, 
         //private geolocation: Geolocation,
@@ -140,7 +143,7 @@ var RestaurantPage = (function () {
     };
     RestaurantPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-restaurant',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="restaurant_background">\n\n      <ion-item *ngFor="let item of items">\n        <ion-thumbnail item-start>\n          <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">\n        </ion-thumbnail>\n        <h1>{{item.nom}}</h1>\n        <strong>Cuina oberta:</strong>\n        <p>\n          Matí: {{item.horariDia}}\n        </p>\n        <p>\n          Nit: {{item.horariNit}}\n        </p>\n        <strong>Preu aproximat:</strong>\n        <p>\n          Des de {{item.preu}} €\n        </p>\n        <!--<button ion-button clear item-end></button>-->\n      </ion-item>\n    <!--<img-loader src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" useImg></img-loader>\n      <ion-card  *ngFor="let item of items | orderBy: \'distancia\'">-->\n    <!--  <ion-item>\n        <ion-card-title>{{item.nom}}</ion-card-title>\n        <ul>\n          <ion-item>Telèfon: {{item.telefon}}</ion-item>\n          <li>{{item.direccio}}</li>\n          <li>{{item.poblacio}}</li>\n          <strong>Cuina oberta:</strong>\n          <ion-item>Matí: {{item.horariDia}}</ion-item>\n          <ion-item>Nit: {{item.horariNit}}</ion-item>\n          <br />\n          <ion-item>Des de {{item.preu}} €</ion-item>\n          <li>{{item.items}}</li>\n          <li>{{item.imatgeSecundaria}}</li>\n        </ul>\n\n\n      </ion-item>-->\n\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/
+            selector: 'page-restaurant',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="restaurant_background">\n\n      <button ion-item  *ngFor="let item of items">\n        <ion-thumbnail item-start>\n          <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">\n        </ion-thumbnail>\n        <h1>{{item.nom}}</h1>\n        <strong>Cuina oberta:</strong>\n        <p>\n          Matí: {{item.horariDia}}\n        </p>\n        <p>\n          Nit: {{item.horariNit}}\n        </p>\n        <strong>Preu aproximat:</strong>\n        <p>\n          Des de {{item.preu}} €\n        </p>\n        <!--<button ion-button clear item-end></button>-->\n      </button>\n    <!--<img-loader src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" useImg></img-loader>\n      <ion-card  *ngFor="let item of items | orderBy: \'distancia\'">-->\n    <!--  <ion-item>\n        <ion-card-title>{{item.nom}}</ion-card-title>\n        <ul>\n          <ion-item>Telèfon: {{item.telefon}}</ion-item>\n          <li>{{item.direccio}}</li>\n          <li>{{item.poblacio}}</li>\n          <strong>Cuina oberta:</strong>\n          <ion-item>Matí: {{item.horariDia}}</ion-item>\n          <ion-item>Nit: {{item.horariNit}}</ion-item>\n          <br />\n          <ion-item>Des de {{item.preu}} €</ion-item>\n          <li>{{item.items}}</li>\n          <li>{{item.imatgeSecundaria}}</li>\n        </ul>\n\n\n      </ion-item>-->\n\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__providers_database_database__["a" /* DatabaseProvider */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */],
@@ -242,9 +245,12 @@ var InformacioPage = (function () {
     function InformacioPage(navCtrl) {
         this.navCtrl = navCtrl;
     }
+    InformacioPage.prototype.navigateToAnotherModule = function () {
+        this.navCtrl.push('page-details-restaurant');
+    };
     InformacioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-informacio',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/informacio/informacio.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Segueix-nos a les xarxes</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      @turismevalldelord\n    </ion-item>\n    <ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      @instagram\n    </ion-item>\n    <ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      Faceboock vall de lord\n    </ion-item>\n    <ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      Web de la Val de Lord\n    </ion-item>\n  </ion-list>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/informacio/informacio.html"*/
+            selector: 'page-informacio',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/informacio/informacio.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Segueix-nos a les xarxes</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      @turismevalldelord\n    </ion-item>\n    <ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      @instagram\n    </ion-item>\n    <ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      Faceboock vall de lord\n    </ion-item>\n    <button ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      Web de la Val de Lord\n    </button>\n  </ion-list>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/informacio/informacio.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
     ], InformacioPage);

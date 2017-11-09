@@ -8,7 +8,7 @@
 
 <ion-content padding class="restaurant_background">
 
-      <ion-item *ngFor="let item of items">
+      <button ion-item  *ngFor="let item of items">
         <ion-thumbnail item-start>
           <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">
         </ion-thumbnail>
@@ -25,7 +25,7 @@
           Des de {{item.preu}} €
         </p>
         <!--<button ion-button clear item-end></button>-->
-      </ion-item>
+      </button>
     <!--<img-loader src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" useImg></img-loader>
       <ion-card  *ngFor="let item of items | orderBy: 'distancia'">-->
     <!--  <ion-item>
