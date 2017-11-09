@@ -1,12 +1,6 @@
 {
   "name": "appValldeLord",
   "app_id": "",
-  "proxies": [
-    {
-      "path": "/restaurant",
-      "proxyUrl": "http://192.168.1.46/restaurant"
-    }
-  ],
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

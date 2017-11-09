@@ -23,3 +23,9 @@ ion-header img{
   margin-right: auto;
   display: block;
 }
+ion-content{
+    background-image: url('../assets/imgs/clot-de-vilamala-75.jpg');
+    -webkit-background-image: url('../assets/imgs/clot-de-vilamala-75.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+}
