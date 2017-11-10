@@ -11,7 +11,5 @@ export class InformacioPage {
   constructor(public navCtrl: NavController) {
 
   }
-  navigateToAnotherModule() {
-    this.navCtrl.push('page-details-restaurant');
-  }
+
 }

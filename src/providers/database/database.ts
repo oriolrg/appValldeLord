@@ -17,7 +17,7 @@ export class DatabaseProvider {
   constructor(public http: Http) {
     console.log('Hello DatabaseProvider Provider');
   }
-  getLocalitzacions() {
+  getResaturant() {
           //SERVER_NAME_APP_TEST servidor online
           //SERVER_NAME_LOCAL servudor local
           //SERVER_NAME_PROXY proxy

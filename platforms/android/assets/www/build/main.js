@@ -1,6 +1,55 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
-/***/ 113:
+/***/ 103:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoRestaurantPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the InfoRestaurantPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var InfoRestaurantPage = (function () {
+    function InfoRestaurantPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.ionViewDidLoad();
+    }
+    InfoRestaurantPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad InfoRestaurantPage');
+        this.data = this.navParams.get('comData');
+        //alert(this.data.nom);
+        //alert(this.navParams.get('param2'));
+    };
+    InfoRestaurantPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-info-restaurant',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/info-restaurant/info-restaurant.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n  <ion-card *ngIf="data">\n    <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{data.imatgeSecundaria}}">\n    <ion-fab right top>\n      <button ion-fab>\n        <ion-icon name="pin"></ion-icon>\n      </button>\n    </ion-fab>\n\n\n    <ion-item>\n      <ion-list>\n        <ion-item>\n          <ion-icon name="restaurant" item-left large ></ion-icon>\n          <h1>\n            <strong>{{data.nom}}</strong>\n          </h1>\n        </ion-item>\n      </ion-list>\n    </ion-item>\n\n    <ion-item>\n      <ion-list inset>\n        <ion-item>\n          Menú\n          <ion-icon name="checkmark-circle" item-end></ion-icon>\n        </ion-item>\n        <ion-item>\n          Menu infantil\n          <ion-icon name="close-circle" item-end></ion-icon>\n        </ion-item>\n        <ion-item>\n          Carta\n          <ion-icon name="close-circle" item-end></ion-icon>\n        </ion-item>\n        <ion-item>\n          Cuina Catalana\n          <ion-icon name="checkmark-circle" item-end></ion-icon>\n        </ion-item>\n        <ion-item>\n          Pizza\n          <ion-icon name="checkmark-circle" item-end></ion-icon>\n        </ion-item>\n        <ion-item>\n          Plats combinats\n          <ion-icon name="checkmark-circle" item-end></ion-icon>\n        </ion-item>\n        <ion-item>\n          Entrepans\n          <ion-icon name="close-circle" item-end></ion-icon>\n        </ion-item>\n        <ion-item>\n          Apte per celiacs\n          <ion-icon name="close-circle" item-end></ion-icon>\n        </ion-item>\n        <ion-item>\n          Terrassa\n          <ion-icon name="close-circle" item-end></ion-icon>\n        </ion-item>\n        <ion-item>\n          Zona d’esbarjo\n          <ion-icon name="checkmark-circle" item-end></ion-icon>\n        </ion-item>\n      </ion-list>\n    </ion-item>\n    <ion-item>\n\n    </ion-item>\n    <ion-item>\n        <button ion-button icon-left >\n          <ion-icon name="navigate"></ion-icon>\n          {{data.direccio}}\n        </button>\n    </ion-item>\n\n  </ion-card>\n\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/info-restaurant/info-restaurant.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], InfoRestaurantPage);
+    return InfoRestaurantPage;
+}());
+
+//# sourceMappingURL=info-restaurant.js.map
+
+/***/ }),
+
+/***/ 114:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,36 +62,44 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 113;
+webpackEmptyAsyncContext.id = 114;
 
 /***/ }),
 
-/***/ 155:
-/***/ (function(module, exports) {
+/***/ 156:
+/***/ (function(module, exports, __webpack_require__) {
 
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
+var map = {
+	"../pages/info-restaurant/info-restaurant.module": [
+		290,
+		0
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
 	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 155;
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 156;
+module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 198:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__restaurant_restaurant__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__informacio_informacio__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__restaurant_restaurant__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__informacio_informacio__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(204);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -75,17 +132,18 @@ var TabsPage = (function () {
 
 /***/ }),
 
-/***/ 199:
+/***/ 200:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_database_database__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_info_restaurant_info_restaurant__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_database_database__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -95,6 +153,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -122,35 +181,38 @@ var RestaurantPage = (function () {
                 content: 'Carregant...'
             });
             _this.loading.present();
-            _this.searchLocalitzacio();
+            _this.searchRestaurant();
         });
     }
-    RestaurantPage.prototype.searchLocalitzacio = function () {
+    RestaurantPage.prototype.searchRestaurant = function () {
         var _this = this;
         //alert(Constant.SERVER_NAME_APP_TEST+'restaurant/');
-        this.DatabaseProvider.getLocalitzacions().subscribe(function (data) {
+        this.DatabaseProvider.getResaturant().subscribe(function (data) {
             //SERVER_NAME_APP_TEST servidor online
             //SERVER_NAME_LOCAL servudor local
             //SERVER_NAME_PROXY proxy
-            //var url = Constant.SERVER_NAME_APP_TEST+'restaurant/';
             _this.items = JSON.parse(data['_body']);
-            //this.items.dir = Constant.SERVER_NAME_APP_PUB_IMG;
-            //alert(this.items.dir);
             _this.loading.dismiss();
         }, function (err) {
             console.log("Error: " + err);
         }, function () { return console.log('Movie Search Complete'); });
     };
+    RestaurantPage.prototype.changePage = function (data) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_info_restaurant_info_restaurant__["a" /* InfoRestaurantPage */], {
+            comData: data
+        });
+    };
+    ;
     RestaurantPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-restaurant',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="restaurant_background">\n\n      <button ion-item  *ngFor="let item of items">\n        <ion-thumbnail item-start>\n          <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">\n        </ion-thumbnail>\n        <h1>{{item.nom}}</h1>\n        <strong>Cuina oberta:</strong>\n        <p>\n          Matí: {{item.horariDia}}\n        </p>\n        <p>\n          Nit: {{item.horariNit}}\n        </p>\n        <strong>Preu aproximat:</strong>\n        <p>\n          Des de {{item.preu}} €\n        </p>\n        <!--<button ion-button clear item-end></button>-->\n      </button>\n    <!--<img-loader src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" useImg></img-loader>\n      <ion-card  *ngFor="let item of items | orderBy: \'distancia\'">-->\n    <!--  <ion-item>\n        <ion-card-title>{{item.nom}}</ion-card-title>\n        <ul>\n          <ion-item>Telèfon: {{item.telefon}}</ion-item>\n          <li>{{item.direccio}}</li>\n          <li>{{item.poblacio}}</li>\n          <strong>Cuina oberta:</strong>\n          <ion-item>Matí: {{item.horariDia}}</ion-item>\n          <ion-item>Nit: {{item.horariNit}}</ion-item>\n          <br />\n          <ion-item>Des de {{item.preu}} €</ion-item>\n          <li>{{item.items}}</li>\n          <li>{{item.imatgeSecundaria}}</li>\n        </ul>\n\n\n      </ion-item>-->\n\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/
+            selector: 'page-restaurant',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="restaurant_background">\n  <ion-item *ngFor="let item of items" (click)="changePage(item)">\n    <ion-item no-lines>\n      <h1>{{item.nom}}</h1>\n    </ion-item>\n    <ion-list>\n      <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">\n      <ion-item no-lines>\n        <strong>Cuina oberta:</strong>\n        De {{item.horariDia}}\n        a {{item.horariNit}}\n      </ion-item>\n      <ion-item no-lines>\n        <strong>Preu aproximat:</strong>{{item.preu}} €\n      </ion-item>\n    </ion-list>\n  </ion-item>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__providers_database_database__["a" /* DatabaseProvider */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__providers_database_database__["a" /* DatabaseProvider */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* LoadingController */]])
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* LoadingController */]])
     ], RestaurantPage);
     return RestaurantPage;
 }());
@@ -159,16 +221,16 @@ var RestaurantPage = (function () {
 
 /***/ }),
 
-/***/ 200:
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatabaseProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(283);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -200,7 +262,7 @@ var DatabaseProvider = (function () {
         enumerable: true,
         configurable: true
     });
-    DatabaseProvider.prototype.getLocalitzacions = function () {
+    DatabaseProvider.prototype.getResaturant = function () {
         //SERVER_NAME_APP_TEST servidor online
         //SERVER_NAME_LOCAL servudor local
         //SERVER_NAME_PROXY proxy
@@ -223,13 +285,13 @@ var DatabaseProvider = (function () {
 
 /***/ }),
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InformacioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -245,14 +307,11 @@ var InformacioPage = (function () {
     function InformacioPage(navCtrl) {
         this.navCtrl = navCtrl;
     }
-    InformacioPage.prototype.navigateToAnotherModule = function () {
-        this.navCtrl.push('page-details-restaurant');
-    };
     InformacioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-informacio',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/informacio/informacio.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Segueix-nos a les xarxes</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      @turismevalldelord\n    </ion-item>\n    <ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      @instagram\n    </ion-item>\n    <ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      Faceboock vall de lord\n    </ion-item>\n    <button ion-item>\n      <ion-icon name="ionic" item></ion-icon>\n      Web de la Val de Lord\n    </button>\n  </ion-list>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/informacio/informacio.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], InformacioPage);
     return InformacioPage;
 }());
@@ -261,13 +320,13 @@ var InformacioPage = (function () {
 
 /***/ }),
 
-/***/ 203:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -285,9 +344,9 @@ var HomePage = (function () {
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/home/home.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img class="center" src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2>Benvinguts a l\'App de la Vall de Lord</h2>\n  <p>\n    This starter project comes with simple tabs-based layout for apps\n    that are going to primarily use a Tabbed UI.\n  </p>\n  <p>\n    Take a look at the <code>src/pages/</code> directory to add or change tabs,\n    update any existing page or create new pages.\n  </p>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/home/home.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img class="center" src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2>Benvinguts a l\'App de la Vall de Lord</h2>\n  <h3>\n    Associació Turisme Vall de Lord\n\n  </h3>\n  <p>\n    Oficina de turisme de la Vall de Lord\n  </p>\n  <p>\n    25282 St. Llorenç de Morunys\n  </p>\n  <p>\n    info@lavalldelord.com\n  </p>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], HomePage);
     return HomePage;
 }());
@@ -296,13 +355,13 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 207:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(232);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -310,24 +369,25 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(274);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_image_loader__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_restaurant_restaurant__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_informacio_informacio__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_database_database__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_image_loader__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_restaurant_restaurant__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_informacio_informacio__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_info_restaurant_info_restaurant__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_database_database__ = __webpack_require__(201);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -348,6 +408,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -358,12 +419,15 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_6__pages_restaurant_restaurant__["a" /* RestaurantPage */],
                 __WEBPACK_IMPORTED_MODULE_7__pages_informacio_informacio__["a" /* InformacioPage */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__["a" /* TabsPage */]
+                __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_info_restaurant_info_restaurant__["a" /* InfoRestaurantPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], { tabsPlacement: 'top' }, {
-                    links: []
+                    links: [
+                        { loadChildren: '../pages/info-restaurant/info-restaurant.module#InfoRestaurantPageModule', name: 'InfoRestaurantPage', segment: 'info-restaurant', priority: 'low', defaultHistory: [] }
+                    ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_5_ionic_image_loader__["a" /* IonicImageLoader */].forRoot()
@@ -374,13 +438,14 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_6__pages_restaurant_restaurant__["a" /* RestaurantPage */],
                 __WEBPACK_IMPORTED_MODULE_7__pages_informacio_informacio__["a" /* InformacioPage */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__["a" /* TabsPage */]
+                __WEBPACK_IMPORTED_MODULE_9__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_info_restaurant_info_restaurant__["a" /* InfoRestaurantPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_12__providers_database_database__["a" /* DatabaseProvider */],
+                __WEBPACK_IMPORTED_MODULE_13__providers_database_database__["a" /* DatabaseProvider */],
                 //ReversePipe,
                 __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* HttpModule */]
             ]
@@ -393,16 +458,16 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 273:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(199);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -430,7 +495,7 @@ var MyApp = (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -439,7 +504,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 282:
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -457,5 +522,5 @@ var SERVER_NAME_APP_PUB_IMG = "http://lavalldelord.com/appvallLord/storage/app/i
 
 /***/ })
 
-},[207]);
+},[208]);
 //# sourceMappingURL=main.js.map

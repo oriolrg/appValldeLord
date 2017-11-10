@@ -7,43 +7,20 @@
 </ion-header>
 
 <ion-content padding class="restaurant_background">
-
-      <button ion-item  *ngFor="let item of items">
-        <ion-thumbnail item-start>
-          <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">
-        </ion-thumbnail>
-        <h1>{{item.nom}}</h1>
+  <ion-item *ngFor="let item of items" (click)="changePage(item)">
+    <ion-item no-lines>
+      <h1>{{item.nom}}</h1>
+    </ion-item>
+    <ion-list>
+      <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">
+      <ion-item no-lines>
         <strong>Cuina oberta:</strong>
-        <p>
-          Matí: {{item.horariDia}}
-        </p>
-        <p>
-          Nit: {{item.horariNit}}
-        </p>
-        <strong>Preu aproximat:</strong>
-        <p>
-          Des de {{item.preu}} €
-        </p>
-        <!--<button ion-button clear item-end></button>-->
-      </button>
-    <!--<img-loader src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" useImg></img-loader>
-      <ion-card  *ngFor="let item of items | orderBy: 'distancia'">-->
-    <!--  <ion-item>
-        <ion-card-title>{{item.nom}}</ion-card-title>
-        <ul>
-          <ion-item>Telèfon: {{item.telefon}}</ion-item>
-          <li>{{item.direccio}}</li>
-          <li>{{item.poblacio}}</li>
-          <strong>Cuina oberta:</strong>
-          <ion-item>Matí: {{item.horariDia}}</ion-item>
-          <ion-item>Nit: {{item.horariNit}}</ion-item>
-          <br />
-          <ion-item>Des de {{item.preu}} €</ion-item>
-          <li>{{item.items}}</li>
-          <li>{{item.imatgeSecundaria}}</li>
-        </ul>
-
-
-      </ion-item>-->
-
+        De {{item.horariDia}}
+        a {{item.horariNit}}
+      </ion-item>
+      <ion-item no-lines>
+        <strong>Preu aproximat:</strong>{{item.preu}} €
+      </ion-item>
+    </ion-list>
+  </ion-item>
 </ion-content>

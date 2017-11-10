@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 
+import { InfoRestaurantPage } from '../../pages/info-restaurant/info-restaurant';
 import { DatabaseProvider } from '../../providers/database/database';
 import * as Constant from '../../providers/constants';
 import 'rxjs/add/operator/map';
@@ -37,21 +38,18 @@ export class RestaurantPage {
       });
 
       this.loading.present();
-      this.searchLocalitzacio();
+      this.searchRestaurant();
     });
   }
-  searchLocalitzacio(){
+  searchRestaurant(){
     //alert(Constant.SERVER_NAME_APP_TEST+'restaurant/');
-    this.DatabaseProvider.getLocalitzacions().subscribe(
+    this.DatabaseProvider.getResaturant().subscribe(
       data => {
 
         //SERVER_NAME_APP_TEST servidor online
         //SERVER_NAME_LOCAL servudor local
         //SERVER_NAME_PROXY proxy
-        //var url = Constant.SERVER_NAME_APP_TEST+'restaurant/';
         this.items = JSON.parse(data['_body']);
-        //this.items.dir = Constant.SERVER_NAME_APP_PUB_IMG;
-        //alert(this.items.dir);
         this.loading.dismiss();
         },
         err => {
@@ -59,7 +57,12 @@ export class RestaurantPage {
         },
         () => console.log('Movie Search Complete')
 
-  );
-}
+      );
+  }
+  changePage(data) {
+    this.navCtrl.push(InfoRestaurantPage, {
+        comData: data
+    });
+  };
 
 }

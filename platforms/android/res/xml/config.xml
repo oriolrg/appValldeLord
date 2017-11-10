@@ -23,9 +23,9 @@
     <feature name="FileTransfer">
         <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
     </feature>
-    <name>MyApp</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <name>ValldeLord</name>
+    <description>Aplicació turisme la Vall de Lord.</description>
+    <author email="oriolrg@gmail.com" href="http://tecnolord.com/">Oriol Riu Gispert</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
