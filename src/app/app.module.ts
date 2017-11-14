@@ -27,7 +27,7 @@ import { DatabaseProvider } from '../providers/database/database';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,{tabsPlacement: 'top'}),
+    IonicModule.forRoot(MyApp),
     HttpModule,
     IonicImageLoader.forRoot()
   ],

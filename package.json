@@ -41,7 +41,8 @@
     "ngx-pipes": "^2.0.1",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.18"
+    "zone.js": "0.8.18",
+    "cordova-browser": "~5.0.1"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.0",
@@ -59,7 +60,8 @@
       "cordova-plugin-file-transfer": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }
