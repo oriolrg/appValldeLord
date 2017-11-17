@@ -49,5 +49,11 @@ export class InfoRestaurantPage {
 
       );
   }
+  obreMaps(direccio, poblacio){
+    window.open('https://www.google.com/maps/search/'+direccio+','+poblacio+'/', '_system', 'location=yes');
+  }
+  obreMapsIndicacions(direccio, poblacio){
+    window.open('https://www.google.com/maps/dir//'+direccio+','+poblacio+'/', '_system', 'location=yes');
+  }
 
 }

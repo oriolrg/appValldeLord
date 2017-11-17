@@ -12,7 +12,7 @@
   <ion-card *ngIf="data">
     <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{data.imatgeSecundaria}}">
     <ion-fab right top>
-      <button ion-fab>
+      <button ion-fab (click)="obreMaps(data.direccio,data.poblacio)">
         <ion-icon name="pin"></ion-icon>
       </button>
     </ion-fab>
@@ -87,10 +87,12 @@
 
     </ion-item>
     <ion-item>
-        <button ion-button icon-left >
+      <a href="geo:?daddr='43.009953,-81.273613'" target="_system">maps</a>
+        <button ion-button icon-left (click)="obreMapsIndicacions(data.direccio,data.poblacio)">
           <ion-icon name="navigate"></ion-icon>
           {{data.direccio}}
         </button>
+<!--window.open('https://www.google.com/maps/dir//'[data.direccio]','data.poblacio'/', '_system', 'location=yes'); return false;-->
     </ion-item>
 
   </ion-card>

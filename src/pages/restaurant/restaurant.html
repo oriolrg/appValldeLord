@@ -7,13 +7,13 @@
 </ion-header>
 
 <ion-content padding class="restaurant_background">
-  <ion-item *ngFor="let item of items" (click)="changePage(item)">
+  <ion-item *ngFor="let item of items">
     <ion-item no-lines>
       <ion-icon name="restaurant" item-left></ion-icon>
       <h1>{{item.nom}}</h1>
     </ion-item>
     <ion-list>
-      <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">
+      <img (click)="changePage(item)" src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">
       <ion-item no-lines>
         <ion-icon name="locate" item> {{item.poblacio}}</ion-icon>
 
@@ -24,9 +24,9 @@
          <ion-icon name="logo-euro" item></ion-icon> Des de {{item.preu}}€
       </ion-item>
       <ion-item no-lines>
-        <ion-icon name="call" item> {{item.telefon}}</ion-icon>
-
+        <a href="tel:{{item.telefon}}"><ion-icon name="call" item> {{item.telefon}}</ion-icon></a>
       </ion-item>
+      <button ion-button full (click)="changePage(item)">Detalls</button>
     </ion-list>
   </ion-item>
 </ion-content>

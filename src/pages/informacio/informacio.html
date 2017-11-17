@@ -6,22 +6,26 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-list-header>Segueix-nos a les xarxes</ion-list-header>
-    <ion-item>
+<ion-content  padding class="restaurant_background">
+  <ion-list ion-item>
+    <h2>App de la Vall de Lord</h2>
+    <h3>Associació Turisme Vall de Lord</h3>
+    <p>Oficina de turisme de la Vall de Lord</p>
+    <p>25282 St. Llorenç de Morunys</p>
+    <p>info@lavalldelord.com</p>
+    <button ion-item onclick="window.open('https://twitter.com/valldelord', '_system', 'location=yes'); return false;">
       <ion-icon name="ionic" item></ion-icon>
       @turismevalldelord
-    </ion-item>
-    <ion-item>
+    </button>
+    <button ion-item onclick="window.open('https://www.instagram.com/turismevalldelord/', '_system', 'location=yes'); return false;">
       <ion-icon name="ionic" item></ion-icon>
-      @instagram
-    </ion-item>
-    <ion-item>
+      @instagram turismevalldelord
+    </button>
+    <button ion-item onclick="window.open('https://www.facebook.com/turismevalldelord', '_system', 'location=yes'); return false;">
       <ion-icon name="ionic" [ngStyle]="{'color': 'red'}" item></ion-icon>
-      Faceboock vall de lord
-    </ion-item>
-    <button ion-item>
+      Faceboock Vall de Lord
+    </button>
+    <button ion-item onclick="window.open('http://lavalldelord.com', '_system', 'location=yes'); return false;">
       <ion-icon name="ionic" item></ion-icon>
       Web de la Val de Lord
     </button>
