@@ -22,7 +22,7 @@ export class DatabaseProvider {
         //SERVER_NAME_APP_TEST servidor online
         //SERVER_NAME_LOCAL servudor local
         //SERVER_NAME_PROXY proxy
-        var url = Constant.SERVER_NAME_LOCAL+'restaurant/';
+        var url = Constant.SERVER_NAME_APP_TEST+'restaurant/';
         //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
         //TODO funciona var response = this.http.get(url+lat+'/'+lon);
         var response = this.http.get(url);
@@ -32,7 +32,7 @@ export class DatabaseProvider {
     }
     getItems($id){
         //alert("databaseprovider"+$id);
-        var url = Constant.SERVER_NAME_LOCAL+'restaurant/item/'+$id;
+        var url = Constant.SERVER_NAME_APP_TEST+'restaurant/item/'+$id;
         var response = this.http.get(url);
         return response;
     }

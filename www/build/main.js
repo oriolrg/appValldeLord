@@ -221,7 +221,7 @@ var RestaurantPage = (function () {
     ;
     RestaurantPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-restaurant',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="restaurant_background">\n  <ion-item *ngFor="let item of items" (click)="changePage(item)">\n    <ion-item no-lines>\n      <ion-icon name="restaurant" item-left></ion-icon>\n      <h1>{{item.nom}}</h1>\n    </ion-item>\n    <ion-list>\n      <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">\n      <ion-item no-lines>\n        <ion-icon name="locate" item> {{item.poblacio}}</ion-icon>\n\n      </ion-item>\n      <ion-item no-lines>\n        <ion-icon name="clock" item></ion-icon> Cuina de {{item.obertura_dia}}h a {{item.tancament_dia}}h i {{item.obertura_nit}}h a {{item.tancament_nit}}h<br />\n        <br />\n         <ion-icon name="logo-euro" item></ion-icon> Des de {{item.preu}}\n      </ion-item>\n      <ion-item no-lines>\n        <ion-icon name="call" item> {{item.telefon}}</ion-icon>\n\n      </ion-item>\n    </ion-list>\n  </ion-item>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/
+            selector: 'page-restaurant',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="restaurant_background">\n  <ion-item *ngFor="let item of items" (click)="changePage(item)">\n    <ion-item no-lines>\n      <ion-icon name="restaurant" item-left></ion-icon>\n      <h1>{{item.nom}}</h1>\n    </ion-item>\n    <ion-list>\n      <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">\n      <ion-item no-lines>\n        <ion-icon name="locate" item> {{item.poblacio}}</ion-icon>\n\n      </ion-item>\n      <ion-item no-lines>\n        <ion-icon name="clock" item></ion-icon> Cuina de {{item.obertura_dia}}h a {{item.tancament_dia}}h i {{item.obertura_nit}}h a {{item.tancament_nit}}h<br />\n        <br />\n         <ion-icon name="logo-euro" item></ion-icon> Des de {{item.preu}}€\n      </ion-item>\n      <ion-item no-lines>\n        <ion-icon name="call" item> {{item.telefon}}</ion-icon>\n\n      </ion-item>\n    </ion-list>\n  </ion-item>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__providers_database_database__["a" /* DatabaseProvider */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */],
@@ -420,8 +420,8 @@ var AppModule = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export SERVER_NAME_APP_TEST */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SERVER_NAME_LOCAL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SERVER_NAME_APP_TEST; });
+/* unused harmony export SERVER_NAME_LOCAL */
 /* unused harmony export SERVER_NAME_LOCAL2 */
 /* unused harmony export SERVER_NAME_PROXY */
 /* unused harmony export SERVER_NAME_APP_PUB_IMG */
@@ -526,7 +526,7 @@ var DatabaseProvider = (function () {
         //SERVER_NAME_APP_TEST servidor online
         //SERVER_NAME_LOCAL servudor local
         //SERVER_NAME_PROXY proxy
-        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_LOCAL */] + 'restaurant/';
+        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/';
         //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
         //TODO funciona var response = this.http.get(url+lat+'/'+lon);
         var response = this.http.get(url);
@@ -536,7 +536,7 @@ var DatabaseProvider = (function () {
     };
     DatabaseProvider.prototype.getItems = function ($id) {
         //alert("databaseprovider"+$id);
-        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_LOCAL */] + 'restaurant/item/' + $id;
+        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/item/' + $id;
         var response = this.http.get(url);
         return response;
     };
