@@ -7,20 +7,24 @@
 </ion-header>
 
 <ion-content padding class="restaurant_background">
-  <ion-item *ngFor="let item of items" (click)="changePage(item)">
+  <ion-item *ngFor="let item of items">
     <ion-item no-lines>
+      <ion-icon name="restaurant" item-left></ion-icon>
       <h1>{{item.nom}}</h1>
     </ion-item>
     <ion-list>
-      <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">
+      <img (click)="changePage(item)" src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">
       <ion-item no-lines>
-        <strong>Cuina oberta:</strong>
-        De {{item.horariDia}}
-        a {{item.horariNit}}
+        <ion-icon name="locate" item> {{item.poblacio}}</ion-icon>
+
       </ion-item>
       <ion-item no-lines>
-        <strong>Preu aproximat:</strong>{{item.preu}} €
+        <ion-icon name="clock" item></ion-icon> Cuina de {{item.obertura_dia}}h a {{item.tancament_dia}}h i {{item.obertura_nit}}h a {{item.tancament_nit}}h<br />
       </ion-item>
+      <ion-item no-lines>
+        <a href="tel:{{item.telefon}}"><ion-icon name="call" item> {{item.telefon}}</ion-icon></a>
+      </ion-item>
+      <button ion-button full (click)="changePage(item)">Detalls</button>
     </ion-list>
   </ion-item>
 </ion-content>

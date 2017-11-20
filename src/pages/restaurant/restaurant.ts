@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
+import { Network } from '@ionic-native/network';
+import { ToastController } from 'ionic-angular';
 
 import { InfoRestaurantPage } from '../../pages/info-restaurant/info-restaurant';
 import { DatabaseProvider } from '../../providers/database/database';
@@ -19,29 +21,69 @@ export class RestaurantPage {
   //restaurants: Array<any>;
   private loading: any;
   public items: any;
+  private online:boolean = false;
+  private wifi:boolean = false;
+  public disconnectSubscription:any;
+  public connectSubscription:any;
   //restRoot = DetailsRestaurantPage;
   constructor(//private reversePipe: ReversePipe,
     public DatabaseProvider: DatabaseProvider,
     public navCtrl: NavController,
     public navParams: NavParams,
     private http:Http,
+    private network: Network,
+    private toastCtrl: ToastController,
     //private geolocation: Geolocation,
     public  platform: Platform,
     public loadingController: LoadingController
   ) {
     platform.ready().then(() => {
+      //missatge de no connexió
 
-      // La plataforma esta lista y ya tenemos acceso a los plugins.
-
-      this.loading = this.loadingController.create({
-        content: 'Carregant...'
+      let disconnectSub = network.onDisconnect().subscribe(() => {
+        this.offLine();
       });
 
-      this.loading.present();
-      this.searchRestaurant();
+      let connectSub = network.onConnect().subscribe(()=> {
+        this.onLine();
+      });
+
+      //si tenim connexio carreguem pagina i mostrem missatge
+      if(this.network.type!='none'){
+        this.onLine();
+      }else{
+        this.offLine();
+      }
+      
     });
   }
+  onLine(){
+    let toast = this.toastCtrl.create({
+      message: 'S\'està connectant',
+      duration: 2000,
+      position: 'bottom'
+    });
+    // La plataforma esta lista y ya tenemos acceso a los plugins.
+    //toastCtrl.present();
+    this.loading = this.loadingController.create({
+      content: 'Carregant...'
+    });
+
+    this.loading.present();
+    this.searchRestaurant();
+    toast.present();
+  }
+  offLine(){
+    let toast = this.toastCtrl.create({
+      message: 'No hi ha connexió',
+      duration: 3000,
+      position: 'bottom'
+    });
+    toast.present();
+  }
   searchRestaurant(){
+
+
     //alert(Constant.SERVER_NAME_APP_TEST+'restaurant/');
     this.DatabaseProvider.getResaturant().subscribe(
       data => {

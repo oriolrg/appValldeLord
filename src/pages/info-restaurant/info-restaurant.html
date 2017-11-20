@@ -12,7 +12,7 @@
   <ion-card *ngIf="data">
     <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{data.imatgeSecundaria}}">
     <ion-fab right top>
-      <button ion-fab>
+      <button ion-fab (click)="obreMaps(data.direccio,data.poblacio)">
         <ion-icon name="pin"></ion-icon>
       </button>
     </ion-fab>
@@ -21,55 +21,68 @@
     <ion-item>
       <ion-list>
         <ion-item>
-          <ion-icon name="restaurant" item-left large ></ion-icon>
+          <!--<ion-icon name="restaurant" item-left large ></ion-icon>-->
           <h1>
             <strong>{{data.nom}}</strong>
           </h1>
         </ion-item>
+        <ion-item>
+          <ion-icon name="logo-euro" item></ion-icon> Des de {{data.preu}}€
+        </ion-item>
       </ion-list>
     </ion-item>
 
-    <ion-item>
+    <ion-item *ngFor="let item of items">
       <ion-list inset>
         <ion-item>
           Menú
-          <ion-icon name="checkmark-circle" item-end></ion-icon>
+          <ion-icon *ngIf="item.Menu==='checkmark-circle'" name={{item.Menu}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+          <ion-icon *ngIf="item.Menu==='close-circle'" name={{item.Menu}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
         </ion-item>
         <ion-item>
           Menu infantil
-          <ion-icon name="close-circle" item-end></ion-icon>
+          <ion-icon *ngIf="item.MenuInfantil==='checkmark-circle'" name={{item.MenuInfantil}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+          <ion-icon *ngIf="item.MenuInfantil==='close-circle'" name={{item.MenuInfantil}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
         </ion-item>
         <ion-item>
           Carta
-          <ion-icon name="close-circle" item-end></ion-icon>
+          <ion-icon *ngIf="item.Carta==='checkmark-circle'" name={{item.Carta}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+          <ion-icon *ngIf="item.Carta==='close-circle'" name={{item.Carta}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
         </ion-item>
         <ion-item>
           Cuina Catalana
-          <ion-icon name="checkmark-circle" item-end></ion-icon>
+          <ion-icon *ngIf="item.CuinaCatalana==='checkmark-circle'" name={{item.CuinaCatalana}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+          <ion-icon *ngIf="item.CuinaCatalana==='close-circle'" name={{item.CuinaCatalana}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
         </ion-item>
         <ion-item>
           Pizza
-          <ion-icon name="checkmark-circle" item-end></ion-icon>
+          <ion-icon *ngIf="item.Pizza==='checkmark-circle'" name={{item.Pizza}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+          <ion-icon *ngIf="item.Pizza==='close-circle'" name={{item.Pizza}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
         </ion-item>
         <ion-item>
           Plats combinats
-          <ion-icon name="checkmark-circle" item-end></ion-icon>
+          <ion-icon *ngIf="item.PlatsCombinats==='checkmark-circle'" name={{item.PlatsCombinats}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+          <ion-icon *ngIf="item.PlatsCombinats==='close-circle'" name={{item.PlatsCombinats}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
         </ion-item>
         <ion-item>
           Entrepans
-          <ion-icon name="close-circle" item-end></ion-icon>
+          <ion-icon *ngIf="item.Entrepans==='checkmark-circle'" name={{item.Entrepans}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+          <ion-icon *ngIf="item.Entrepans==='close-circle'" name={{item.Entrepans}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
         </ion-item>
         <ion-item>
           Apte per celiacs
-          <ion-icon name="close-circle" item-end></ion-icon>
+          <ion-icon *ngIf="item.ApteCeliacs==='checkmark-circle'" name={{item.ApteCeliacs}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+          <ion-icon *ngIf="item.ApteCeliacs==='close-circle'" name={{item.ApteCeliacs}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
         </ion-item>
         <ion-item>
           Terrassa
-          <ion-icon name="close-circle" item-end></ion-icon>
+          <ion-icon *ngIf="item.Terrasa==='checkmark-circle'" name={{item.Terrasa}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+          <ion-icon *ngIf="item.Terrasa==='close-circle'" name={{item.Terrasa}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
         </ion-item>
         <ion-item>
           Zona d’esbarjo
-          <ion-icon name="checkmark-circle" item-end></ion-icon>
+          <ion-icon *ngIf="item.ZonaEsbarjo==='checkmark-circle'" name={{item.ZonaEsbarjo}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+          <ion-icon *ngIf="item.ZonaEsbarjo==='close-circle'" name={{item.ZonaEsbarjo}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
         </ion-item>
       </ion-list>
     </ion-item>
@@ -77,10 +90,11 @@
 
     </ion-item>
     <ion-item>
-        <button ion-button icon-left >
+        <button ion-button icon-left (click)="obreMapsIndicacions(data.direccio,data.poblacio)">
           <ion-icon name="navigate"></ion-icon>
           {{data.direccio}}
         </button>
+<!--window.open('https://www.google.com/maps/dir//'[data.direccio]','data.poblacio'/', '_system', 'location=yes'); return false;-->
     </ion-item>
 
   </ion-card>

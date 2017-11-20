@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import { IonicImageLoader } from 'ionic-image-loader';
+import { Network } from '@ionic-native/network';
 //import { ReversePipe } from 'ngx-pipes/src/app/pipes/array/reverse';
 
 import { RestaurantPage } from '../pages/restaurant/restaurant';
@@ -27,7 +28,7 @@ import { DatabaseProvider } from '../providers/database/database';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,{tabsPlacement: 'top'}),
+    IonicModule.forRoot(MyApp),
     HttpModule,
     IonicImageLoader.forRoot()
   ],
@@ -46,7 +47,8 @@ import { DatabaseProvider } from '../providers/database/database';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DatabaseProvider,
     //ReversePipe,
-    HttpModule
+    HttpModule,
+    Network
   ]
 })
 export class AppModule {}

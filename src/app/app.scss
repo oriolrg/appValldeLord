@@ -15,11 +15,11 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 ion-header{
-  height: 80px;
+  height: auto;
 }
 ion-header img{
-  height: 80px;
-  margin-left: auto;
+  height: 40px;
+  margin-left: 0;
   margin-right: auto;
   display: block;
 }
@@ -28,6 +28,7 @@ ion-content{
     -webkit-background-image: url('../assets/imgs/clot-de-vilamala-75.jpg');
     background-repeat:no-repeat;
     background-size: cover;
+    margin-top: 0px;
 }
 @font-face {
     font-family: "gotham-light";
