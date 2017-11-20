@@ -9,25 +9,27 @@
 <ion-content  padding class="restaurant_background">
   <ion-list ion-item>
     <h2>App de la Vall de Lord</h2>
-    <h3>Associació Turisme Vall de Lord</h3>
-    <p>Oficina de turisme de la Vall de Lord</p>
-    <p>25282 St. Llorenç de Morunys</p>
-    <p>info@lavalldelord.com</p>
+    <h3>Segueix-nos a:</h3><br />
     <button ion-item onclick="window.open('https://twitter.com/valldelord', '_system', 'location=yes'); return false;">
-      <ion-icon name="ionic" item></ion-icon>
-      @turismevalldelord
+      <ion-icon name="logo-twitter" [ngStyle]="{'color': 'blue'}" item></ion-icon>
+        <span [ngStyle]="{'color': 'blue'}">Twitter</span>
     </button>
     <button ion-item onclick="window.open('https://www.instagram.com/turismevalldelord/', '_system', 'location=yes'); return false;">
-      <ion-icon name="ionic" item></ion-icon>
-      @instagram turismevalldelord
+      <ion-icon name="logo-instagram" [ngStyle]="{'color': 'blue'}" item></ion-icon>
+        <span [ngStyle]="{'color': 'blue'}">Instagram</span>
     </button>
     <button ion-item onclick="window.open('https://www.facebook.com/turismevalldelord', '_system', 'location=yes'); return false;">
-      <ion-icon name="ionic" [ngStyle]="{'color': 'red'}" item></ion-icon>
-      Faceboock Vall de Lord
+      <ion-icon name="logo-facebook" [ngStyle]="{'color': 'blue'}" item></ion-icon>
+        <span [ngStyle]="{'color': 'blue'}">Faceboock</span>
     </button>
     <button ion-item onclick="window.open('http://lavalldelord.com', '_system', 'location=yes'); return false;">
-      <ion-icon name="ionic" item></ion-icon>
-      Web de la Val de Lord
+      <ion-icon name="logo-wordpress" [ngStyle]="{'color': 'blue'}" item></ion-icon>
+        <span [ngStyle]="{'color': 'blue'}">Web de la Val de Lord</span>
     </button>
+    <br />
+    <h3><strong>Associació Turisme Vall de Lord</strong><br />
+    <span>Oficina de turisme de la Vall de Lord<br />
+    25282 St. Llorenç de Morunys<br />
+    info@lavalldelord.com</span></h3>
   </ion-list>
 </ion-content>
