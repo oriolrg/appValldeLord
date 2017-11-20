@@ -30,6 +30,30 @@ export class DatabaseProvider {
         //alert(response);
         return response;
     }
+    getResaturantDia() {
+        //SERVER_NAME_APP_TEST servidor online
+        //SERVER_NAME_LOCAL servudor local
+        //SERVER_NAME_PROXY proxy
+        var url = Constant.SERVER_NAME_APP_TEST+'restaurant/';
+        //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
+        //TODO funciona var response = this.http.get(url+lat+'/'+lon);
+        var response = this.http.get(url);
+        console.log(url);
+        //alert(response);
+        return response;
+    }
+    getResaturantFiltre(dia) {
+        //SERVER_NAME_APP_TEST servidor online
+        //SERVER_NAME_LOCAL servudor local
+        //SERVER_NAME_PROXY proxy
+        var url = Constant.SERVER_NAME_APP_TEST+'restaurant/'+dia;
+        //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
+        //TODO funciona var response = this.http.get(url+lat+'/'+lon);
+        var response = this.http.get(url);
+        console.log(url);
+        //alert(response);
+        return response;
+    }
     getItems($id){
         //alert("databaseprovider"+$id);
         var url = Constant.SERVER_NAME_APP_TEST+'restaurant/item/'+$id;
