@@ -54,7 +54,7 @@ export class RestaurantPage {
       }else{
         this.offLine();
       }
-      
+
     });
   }
   onLine(){
@@ -82,8 +82,6 @@ export class RestaurantPage {
     toast.present();
   }
   searchRestaurant(){
-
-
     //alert(Constant.SERVER_NAME_APP_TEST+'restaurant/');
     this.DatabaseProvider.getResaturant().subscribe(
       data => {
@@ -105,6 +103,85 @@ export class RestaurantPage {
     this.navCtrl.push(InfoRestaurantPage, {
         comData: data
     });
-  };
+  }
+  onChangeDia(dia) {
+    if(dia !=0 ){
+      let data = "dia/"+dia;
+      this.DatabaseProvider.getResaturantFiltre(data).subscribe(
+        data => {
+
+          //SERVER_NAME_APP_TEST servidor online
+          //SERVER_NAME_LOCAL servudor local
+          //SERVER_NAME_PROXY proxy
+          this.items = JSON.parse(data['_body']);
+          this.loading.dismiss();
+          },
+          err => {
+            console.log("Error: " + err);
+          },
+          () => console.log('Movie Search Complete')
+
+        );
+    }else{
+      //obtenim dades segons data actual
+      let String = new Date();
+      alert(String.getDay());
+      let data = "dia/"+String.getDay();
+      this.DatabaseProvider.getResaturantFiltre(data).subscribe(
+        data => {
+
+          //SERVER_NAME_APP_TEST servidor online
+          //SERVER_NAME_LOCAL servudor local
+          //SERVER_NAME_PROXY proxy
+          this.items = JSON.parse(data['_body']);
+          this.loading.dismiss();
+          },
+          err => {
+            console.log("Error: " + err);
+          },
+          () => console.log('Movie Search Complete')
+
+        );
+    }
+  }
+  onChangeHora(hora) {
+    //alert(hora);
+    if(hora == 'Hora actual'){
+      let String = new Date();
+      //alert(String.getHours());
+      let data = "hora/"+String.getDay();
+      this.DatabaseProvider.getResaturantFiltre(data).subscribe(
+        data => {
+
+          //SERVER_NAME_APP_TEST servidor online
+          //SERVER_NAME_LOCAL servudor local
+          //SERVER_NAME_PROXY proxy
+          this.items = JSON.parse(data['_body']);
+          this.loading.dismiss();
+          },
+          err => {
+            console.log("Error: " + err);
+          },
+          () => console.log('Movie Search Complete')
+
+        );
+    }
+    let data = "hora/"+hora;
+    this.DatabaseProvider.getResaturantFiltre(data).subscribe(
+      data => {
+
+        //SERVER_NAME_APP_TEST servidor online
+        //SERVER_NAME_LOCAL servudor local
+        //SERVER_NAME_PROXY proxy
+        this.items = JSON.parse(data['_body']);
+        this.loading.dismiss();
+        },
+        err => {
+          console.log("Error: " + err);
+        },
+        () => console.log('Movie Search Complete')
+
+      );
+  }
 
 }
