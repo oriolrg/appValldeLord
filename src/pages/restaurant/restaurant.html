@@ -1,49 +1,53 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-        <img src="assets/imgs/logo-vdl-mini.png"/>
+      <ion-grid>
+        <ion-row align-items-start>
+
+            <img src="assets/imgs/logo-vdl-mini.png" col-auto/>
+
+            <ion-select [(ngModel)]="dia" (ionChange)="onChangeDia(dia)" col-4>
+              <ion-option value="" [selected]="true">Dia Obert</ion-option>
+              <ion-option value="0">Dia actual</ion-option>
+              <ion-option value="1">Dilluns</ion-option>
+              <ion-option value="2">Dimarts</ion-option>
+              <ion-option value="3">Dimecres</ion-option>
+              <ion-option value="4">Dijous</ion-option>
+              <ion-option value="5">Divendres</ion-option>
+              <ion-option value="6">Dissabte</ion-option>
+              <ion-option value="7">Diumenge</ion-option>
+            </ion-select>
+            <ion-select [(ngModel)]="hora" (ionChange)="onChangeHora(hora)" col-4>
+              <ion-option [selected]="true">Hora Cuina</ion-option>
+              <ion-option>Hora actual</ion-option>
+              <ion-option value="0">00</ion-option>
+              <ion-option value="1">01</ion-option>
+              <ion-option value="2">02</ion-option>
+              <ion-option value="3">03</ion-option>
+              <ion-option value="4">04</ion-option>
+              <ion-option value="5">05</ion-option>
+              <ion-option value="6">06</ion-option>
+              <ion-option value="7">07</ion-option>
+              <ion-option value="8">08</ion-option>
+              <ion-option value="9">09</ion-option>
+              <ion-option>10</ion-option>
+              <ion-option>11</ion-option>
+              <ion-option>12</ion-option>
+              <ion-option>13</ion-option>
+              <ion-option>14</ion-option>
+              <ion-option>15</ion-option>
+              <ion-option>16</ion-option>
+              <ion-option>17</ion-option>
+              <ion-option>18</ion-option>
+              <ion-option>19</ion-option>
+              <ion-option>20</ion-option>
+              <ion-option>21</ion-option>
+              <ion-option>22</ion-option>
+              <ion-option>23</ion-option>
+            </ion-select>
+        </ion-row>
+      </ion-grid>
     </ion-title>
-    <ion-item>
-        <ion-select [(ngModel)]="dia" (ionChange)="onChangeDia(dia)">
-          <ion-option value="" [selected]="true">Filtra Dia</ion-option>
-          <ion-option value="0">Dia actual</ion-option>
-          <ion-option value="1">Dilluns</ion-option>
-          <ion-option value="2">Dimarts</ion-option>
-          <ion-option value="3">Dimecres</ion-option>
-          <ion-option value="4">Dijous</ion-option>
-          <ion-option value="5">Divendres</ion-option>
-          <ion-option value="6">Dissabte</ion-option>
-          <ion-option value="7">Diumenge</ion-option>
-        </ion-select>
-      <ion-select [(ngModel)]="hora" (ionChange)="onChangeHora(hora)">
-        <ion-option [selected]="true">Filtra Hora</ion-option>
-        <ion-option>Hora actual</ion-option>
-        <ion-option value="0">00</ion-option>
-        <ion-option value="1">01</ion-option>
-        <ion-option value="2">02</ion-option>
-        <ion-option value="3">03</ion-option>
-        <ion-option value="4">04</ion-option>
-        <ion-option value="5">05</ion-option>
-        <ion-option value="6">06</ion-option>
-        <ion-option value="7">07</ion-option>
-        <ion-option value="8">08</ion-option>
-        <ion-option value="9">09</ion-option>
-        <ion-option>10</ion-option>
-        <ion-option>11</ion-option>
-        <ion-option>12</ion-option>
-        <ion-option>13</ion-option>
-        <ion-option>14</ion-option>
-        <ion-option>15</ion-option>
-        <ion-option>16</ion-option>
-        <ion-option>17</ion-option>
-        <ion-option>18</ion-option>
-        <ion-option>19</ion-option>
-        <ion-option>20</ion-option>
-        <ion-option>21</ion-option>
-        <ion-option>22</ion-option>
-        <ion-option>23</ion-option>
-      </ion-select>
-    </ion-item>
   </ion-navbar>
 </ion-header>
 

@@ -30537,7 +30537,7 @@ ion-header {
 ion-header img {
   height: 40px;
   margin-left: 0;
-  margin-right: auto;
+  margin-right: 0;
   display: block;
 }
 
@@ -30597,4 +30597,8 @@ page-restaurant .item ion-thumbnail img {
   min-width: 10rem;
   max-height: 23rem;
   min-height: 20rem;
+}
+
+page-restaurant ion-select {
+  font-size: 1.2rem;
 }
