@@ -47,6 +47,7 @@ export class DatabaseProvider {
         //SERVER_NAME_LOCAL servudor local
         //SERVER_NAME_PROXY proxy
         var url = Constant.SERVER_NAME_APP_TEST+'restaurant/'+dia;
+        //alert(url);
         //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
         //TODO funciona var response = this.http.get(url+lat+'/'+lon);
         var response = this.http.get(url);
