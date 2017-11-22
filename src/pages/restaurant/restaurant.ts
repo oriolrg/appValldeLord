@@ -125,7 +125,7 @@ export class RestaurantPage {
     }else{
       //obtenim dades segons data actual
       let String = new Date();
-      alert(String.getDay());
+      //alert(String.getDay());
       let data = "dia/"+String.getDay();
       this.DatabaseProvider.getResaturantFiltre(data).subscribe(
         data => {
@@ -148,8 +148,9 @@ export class RestaurantPage {
     //alert(hora);
     if(hora == 'Hora actual'){
       let String = new Date();
+
+      let data = "hora/"+String.getHours();
       //alert(String.getHours());
-      let data = "hora/"+String.getDay();
       this.DatabaseProvider.getResaturantFiltre(data).subscribe(
         data => {
 
@@ -165,7 +166,7 @@ export class RestaurantPage {
           () => console.log('Movie Search Complete')
 
         );
-    }
+    }else{
     let data = "hora/"+hora;
     this.DatabaseProvider.getResaturantFiltre(data).subscribe(
       data => {
@@ -182,6 +183,7 @@ export class RestaurantPage {
         () => console.log('Movie Search Complete')
 
       );
+    }
   }
 
 }

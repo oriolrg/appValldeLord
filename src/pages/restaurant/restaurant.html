@@ -1,13 +1,14 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      <ion-grid>
-        <ion-row align-items-start>
-
-            <img src="assets/imgs/logo-vdl-mini.png" col-auto/>
-
-            <ion-select [(ngModel)]="dia" (ionChange)="onChangeDia(dia)" col-4>
-              <ion-option value="" [selected]="true">Dia Obert</ion-option>
+        <ion-title>
+      <ion-grid class="graellaHeader">
+        <ion-row align-items-start class="filaHeader">
+          <ion-col col-2 class="imageHeader">
+          <img src="assets/imgs/logo-vdl-no-text.png"/>
+          </ion-col>
+          <ion-col col-10 class="colSelectHeader">
+          <ion-item class="selecHeader" no-lines>
+            <ion-select [(ngModel)]="dia" (ionChange)="onChangeDia(dia)" action-sheet placeholder="Dia Obert">
               <ion-option value="0">Dia actual</ion-option>
               <ion-option value="1">Dilluns</ion-option>
               <ion-option value="2">Dimarts</ion-option>
@@ -17,8 +18,10 @@
               <ion-option value="6">Dissabte</ion-option>
               <ion-option value="7">Diumenge</ion-option>
             </ion-select>
-            <ion-select [(ngModel)]="hora" (ionChange)="onChangeHora(hora)" col-4>
-              <ion-option [selected]="true">Hora Cuina</ion-option>
+
+
+
+            <ion-select [(ngModel)]="hora" (ionChange)="onChangeHora(hora)" action-sheet   placeholder="Hora Cuina">
               <ion-option>Hora actual</ion-option>
               <ion-option value="0">00</ion-option>
               <ion-option value="1">01</ion-option>
@@ -45,6 +48,8 @@
               <ion-option>22</ion-option>
               <ion-option>23</ion-option>
             </ion-select>
+          </ion-item>
+          </ion-col>
         </ion-row>
       </ion-grid>
     </ion-title>
@@ -79,4 +84,5 @@
       </ion-grid>
     </ion-list>
   </ion-item>
+
 </ion-content>

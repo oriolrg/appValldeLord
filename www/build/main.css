@@ -30592,6 +30592,16 @@ page-info-restaurant .close-circle {
   color: red;
 }
 
+page-informacio ion-select {
+  padding: 0px;
+  border: solid 1px #DDD;
+  background-color: #dd295b;
+  color: #FFF;
+  border-radius: 3px;
+  margin: 0px;
+  width: auto;
+}
+
 page-restaurant .item ion-thumbnail img {
   max-width: 15rem;
   min-width: 10rem;
@@ -30601,4 +30611,46 @@ page-restaurant .item ion-thumbnail img {
 
 page-restaurant ion-select {
   font-size: 1.2rem;
+  style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: left;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+page-restaurant .selecHeader {
+  margin: 0;
+  padding: 0;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+page-restaurant .imageHeader {
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+page-restaurant .filaHeader {
+  margin: 0;
+  padding: 0;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+page-restaurant .graellaHeader {
+  margin: 0;
+  padding: 0;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+page-restaurant ion-title {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
 }

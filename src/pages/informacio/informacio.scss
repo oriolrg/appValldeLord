@@ -8,4 +8,13 @@ page-informacio {
     checkmark-circle: #ff0000,
     close-circle: #009900
   );
+  ion-select{
+  	padding: 0px;
+  	border: solid 1px #DDD;
+  	background-color: rgb(221, 41, 91);
+  	color: #FFF;
+  	border-radius: 3px;
+  	margin: 0px;
+    width: auto;
+  }
 }
