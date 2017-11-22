@@ -1,0 +1,1 @@
+{"version":3,"file":"informacio.js","sourceRoot":"","sources":["informacio.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,eAAe,CAAC;AAC1C,OAAO,EAAE,aAAa,EAAE,MAAM,eAAe,CAAC;;IAU5C,wBACS,OAAsB;QAAtB,YAAO,GAAP,OAAO,CAAe;QAC7B,IAAI,CAAC,KAAK,GAAG,OAAO,CAAC;KACtB;;gBAVF,SAAS,SAAC;oBACT,QAAQ,EAAE,iBAAiB;oBAC3B,WAAW,EAAE,iBAAiB;iBAC/B;;;;gBANQ,aAAa;;yBADtB;;SAQa,cAAc"}

@@ -1,6 +1,5 @@
-import { Http } from '@angular/http';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { Network } from '@ionic-native/network';
@@ -8,32 +7,28 @@ import { ToastController } from 'ionic-angular';
 
 import { InfoRestaurantPage } from '../../pages/info-restaurant/info-restaurant';
 import { DatabaseProvider } from '../../providers/database/database';
-import * as Constant from '../../providers/constants';
 import 'rxjs/add/operator/map';
 
-//import { DetailsRestaurantPage } from '../details-restaurant/details-restaurant';
 
 @Component({
   selector: 'page-restaurant',
   templateUrl: 'restaurant.html'
 })
 export class RestaurantPage {
-  //restaurants: Array<any>;
   private loading: any;
   public items: any;
-  private online:boolean = false;
-  private wifi:boolean = false;
   public disconnectSubscription:any;
   public connectSubscription:any;
-  //restRoot = DetailsRestaurantPage;
-  constructor(//private reversePipe: ReversePipe,
+  private tmpDia:any;
+  private tmpHora:any;
+  public dia:any;
+  public hora:any;
+  constructor(
     public DatabaseProvider: DatabaseProvider,
     public navCtrl: NavController,
     public navParams: NavParams,
-    private http:Http,
     private network: Network,
     private toastCtrl: ToastController,
-    //private geolocation: Geolocation,
     public  platform: Platform,
     public loadingController: LoadingController
   ) {
@@ -82,13 +77,8 @@ export class RestaurantPage {
     toast.present();
   }
   searchRestaurant(){
-    //alert(Constant.SERVER_NAME_APP_TEST+'restaurant/');
     this.DatabaseProvider.getResaturant().subscribe(
       data => {
-
-        //SERVER_NAME_APP_TEST servidor online
-        //SERVER_NAME_LOCAL servudor local
-        //SERVER_NAME_PROXY proxy
         this.items = JSON.parse(data['_body']);
         this.loading.dismiss();
         },
@@ -105,75 +95,46 @@ export class RestaurantPage {
     });
   }
   onChangeDia(dia) {
-    if(dia !=0 ){
-      let data = "dia/"+dia;
-      this.DatabaseProvider.getResaturantFiltre(data).subscribe(
-        data => {
-
-          //SERVER_NAME_APP_TEST servidor online
-          //SERVER_NAME_LOCAL servudor local
-          //SERVER_NAME_PROXY proxy
-          this.items = JSON.parse(data['_body']);
-          this.loading.dismiss();
-          },
-          err => {
-            console.log("Error: " + err);
-          },
-          () => console.log('Movie Search Complete')
-
-        );
+    var data;
+    if(this.tmpHora){
+      if(dia ==0 ){
+        //obtenim dades segons data actual
+        data = this.dataDiaHoraActual();
+      }else{
+        //obtenim dades segons dia
+        data = this.dataDiaHora(dia);
+      }
     }else{
-      //obtenim dades segons data actual
-      let String = new Date();
-      //alert(String.getDay());
-      let data = "dia/"+String.getDay();
-      this.DatabaseProvider.getResaturantFiltre(data).subscribe(
-        data => {
-
-          //SERVER_NAME_APP_TEST servidor online
-          //SERVER_NAME_LOCAL servudor local
-          //SERVER_NAME_PROXY proxy
-          this.items = JSON.parse(data['_body']);
-          this.loading.dismiss();
-          },
-          err => {
-            console.log("Error: " + err);
-          },
-          () => console.log('Movie Search Complete')
-
-        );
+      if(dia ==0 ){
+        //obtenim dades segons data actual
+        data = this.dataDiaActual();
+      }else{
+        //obtenim dades segons dia
+        data = this.dataDia(dia);
+      }
     }
+    this.sendData(data);
   }
   onChangeHora(hora) {
-    //alert(hora);
-    if(hora == 'Hora actual'){
-      let String = new Date();
-
-      let data = "hora/"+String.getHours();
-      //alert(String.getHours());
-      this.DatabaseProvider.getResaturantFiltre(data).subscribe(
-        data => {
-
-          //SERVER_NAME_APP_TEST servidor online
-          //SERVER_NAME_LOCAL servudor local
-          //SERVER_NAME_PROXY proxy
-          this.items = JSON.parse(data['_body']);
-          this.loading.dismiss();
-          },
-          err => {
-            console.log("Error: " + err);
-          },
-          () => console.log('Movie Search Complete')
-
-        );
+    var data;
+    if(this.tmpDia){
+      if(hora == 'Hora actual'){
+        data = this.dataHoraDiaActual();
+      }else{
+        data = this.dataHoraDia(hora);
+      }
     }else{
-    let data = "hora/"+hora;
+      if(hora == 'Hora actual'){
+        data = this.dataHoraActual();
+      }else{
+        data = this.dataHora(hora);
+      }
+    }
+    this.sendData(data);
+  }
+  sendData(data){
     this.DatabaseProvider.getResaturantFiltre(data).subscribe(
       data => {
-
-        //SERVER_NAME_APP_TEST servidor online
-        //SERVER_NAME_LOCAL servudor local
-        //SERVER_NAME_PROXY proxy
         this.items = JSON.parse(data['_body']);
         this.loading.dismiss();
         },
@@ -183,7 +144,42 @@ export class RestaurantPage {
         () => console.log('Movie Search Complete')
 
       );
-    }
+  }
+  dataDia(dia){
+    this.tmpDia = dia;
+    return "dia/"+dia;
+  }
+  dataDiaActual(){
+    let String = new Date();
+    this.tmpDia = String.getDay();
+    return "dia/"+this.tmpDia;
+  }
+  dataHora(hora){
+    this.tmpHora = hora;
+    return "hora/"+hora;
+  }
+  dataHoraActual(){
+    let String = new Date();
+    this.tmpHora = String.getHours();
+    return "hora/"+this.tmpHora;
+  }
+  dataDiaHora(dia){
+    this.tmpDia = dia;
+    return "diahora/"+this.tmpDia+"/"+this.tmpHora;
+  }
+  dataDiaHoraActual(){
+    let String = new Date();
+    this.tmpDia = String.getDay();
+    return "diahora/"+this.tmpDia+"/"+this.tmpHora;
+  }
+  dataHoraDia(hora){
+    this.tmpHora = hora;
+    return "diahora/"+this.tmpDia+"/"+this.tmpHora;
+  }
+  dataHoraDiaActual(){
+    let String = new Date();
+    this.tmpHora = String.getHours();
+    return "diahora/"+this.tmpDia+"/"+this.tmpHora;
   }
 
 }
