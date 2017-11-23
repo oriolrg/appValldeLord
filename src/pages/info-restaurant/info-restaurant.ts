@@ -23,7 +23,6 @@ export class InfoRestaurantPage {
     public navCtrl: NavController,
     public navParams: NavParams) {
     this.checkmark='#f53d3d';
-    this.ionViewDidLoad();
   }
 
   ionViewDidLoad() {
