@@ -35,13 +35,13 @@ export class RestaurantPage {
     platform.ready().then(() => {
       //missatge de no connexió
 
-      let disconnectSub = network.onDisconnect().subscribe(() => {
+      /*let disconnectSub = network.onDisconnect().subscribe(() => {
         this.offLine();
       });
 
       let connectSub = network.onConnect().subscribe(()=> {
         this.onLine();
-      });
+      });*/
 
       //si tenim connexio carreguem pagina i mostrem missatge
       if(this.network.type!='none'){
