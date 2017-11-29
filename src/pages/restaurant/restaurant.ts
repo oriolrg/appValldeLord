@@ -85,7 +85,7 @@ export class RestaurantPage {
         err => {
           console.log("Error: " + err);
         },
-        () => console.log('Movie Search Complete')
+        () => console.log('Busqueda restaurant completada')
 
       );
   }

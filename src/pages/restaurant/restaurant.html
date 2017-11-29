@@ -54,6 +54,19 @@
 </ion-header>
 
 <ion-content padding class="restaurant_background">
+  <ion-item *ngIf="items?.length == 0" text-center>
+    <ion-item text-center no-lines><ion-icon name="warning" [ngStyle]="{'color': 'red', 'font-size': '50px'}"></ion-icon></ion-item>
+    <ion-item text-center no-lines>No hi ha dades disponibles</ion-item>
+    <ion-item *ngIf="dia==0" text-center no-lines>Dia: Avui</ion-item>
+    <ion-item *ngIf="dia==1" text-center no-lines>Dia: Dilluns</ion-item>
+    <ion-item *ngIf="dia==2" text-center no-lines>Dia: Dimarts</ion-item>
+    <ion-item *ngIf="dia==3" text-center no-lines>Dia: Dimecres</ion-item>
+    <ion-item *ngIf="dia==4" text-center no-lines>Dia: Dijous</ion-item>
+    <ion-item *ngIf="dia==5" text-center no-lines>Dia: Divendres</ion-item>
+    <ion-item *ngIf="dia==6" text-center no-lines>Dia: Dissabte</ion-item>
+    <ion-item *ngIf="dia==7" text-center no-lines>Dia: Diumenge</ion-item>
+   <ion-item *ngIf="hora" text-center no-lines>Hora: {{hora}} </ion-item>
+  </ion-item>
   <ion-item *ngFor="let item of items">
     <ion-item no-lines>
       <ion-icon name="restaurant" item-left></ion-icon>
@@ -70,7 +83,7 @@
               <ion-icon name="locate" item> {{item.poblacio}}</ion-icon>
             </ion-item>
             <ion-item no-lines>
-              <ion-icon name="clock" item> Cuina de {{item.obertura_dia}}h a {{item.tancament_dia}}h i de {{item.obertura_nit}}h a {{item.tancament_nit}}h</ion-icon><br />
+              <ion-icon name="ios-flame" item> Cuina de {{item.obertura_dia}}h a {{item.tancament_dia}}h i de {{item.obertura_nit}}h a {{item.tancament_nit}}h</ion-icon><br />
             </ion-item>
             <ion-item no-lines>
               <a href="tel:{{item.telefon}}"><ion-icon name="call" item> {{item.telefon}}</ion-icon></a>
