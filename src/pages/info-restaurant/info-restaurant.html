@@ -82,7 +82,7 @@
                 <ion-icon *ngIf="item.Entrepans==='close-circle'" name={{item.Entrepans}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
               </ion-item>
               <ion-item>
-                Apte per celiacs
+                <ion-icon name="eye" [ngStyle]="{'color': 'orange'}" item> </ion-icon> Apte per celiacs
                 <ion-icon *ngIf="item.ApteCeliacs==='checkmark-circle'" name={{item.ApteCeliacs}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
                 <ion-icon *ngIf="item.ApteCeliacs==='close-circle'" name={{item.ApteCeliacs}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
               </ion-item>
@@ -96,10 +96,13 @@
                 <ion-icon *ngIf="item.ZonaEsbarjo==='checkmark-circle'" name={{item.ZonaEsbarjo}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
                 <ion-icon *ngIf="item.ZonaEsbarjo==='close-circle'" name={{item.ZonaEsbarjo}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
               </ion-item>
+              <ion-item>
+              <ion-icon name="eye" [ngStyle]="{'color': 'orange'}" item> </ion-icon> <i>Trucar per confirmar</i>
+              </ion-item>
             </ion-list>
           </ion-item>
           <button ion-button full (click)="obreMapsIndicacions(data.direccio,data.poblacio)">
-            <ion-icon name="navigate"> {{data.direccio}}</ion-icon>
+            <ion-icon name="navigate" text-center [ngStyle]="{'font-size': '40px'}"></ion-icon> Com arribar
           </button>
         </ion-col>
       </ion-row>

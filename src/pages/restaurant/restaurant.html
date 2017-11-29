@@ -20,30 +20,30 @@
             </ion-select>
             <ion-select [(ngModel)]="hora" (ionChange)="onChangeHora(hora)" action-sheet   placeholder="Hora Cuina">
               <ion-option>Hora actual</ion-option>
-              <ion-option value="0">00</ion-option>
-              <ion-option value="1">01</ion-option>
-              <ion-option value="2">02</ion-option>
-              <ion-option value="3">03</ion-option>
-              <ion-option value="4">04</ion-option>
-              <ion-option value="5">05</ion-option>
-              <ion-option value="6">06</ion-option>
-              <ion-option value="7">07</ion-option>
-              <ion-option value="8">08</ion-option>
-              <ion-option value="9">09</ion-option>
-              <ion-option>10</ion-option>
-              <ion-option>11</ion-option>
-              <ion-option>12</ion-option>
-              <ion-option>13</ion-option>
-              <ion-option>14</ion-option>
-              <ion-option>15</ion-option>
-              <ion-option>16</ion-option>
-              <ion-option>17</ion-option>
-              <ion-option>18</ion-option>
-              <ion-option>19</ion-option>
-              <ion-option>20</ion-option>
-              <ion-option>21</ion-option>
-              <ion-option>22</ion-option>
-              <ion-option>23</ion-option>
+              <ion-option>00:00</ion-option>
+              <ion-option>01:00</ion-option>
+              <ion-option>02:00</ion-option>
+              <ion-option>03:00</ion-option>
+              <ion-option>04:00</ion-option>
+              <ion-option>05:00</ion-option>
+              <ion-option>06:00</ion-option>
+              <ion-option>07:00</ion-option>
+              <ion-option>08:00</ion-option>
+              <ion-option>09:00</ion-option>
+              <ion-option>10:00</ion-option>
+              <ion-option>11:00</ion-option>
+              <ion-option>12:00</ion-option>
+              <ion-option>13:00</ion-option>
+              <ion-option>14:00</ion-option>
+              <ion-option>15:00</ion-option>
+              <ion-option>16:00</ion-option>
+              <ion-option>17:00</ion-option>
+              <ion-option>18:00</ion-option>
+              <ion-option>19:00</ion-option>
+              <ion-option>20:00</ion-option>
+              <ion-option>21:00</ion-option>
+              <ion-option>22:00</ion-option>
+              <ion-option>23:00</ion-option>
             </ion-select>
           </ion-item>
           </ion-col>
@@ -54,6 +54,19 @@
 </ion-header>
 
 <ion-content padding class="restaurant_background">
+  <ion-item *ngIf="items?.length == 0" text-center>
+    <ion-item text-center no-lines><ion-icon name="warning" [ngStyle]="{'color': 'red', 'font-size': '50px'}"></ion-icon></ion-item>
+    <ion-item text-center no-lines>No hi ha dades disponibles</ion-item>
+    <ion-item *ngIf="dia==0" text-center no-lines>Dia: Avui</ion-item>
+    <ion-item *ngIf="dia==1" text-center no-lines>Dia: Dilluns</ion-item>
+    <ion-item *ngIf="dia==2" text-center no-lines>Dia: Dimarts</ion-item>
+    <ion-item *ngIf="dia==3" text-center no-lines>Dia: Dimecres</ion-item>
+    <ion-item *ngIf="dia==4" text-center no-lines>Dia: Dijous</ion-item>
+    <ion-item *ngIf="dia==5" text-center no-lines>Dia: Divendres</ion-item>
+    <ion-item *ngIf="dia==6" text-center no-lines>Dia: Dissabte</ion-item>
+    <ion-item *ngIf="dia==7" text-center no-lines>Dia: Diumenge</ion-item>
+   <ion-item *ngIf="hora" text-center no-lines>Hora: {{hora}} </ion-item>
+  </ion-item>
   <ion-item *ngFor="let item of items">
     <ion-item no-lines>
       <ion-icon name="restaurant" item-left></ion-icon>
@@ -70,7 +83,7 @@
               <ion-icon name="locate" item> {{item.poblacio}}</ion-icon>
             </ion-item>
             <ion-item no-lines>
-              <ion-icon name="clock" item></ion-icon> Cuina de {{item.obertura_dia}}h a {{item.tancament_dia}}h i {{item.obertura_nit}}h a {{item.tancament_nit}}h<br />
+              <ion-icon name="ios-flame" item> Cuina de {{item.obertura_dia}}h a {{item.tancament_dia}}h i de {{item.obertura_nit}}h a {{item.tancament_nit}}h</ion-icon><br />
             </ion-item>
             <ion-item no-lines>
               <a href="tel:{{item.telefon}}"><ion-icon name="call" item> {{item.telefon}}</ion-icon></a>
