@@ -33,7 +33,7 @@
             <ion-icon name="locate" item> {{data.poblacio}}</ion-icon>
           </ion-item>
           <ion-item no-lines>
-            <ion-icon name="clock" item></ion-icon> Cuina de {{data.obertura_dia}}h a {{data.tancament_dia}}h i {{data.obertura_nit}}h a {{data.tancament_nit}}h<br />
+            <ion-icon name="clock" item> Cuina de {{data.obertura_dia}}h a {{data.tancament_dia}}h i <br /> de {{data.obertura_nit}}h a {{data.tancament_nit}}h</ion-icon><br />
           </ion-item>
           <ion-item no-lines>
             <a href="tel:{{data.telefon}}"><ion-icon name="call" item> {{data.telefon}}</ion-icon></a>
@@ -82,7 +82,7 @@
                 <ion-icon *ngIf="item.Entrepans==='close-circle'" name={{item.Entrepans}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
               </ion-item>
               <ion-item>
-                <ion-icon name="eye" [ngStyle]="{'color': 'orange'}" item> </ion-icon> Apte per celiacs
+                <ion-icon name="eye" [ngStyle]="{'color': 'orange'}" item> </ion-icon> Apte celiacs
                 <ion-icon *ngIf="item.ApteCeliacs==='checkmark-circle'" name={{item.ApteCeliacs}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
                 <ion-icon *ngIf="item.ApteCeliacs==='close-circle'" name={{item.ApteCeliacs}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
               </ion-item>
@@ -97,7 +97,7 @@
                 <ion-icon *ngIf="item.ZonaEsbarjo==='close-circle'" name={{item.ZonaEsbarjo}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
               </ion-item>
               <ion-item>
-              <ion-icon name="eye" [ngStyle]="{'color': 'orange'}" item> </ion-icon> <i>Trucar per confirmar</i>
+              <ion-icon name="eye" [ngStyle]="{'color': 'orange'}" item> </ion-icon> <i>Trucar prèviament</i>
               </ion-item>
             </ion-list>
           </ion-item>
