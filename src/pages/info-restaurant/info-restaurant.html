@@ -82,9 +82,10 @@
                 <ion-icon *ngIf="item.Entrepans==='close-circle'" name={{item.Entrepans}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
               </ion-item>
               <ion-item>
-                <ion-icon name="eye" [ngStyle]="{'color': 'orange'}" item> </ion-icon> Apte celiacs
-                <ion-icon *ngIf="item.ApteCeliacs==='checkmark-circle'" name={{item.ApteCeliacs}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
-                <ion-icon *ngIf="item.ApteCeliacs==='close-circle'" name={{item.ApteCeliacs}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
+                <!--<ion-icon name="eye" [ngStyle]="{'color': 'orange'}" item> </ion-icon>-->
+                Brasa
+                <ion-icon *ngIf="item.Brasa==='checkmark-circle'" name={{item.Brasa}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+                <ion-icon *ngIf="item.Brasa==='close-circle'" name={{item.Brasa}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
               </ion-item>
               <ion-item>
                 Terrassa
@@ -92,13 +93,13 @@
                 <ion-icon *ngIf="item.Terrasa==='close-circle'" name={{item.Terrasa}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
               </ion-item>
               <ion-item>
-                Zona d’esbarjo
-                <ion-icon *ngIf="item.ZonaEsbarjo==='checkmark-circle'" name={{item.ZonaEsbarjo}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
-                <ion-icon *ngIf="item.ZonaEsbarjo==='close-circle'" name={{item.ZonaEsbarjo}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
+                Tapes
+                <ion-icon *ngIf="item.Tapes==='checkmark-circle'" name={{item.Tapes}}  [ngStyle]="{'color': 'green'}" item-end></ion-icon>
+                <ion-icon *ngIf="item.Tapes==='close-circle'" name={{item.Tapes}}  [ngStyle]="{'color': 'red'}" item-end></ion-icon>
               </ion-item>
-              <ion-item>
+              <!--<ion-item>
               <ion-icon name="eye" [ngStyle]="{'color': 'orange'}" item> </ion-icon> <i>Trucar prèviament</i>
-              </ion-item>
+              </ion-item>-->
             </ion-list>
           </ion-item>
           <button ion-button full (click)="obreMapsIndicacions(data.direccio,data.poblacio)">
