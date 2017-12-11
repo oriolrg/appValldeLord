@@ -76,7 +76,12 @@
               <ion-icon name="locate" item> {{item.poblacio}}</ion-icon>
             </ion-item>
             <ion-item no-lines>
-              <ion-icon name="clock" item> Cuina de {{item.obertura_dia}}h a {{item.tancament_dia}}h i de {{item.obertura_nit}}h a {{item.tancament_nit}}h</ion-icon><br />
+              <ion-icon name="clock" item>
+                <ng-container *ngIf="item.obertura_dia">Cuina de {{item.obertura_dia}}h a {{item.tancament_dia}}h i </ng-container>
+                <ng-container *ngIf="!item.obertura_dia">Dinars tancat i </ng-container>
+                <ng-container *ngIf="item.obertura_nit">de {{item.obertura_nit}}h a {{item.tancament_nit}}h</ng-container>
+                <ng-container *ngIf="!item.obertura_nit">Sopars tancat</ng-container>
+              </ion-icon><br />
             </ion-item>
             <ion-item no-lines>
               <a href="tel:{{item.telefon}}"><ion-icon name="call" item> {{item.telefon}}</ion-icon></a>
