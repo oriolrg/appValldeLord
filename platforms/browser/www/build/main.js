@@ -1,1 +1,686 @@
-webpackJsonp([0],{143:function(l,n){function u(l){return Promise.resolve().then(function(){throw new Error("Cannot find module '"+l+"'.")})}u.keys=function(){return[]},u.resolve=u,l.exports=u,u.id=143},172:function(l,n){function u(l){return Promise.resolve().then(function(){throw new Error("Cannot find module '"+l+"'.")})}u.keys=function(){return[]},u.resolve=u,l.exports=u,u.id=172},199:function(l,n,u){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var a=u(32),t=u(0),e=(u(3),u(23),u(86)),i=u(87),o=u(88),c=(u(196),u(129)),_="http://lavalldelord.com/appvallLord/public/",r=function(){function l(l){this.http=l,console.log("Hello DatabaseProvider Provider")}return Object.defineProperty(l,"parameters",{get:function(){return[[c.d]]},enumerable:!0,configurable:!0}),l.prototype.getResaturant=function(){var l=_+"restaurant/",n=this.http.get(l);return console.log(l),n},l.prototype.getResaturantDia=function(){var l=_+"restaurant/",n=this.http.get(l);return console.log(l),n},l.prototype.getResaturantFiltre=function(l){var n=_+"restaurant/"+l,u=this.http.get(n);return console.log(n),u},l.prototype.getItems=function(l){return this.http.get(_+"restaurant/item/"+l)},l}(),s=function(){function l(l,n,u){this.DatabaseProvider=l,this.navCtrl=n,this.navParams=u,this.checkmark="#f53d3d"}return l.prototype.ionViewDidLoad=function(){var l=this;console.log("ionViewDidLoad InfoRestaurantPage"),this.data=this.navParams.get("comData"),this.DatabaseProvider.getItems(this.data.id).subscribe(function(n){l.items=JSON.parse(n._body),l.loading.dismiss()},function(l){console.log("Error: "+l)},function(){return console.log("Movie Search Complete")})},l.prototype.obreMaps=function(l,n){window.open("https://www.google.com/maps/search/"+l+","+n+"/","_system","location=yes")},l.prototype.obreMapsIndicacions=function(l,n){window.open("https://www.google.com/maps/dir//"+l+","+n+"/","_system","location=yes")},l}(),m=function(){function l(l,n,u,a,t,e,i){var o=this;this.DatabaseProvider=l,this.navCtrl=n,this.navParams=u,this.network=a,this.toastCtrl=t,this.platform=e,this.loadingController=i,e.ready().then(function(){"none"!=o.network.type?o.onLine():o.offLine()})}return l.prototype.onLine=function(){var l=this.toastCtrl.create({message:"S'està connectant",duration:2e3,position:"bottom"});this.loading=this.loadingController.create({content:"Carregant..."}),this.loading.present(),this.searchRestaurant(),l.present()},l.prototype.offLine=function(){this.toastCtrl.create({message:"No hi ha connexió",duration:3e3,position:"bottom"}).present()},l.prototype.searchRestaurant=function(){var l=this;this.DatabaseProvider.getResaturant().subscribe(function(n){l.items=JSON.parse(n._body),l.loading.dismiss()},function(l){console.log("Error: "+l)},function(){return console.log("Busqueda restaurant completada")})},l.prototype.changePage=function(l){this.navCtrl.push(s,{comData:l})},l.prototype.onChangeDia=function(l){var n;n=this.tmpHora?0==l?this.dataDiaHoraActual():this.dataDiaHora(l):0==l?this.dataDiaActual():this.dataDia(l),this.sendData(n)},l.prototype.onChangeHora=function(l){var n;n=this.tmpDia?"Hora actual"==l?this.dataHoraDiaActual():this.dataHoraDia(l):"Hora actual"==l?this.dataHoraActual():this.dataHora(l),this.sendData(n)},l.prototype.sendData=function(l){var n=this;this.DatabaseProvider.getResaturantFiltre(l).subscribe(function(l){n.items=JSON.parse(l._body),n.loading.dismiss()},function(l){console.log("Error: "+l)},function(){return console.log("Movie Search Complete")})},l.prototype.dataDia=function(l){return this.tmpDia=l,"dia/"+l},l.prototype.dataDiaActual=function(){var l=new Date;return this.tmpDia=l.getDay(),"dia/"+this.tmpDia},l.prototype.dataHora=function(l){return this.tmpHora=l,"hora/"+l},l.prototype.dataHoraActual=function(){var l=new Date;return this.tmpHora=l.getHours(),"hora/"+this.tmpHora},l.prototype.dataDiaHora=function(l){return this.tmpDia=l,"diahora/"+this.tmpDia+"/"+this.tmpHora},l.prototype.dataDiaHoraActual=function(){var l=new Date;return this.tmpDia=l.getDay(),"diahora/"+this.tmpDia+"/"+this.tmpHora},l.prototype.dataHoraDia=function(l){return this.tmpHora=l,"diahora/"+this.tmpDia+"/"+this.tmpHora},l.prototype.dataHoraDiaActual=function(){var l=new Date;return this.tmpHora=l.getHours(),"diahora/"+this.tmpDia+"/"+this.tmpHora},l}(),d=function(){return function(l){this.navCtrl=l,this.prova="ionic"}}(),g=function(){return function(l){this.navCtrl=l}}(),b=function(){return function(){this.tab1Root=g,this.tab2Root=m,this.tab3Root=d}}(),p=function(){return function(l,n,u){this.rootPage=b,l.ready().then(function(){n.styleDefault(),u.hide()})}}(),f=(u(233),function(){return function(){}}()),h=u(52),Y=u(238),Z=u(239),j=u(240),I=u(241),y=u(242),z=u(243),k=u(244),v=u(245),D=u(246),x=u(247),S=u(29),C=u(57),L=u(5),w=u(14),$=u(6),F=u(1),P=u(4),A=u(7),U=u(26),H=u(13),q=u(8),M=t.X({encapsulation:2,styles:[],data:{}}),T=t.V("ng-component",p,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,1,"ng-component",[],null,null,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,2,"ion-nav",[],null,null,null,x.b,x.a)),t._15(6144,null,S.a,null,[C.a]),t.Y(2,4374528,null,0,C.a,[[2,L.a],[2,w.a],$.a,F.a,P.a,t.j,t.u,t.z,t.i,A.l,U.a,[2,H.a],q.a,t.k],{root:[0,"root"]},null),(l()(),t._18(-1,null,["\n"]))],function(l,n){l(n,2,0,n.component.rootPage)},null)},M)),t.Y(1,49152,null,0,p,[P.a,e.a,i.a],null,null)],null,null)},{},{},[]),R=u(90),V=u(16),O=u(15),E=u(38),B=u(46),X=u(11),N=u(24),J=u(41),G=u(69),W=u(70),K=u(68),Q=u(31),ll=u(18),nl=u(49),ul=u(91),al=u(25),tl=u(92),el=u(42),il=u(30),ol=u(248),cl=u(78),_l=u(19),rl=u(75),sl=u(93),ml=u(21),dl=u(22),gl=u(12),bl=u(85),pl=u(73),fl=t.X({encapsulation:2,styles:[],data:{}}),hl=t.V("page-restaurant",m,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,1,"page-restaurant",[],null,null,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,158,"ion-header",[],null,null,null,null,null)),t.Y(1,16384,null,0,nl.a,[F.a,t.j,t.z,[2,L.a]],null,null),(l()(),t._18(-1,null,["\n  "])),(l()(),t.Z(3,0,null,null,154,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,ul.b,ul.a)),t.Y(4,49152,null,0,al.a,[$.a,[2,L.a],[2,w.a],F.a,t.j,t.z],null,null),(l()(),t._18(-1,3,["\n        "])),(l()(),t.Z(6,0,null,3,150,"ion-title",[],null,null,null,tl.b,tl.a)),t.Y(7,49152,null,0,el.a,[F.a,t.j,t.z,[2,il.a],[2,al.a]],null,null),(l()(),t._18(-1,0,["\n      "])),(l()(),t.Z(9,0,null,0,146,"ion-grid",[["class","graellaHeader grid"]],null,null,null,null,null)),t.Y(10,16384,null,0,G.a,[],null,null),(l()(),t._18(-1,null,["\n        "])),(l()(),t.Z(12,0,null,null,142,"ion-row",[["align-items-start",""],["class","filaHeader row"]],null,null,null,null,null)),t.Y(13,16384,null,0,W.a,[],null,null),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(15,0,null,null,4,"ion-col",[["class","imageHeader col"],["col-2",""]],null,null,null,null,null)),t.Y(16,16384,null,0,K.a,[],null,null),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(18,0,null,null,0,"img",[["src","assets/imgs/logo-vdl-no-text.png"]],null,null,null,null,null)),(l()(),t._18(-1,null,["\n          "])),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(21,0,null,null,132,"ion-col",[["class","colSelectHeader col"],["col-10",""]],null,null,null,null,null)),t.Y(22,16384,null,0,K.a,[],null,null),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(24,0,null,null,128,"ion-item",[["class","selecHeader item item-block"],["no-lines",""]],null,null,null,R.b,R.a)),t.Y(25,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,1,{contentLabel:0}),t._16(603979776,2,{_buttons:1}),t._16(603979776,3,{_icons:1}),t.Y(29,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n            "])),(l()(),t.Z(31,0,null,3,39,"ion-select",[["action-sheet",""],["placeholder","Dia Obert"]],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"ionChange"],[null,"click"],[null,"keyup.space"]],function(l,n,u){var a=!0,e=l.component;return"click"===n&&(a=!1!==t._13(l,32)._click(u)&&a),"keyup.space"===n&&(a=!1!==t._13(l,32)._keyup()&&a),"ngModelChange"===n&&(a=!1!==(e.dia=u)&&a),"ionChange"===n&&(a=!1!==e.onChangeDia(e.dia)&&a),a},ol.b,ol.a)),t.Y(32,1228800,null,1,cl.a,[$.a,O.a,F.a,t.j,t.z,[2,V.a],H.a],{placeholder:[0,"placeholder"]},{ionChange:"ionChange"}),t._16(603979776,4,{options:1}),t._15(1024,null,_l.e,function(l){return[l]},[cl.a]),t.Y(35,671744,null,0,_l.h,[[8,null],[8,null],[8,null],[2,_l.e]],{model:[0,"model"]},{update:"ngModelChange"}),t._15(2048,null,_l.f,null,[_l.h]),t.Y(37,16384,null,0,_l.g,[_l.f],null,null),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(39,0,null,null,2,"ion-option",[["value","0"]],null,null,null,null,null)),t.Y(40,16384,[[4,4]],0,rl.a,[t.j],{value:[0,"value"]},null),(l()(),t._18(-1,null,["Dia actual"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(43,0,null,null,2,"ion-option",[["value","1"]],null,null,null,null,null)),t.Y(44,16384,[[4,4]],0,rl.a,[t.j],{value:[0,"value"]},null),(l()(),t._18(-1,null,["Dilluns"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(47,0,null,null,2,"ion-option",[["value","2"]],null,null,null,null,null)),t.Y(48,16384,[[4,4]],0,rl.a,[t.j],{value:[0,"value"]},null),(l()(),t._18(-1,null,["Dimarts"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(51,0,null,null,2,"ion-option",[["value","3"]],null,null,null,null,null)),t.Y(52,16384,[[4,4]],0,rl.a,[t.j],{value:[0,"value"]},null),(l()(),t._18(-1,null,["Dimecres"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(55,0,null,null,2,"ion-option",[["value","4"]],null,null,null,null,null)),t.Y(56,16384,[[4,4]],0,rl.a,[t.j],{value:[0,"value"]},null),(l()(),t._18(-1,null,["Dijous"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(59,0,null,null,2,"ion-option",[["value","5"]],null,null,null,null,null)),t.Y(60,16384,[[4,4]],0,rl.a,[t.j],{value:[0,"value"]},null),(l()(),t._18(-1,null,["Divendres"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(63,0,null,null,2,"ion-option",[["value","6"]],null,null,null,null,null)),t.Y(64,16384,[[4,4]],0,rl.a,[t.j],{value:[0,"value"]},null),(l()(),t._18(-1,null,["Dissabte"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(67,0,null,null,2,"ion-option",[["value","7"]],null,null,null,null,null)),t.Y(68,16384,[[4,4]],0,rl.a,[t.j],{value:[0,"value"]},null),(l()(),t._18(-1,null,["Diumenge"])),(l()(),t._18(-1,null,["\n            "])),(l()(),t._18(-1,2,["\n            "])),(l()(),t.Z(72,0,null,3,79,"ion-select",[["action-sheet",""],["placeholder","Hora Cuina"]],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"ionChange"],[null,"click"],[null,"keyup.space"]],function(l,n,u){var a=!0,e=l.component;return"click"===n&&(a=!1!==t._13(l,73)._click(u)&&a),"keyup.space"===n&&(a=!1!==t._13(l,73)._keyup()&&a),"ngModelChange"===n&&(a=!1!==(e.hora=u)&&a),"ionChange"===n&&(a=!1!==e.onChangeHora(e.hora)&&a),a},ol.b,ol.a)),t.Y(73,1228800,null,1,cl.a,[$.a,O.a,F.a,t.j,t.z,[2,V.a],H.a],{placeholder:[0,"placeholder"]},{ionChange:"ionChange"}),t._16(603979776,5,{options:1}),t._15(1024,null,_l.e,function(l){return[l]},[cl.a]),t.Y(76,671744,null,0,_l.h,[[8,null],[8,null],[8,null],[2,_l.e]],{model:[0,"model"]},{update:"ngModelChange"}),t._15(2048,null,_l.f,null,[_l.h]),t.Y(78,16384,null,0,_l.g,[_l.f],null,null),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(80,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(81,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["Hora actual"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(84,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(85,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["08:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(88,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(89,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["09:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(92,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(93,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["10:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(96,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(97,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["11:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(100,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(101,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["12:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(104,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(105,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["13:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(108,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(109,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["14:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(112,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(113,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["15:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(116,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(117,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["16:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(120,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(121,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["17:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(124,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(125,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["18:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(128,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(129,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["19:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(132,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(133,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["20:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(136,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(137,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["21:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(140,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(141,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["22:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(144,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(145,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["23:00"])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(148,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(149,16384,[[5,4]],0,rl.a,[t.j],null,null),(l()(),t._18(-1,null,["00:00"])),(l()(),t._18(-1,null,["\n            "])),(l()(),t._18(-1,2,["\n          "])),(l()(),t._18(-1,null,["\n          "])),(l()(),t._18(-1,null,["\n        "])),(l()(),t._18(-1,null,["\n      "])),(l()(),t._18(-1,0,["\n    "])),(l()(),t._18(-1,3,["\n  "])),(l()(),t._18(-1,null,["\n"])),(l()(),t._18(-1,null,["\n\n"])),(l()(),t.Z(160,0,null,null,8,"ion-content",[["class","restaurant_background"],["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,sl.b,sl.a)),t.Y(161,4374528,null,0,ml.a,[F.a,P.a,q.a,t.j,t.z,$.a,dl.a,t.u,[2,L.a],[2,w.a]],null,null),(l()(),t._18(-1,1,["\n  "])),(l()(),t.U(16777216,null,1,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,52,"ion-item",[["class","item item-block"],["text-center",""]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,6,{contentLabel:0}),t._16(603979776,7,{_buttons:1}),t._16(603979776,8,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(7,0,null,2,9,"ion-item",[["class","item item-block"],["no-lines",""],["text-center",""]],null,null,null,R.b,R.a)),t.Y(8,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,9,{contentLabel:0}),t._16(603979776,10,{_buttons:1}),t._16(603979776,11,{_icons:1}),t.Y(12,16384,null,0,B.a,[],null,null),(l()(),t.Z(13,0,null,2,3,"ion-icon",[["name","warning"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(14,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(15,{color:0,"font-size":1}),t.Y(16,147456,[[11,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(18,0,null,2,6,"ion-item",[["class","item item-block"],["no-lines",""],["text-center",""]],null,null,null,R.b,R.a)),t.Y(19,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,12,{contentLabel:0}),t._16(603979776,13,{_buttons:1}),t._16(603979776,14,{_icons:1}),t.Y(23,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["No hi ha dades disponibles"])),(l()(),t._18(-1,2,["\n    "])),(l()(),t.U(16777216,null,2,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,6,"ion-item",[["class","item item-block"],["no-lines",""],["text-center",""]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,15,{contentLabel:0}),t._16(603979776,16,{_buttons:1}),t._16(603979776,17,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["Dia: Avui"]))],null,null)})),t.Y(27,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n    "])),(l()(),t.U(16777216,null,2,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,6,"ion-item",[["class","item item-block"],["no-lines",""],["text-center",""]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,18,{contentLabel:0}),t._16(603979776,19,{_buttons:1}),t._16(603979776,20,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["Dia: Dilluns"]))],null,null)})),t.Y(30,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n    "])),(l()(),t.U(16777216,null,2,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,6,"ion-item",[["class","item item-block"],["no-lines",""],["text-center",""]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,21,{contentLabel:0}),t._16(603979776,22,{_buttons:1}),t._16(603979776,23,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["Dia: Dimarts"]))],null,null)})),t.Y(33,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n    "])),(l()(),t.U(16777216,null,2,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,6,"ion-item",[["class","item item-block"],["no-lines",""],["text-center",""]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,24,{contentLabel:0}),t._16(603979776,25,{_buttons:1}),t._16(603979776,26,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["Dia: Dimecres"]))],null,null)})),t.Y(36,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n    "])),(l()(),t.U(16777216,null,2,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,6,"ion-item",[["class","item item-block"],["no-lines",""],["text-center",""]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,27,{contentLabel:0}),t._16(603979776,28,{_buttons:1}),t._16(603979776,29,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["Dia: Dijous"]))],null,null)})),t.Y(39,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n    "])),(l()(),t.U(16777216,null,2,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,6,"ion-item",[["class","item item-block"],["no-lines",""],["text-center",""]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,30,{contentLabel:0}),t._16(603979776,31,{_buttons:1}),t._16(603979776,32,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["Dia: Divendres"]))],null,null)})),t.Y(42,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n    "])),(l()(),t.U(16777216,null,2,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,6,"ion-item",[["class","item item-block"],["no-lines",""],["text-center",""]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,33,{contentLabel:0}),t._16(603979776,34,{_buttons:1}),t._16(603979776,35,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["Dia: Dissabte"]))],null,null)})),t.Y(45,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n    "])),(l()(),t.U(16777216,null,2,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,6,"ion-item",[["class","item item-block"],["no-lines",""],["text-center",""]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,36,{contentLabel:0}),t._16(603979776,37,{_buttons:1}),t._16(603979776,38,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["Dia: Diumenge"]))],null,null)})),t.Y(48,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n   "])),(l()(),t.U(16777216,null,2,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,6,"ion-item",[["class","item item-block"],["no-lines",""],["text-center",""]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,39,{contentLabel:0}),t._16(603979776,40,{_buttons:1}),t._16(603979776,41,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(6,2,["Hora: "," "]))],null,function(l,n){l(n,6,0,n.component.hora)})})),t.Y(51,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n  "]))],function(l,n){var u=n.component;l(n,14,0,l(n,15,0,"red","50px")),l(n,16,0,"warning"),l(n,27,0,0==u.dia),l(n,30,0,1==u.dia),l(n,33,0,2==u.dia),l(n,36,0,3==u.dia),l(n,39,0,4==u.dia),l(n,42,0,5==u.dia),l(n,45,0,6==u.dia),l(n,48,0,7==u.dia),l(n,51,0,u.hora)},function(l,n){l(n,13,0,t._13(n,16)._hidden)})})),t.Y(164,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,1,["\n  "])),(l()(),t.U(16777216,null,1,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,96,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,42,{contentLabel:0}),t._16(603979776,43,{_buttons:1}),t._16(603979776,44,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(7,0,null,2,12,"ion-item",[["class","item item-block"],["no-lines",""]],null,null,null,R.b,R.a)),t.Y(8,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,45,{contentLabel:0}),t._16(603979776,46,{_buttons:1}),t._16(603979776,47,{_icons:1}),t.Y(12,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n      "])),(l()(),t.Z(14,0,null,0,1,"ion-icon",[["item-left",""],["name","restaurant"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(15,147456,[[47,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(-1,2,["\n      "])),(l()(),t.Z(17,0,null,2,1,"h1",[],null,null,null,null,null)),(l()(),t._18(18,null,["",""])),(l()(),t._18(-1,2,["\n    "])),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(21,0,null,2,74,"ion-list",[],null,null,null,null,null)),t.Y(22,16384,null,0,J.a,[F.a,t.j,t.z,P.a,A.l,q.a],null,null),(l()(),t._18(-1,null,["\n      "])),(l()(),t.Z(24,0,null,null,70,"ion-grid",[["class","grid"]],null,null,null,null,null)),t.Y(25,16384,null,0,G.a,[],null,null),(l()(),t._18(-1,null,["\n        "])),(l()(),t.Z(27,0,null,null,66,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(28,16384,null,0,W.a,[],null,null),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(30,0,null,null,4,"ion-col",[["class","col"],["col-12",""],["col-sm",""]],null,null,null,null,null)),t.Y(31,16384,null,0,K.a,[],null,null),(l()(),t._18(-1,null,["\n            "])),(l()(),t.Z(33,0,null,null,0,"img",[["class","img_thumbnail"]],[[8,"src",4]],[[null,"click"]],function(l,n,u){var a=!0;return"click"===n&&(a=!1!==l.component.changePage(l.context.$implicit)&&a),a},null,null)),(l()(),t._18(-1,null,["\n          "])),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(36,0,null,null,52,"ion-col",[["class","col"],["col-12",""],["col-sm",""]],null,null,null,null,null)),t.Y(37,16384,null,0,K.a,[],null,null),(l()(),t._18(-1,null,["\n            "])),(l()(),t.Z(39,0,null,null,10,"ion-item",[["class","item item-block"],["no-lines",""]],null,null,null,R.b,R.a)),t.Y(40,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,48,{contentLabel:0}),t._16(603979776,49,{_buttons:1}),t._16(603979776,50,{_icons:1}),t.Y(44,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n              "])),(l()(),t.Z(46,0,null,2,2,"ion-icon",[["item",""],["name","locate"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(47,147456,[[50,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(48,null,[" ",""])),(l()(),t._18(-1,2,["\n            "])),(l()(),t._18(-1,null,["\n            "])),(l()(),t.Z(51,0,null,null,23,"ion-item",[["class","item item-block"],["no-lines",""]],null,null,null,R.b,R.a)),t.Y(52,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,51,{contentLabel:0}),t._16(603979776,52,{_buttons:1}),t._16(603979776,53,{_icons:1}),t.Y(56,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n              "])),(l()(),t.Z(58,0,null,2,14,"ion-icon",[["item",""],["name","clock"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(59,147456,[[53,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(-1,null,["\n                "])),(l()(),t.U(16777216,null,null,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,1,null,null,null,null,null,null,null)),(l()(),t._18(1,null,["Cuina de ","h a ","h i "]))],null,function(l,n){l(n,1,0,n.parent.context.$implicit.obertura_dia,n.parent.context.$implicit.tancament_dia)})})),t.Y(62,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,null,["\n                "])),(l()(),t.U(16777216,null,null,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,1,null,null,null,null,null,null,null)),(l()(),t._18(-1,null,["Dinars tancat i "]))],null,null)})),t.Y(65,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,null,["\n                "])),(l()(),t.U(16777216,null,null,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,1,null,null,null,null,null,null,null)),(l()(),t._18(1,null,["de ","h a ","h"]))],null,function(l,n){l(n,1,0,n.parent.context.$implicit.obertura_nit,n.parent.context.$implicit.tancament_nit)})})),t.Y(68,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,null,["\n                "])),(l()(),t.U(16777216,null,null,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,1,null,null,null,null,null,null,null)),(l()(),t._18(-1,null,["Sopars tancat"]))],null,null)})),t.Y(71,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(73,0,null,2,0,"br",[],null,null,null,null,null)),(l()(),t._18(-1,2,["\n            "])),(l()(),t._18(-1,null,["\n            "])),(l()(),t.Z(76,0,null,null,11,"ion-item",[["class","item item-block"],["no-lines",""]],null,null,null,R.b,R.a)),t.Y(77,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,54,{contentLabel:0}),t._16(603979776,55,{_buttons:1}),t._16(603979776,56,{_icons:1}),t.Y(81,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n              "])),(l()(),t.Z(83,0,null,2,3,"a",[],[[8,"href",4]],null,null,null,null)),(l()(),t.Z(84,0,null,null,2,"ion-icon",[["item",""],["name","call"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(85,147456,[[56,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(86,null,[" ",""])),(l()(),t._18(-1,2,["\n            "])),(l()(),t._18(-1,null,["\n          "])),(l()(),t._18(-1,null,["\n            "])),(l()(),t.Z(90,0,null,null,2,"button",[["full",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var a=!0;return"click"===n&&(a=!1!==l.component.changePage(l.context.$implicit)&&a),a},Q.b,Q.a)),t.Y(91,1097728,null,0,ll.a,[[8,""],F.a,t.j,t.z],{full:[0,"full"]},null),(l()(),t._18(-1,0,["Detalls"])),(l()(),t._18(-1,null,["\n        "])),(l()(),t._18(-1,null,["\n      "])),(l()(),t._18(-1,null,["\n    "])),(l()(),t._18(-1,2,["\n  "]))],function(l,n){l(n,15,0,"restaurant"),l(n,47,0,"locate"),l(n,59,0,"clock"),l(n,62,0,n.context.$implicit.obertura_dia),l(n,65,0,!n.context.$implicit.obertura_dia),l(n,68,0,n.context.$implicit.obertura_nit),l(n,71,0,!n.context.$implicit.obertura_nit),l(n,85,0,"call"),l(n,91,0,"")},function(l,n){l(n,14,0,t._13(n,15)._hidden),l(n,18,0,n.context.$implicit.nom),l(n,33,0,t._2(1,"http://lavalldelord.com/appvallLord/storage/app/images/",n.context.$implicit.imatgePrincipal,"")),l(n,46,0,t._13(n,47)._hidden),l(n,48,0,n.context.$implicit.poblacio),l(n,58,0,t._13(n,59)._hidden),l(n,83,0,t._2(1,"tel:",n.context.$implicit.telefon,"")),l(n,84,0,t._13(n,85)._hidden),l(n,86,0,n.context.$implicit.telefon)})})),t.Y(167,802816,null,0,X.h,[t.I,t.F,t.p],{ngForOf:[0,"ngForOf"]},null),(l()(),t._18(-1,1,["\n\n"])),(l()(),t._18(-1,null,["\n"]))],function(l,n){var u=n.component;l(n,32,0,"Dia Obert"),l(n,35,0,u.dia),l(n,40,0,"0"),l(n,44,0,"1"),l(n,48,0,"2"),l(n,52,0,"3"),l(n,56,0,"4"),l(n,60,0,"5"),l(n,64,0,"6"),l(n,68,0,"7"),l(n,73,0,"Hora Cuina"),l(n,76,0,u.hora),l(n,164,0,0==(null==u.items?null:u.items.length)),l(n,167,0,u.items)},function(l,n){l(n,3,0,t._13(n,4)._hidden,t._13(n,4)._sbPadding),l(n,31,0,t._13(n,32)._disabled,t._13(n,37).ngClassUntouched,t._13(n,37).ngClassTouched,t._13(n,37).ngClassPristine,t._13(n,37).ngClassDirty,t._13(n,37).ngClassValid,t._13(n,37).ngClassInvalid,t._13(n,37).ngClassPending),l(n,72,0,t._13(n,73)._disabled,t._13(n,78).ngClassUntouched,t._13(n,78).ngClassTouched,t._13(n,78).ngClassPristine,t._13(n,78).ngClassDirty,t._13(n,78).ngClassValid,t._13(n,78).ngClassInvalid,t._13(n,78).ngClassPending),l(n,160,0,t._13(n,161).statusbarPadding,t._13(n,161)._hasRefresher)})},fl)),t.Y(1,49152,null,0,m,[r,w.a,gl.a,o.a,bl.a,P.a,pl.a],null,null)],null,null)},{},{},[]),Yl=t.X({encapsulation:2,styles:[],data:{}}),Zl=t.V("page-informacio",d,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,1,"page-informacio",[],null,null,null,function(l){return t._19(0,[(l()(),t._18(-1,null,["\n"])),(l()(),t.Z(1,0,null,null,12,"ion-header",[],null,null,null,null,null)),t.Y(2,16384,null,0,nl.a,[F.a,t.j,t.z,[2,L.a]],null,null),(l()(),t._18(-1,null,["\n  "])),(l()(),t.Z(4,0,null,null,8,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,ul.b,ul.a)),t.Y(5,49152,null,0,al.a,[$.a,[2,L.a],[2,w.a],F.a,t.j,t.z],null,null),(l()(),t._18(-1,3,["\n    "])),(l()(),t.Z(7,0,null,3,4,"ion-title",[],null,null,null,tl.b,tl.a)),t.Y(8,49152,null,0,el.a,[F.a,t.j,t.z,[2,il.a],[2,al.a]],null,null),(l()(),t._18(-1,0,["\n        "])),(l()(),t.Z(10,0,null,0,0,"img",[["src","assets/imgs/logo-vdl-mini.png"]],null,null,null,null,null)),(l()(),t._18(-1,0,["\n    "])),(l()(),t._18(-1,3,["\n  "])),(l()(),t._18(-1,null,["\n"])),(l()(),t._18(-1,null,["\n\n"])),(l()(),t.Z(15,0,null,null,108,"ion-content",[["class","restaurant_background"],["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,sl.b,sl.a)),t.Y(16,4374528,null,0,ml.a,[F.a,P.a,q.a,t.j,t.z,$.a,dl.a,t.u,[2,L.a],[2,w.a]],null,null),(l()(),t._18(-1,1,["\n  "])),(l()(),t.Z(18,0,null,1,104,"ion-list",[["class","item item-block"],["ion-item",""]],null,null,null,R.b,R.a)),t.Y(19,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,1,{contentLabel:0}),t._16(603979776,2,{_buttons:1}),t._16(603979776,3,{_icons:1}),t.Y(23,16384,null,0,B.a,[],null,null),t.Y(24,16384,null,0,J.a,[F.a,t.j,t.z,P.a,A.l,q.a],null,null),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(26,0,null,2,1,"h2",[],null,null,null,null,null)),(l()(),t._18(-1,null,["App de la Vall de Lord"])),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(29,0,null,2,1,"span",[],null,null,null,null,null)),(l()(),t._18(-1,null,["Per qualsevol comentari o problemàtica, poseu-vos en contacte amb l'Oficina de Turisme de la Vall de Lord"])),(l()(),t.Z(31,0,null,2,0,"br",[],null,null,null,null,null)),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(33,0,null,2,1,"h3",[],null,null,null,null,null)),(l()(),t._18(-1,null,["Segueix-nos a:"])),(l()(),t.Z(35,0,null,2,0,"br",[],null,null,null,null,null)),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(37,0,null,2,16,"button",[["class","item item-block"],["ion-item",""],["onclick","window.open('https://twitter.com/valldelord', '_system', 'location=yes'); return false;"]],null,null,null,R.b,R.a)),t.Y(38,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,4,{contentLabel:0}),t._16(603979776,5,{_buttons:1}),t._16(603979776,6,{_icons:1}),t.Y(42,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n      "])),(l()(),t.Z(44,0,null,2,3,"ion-icon",[["item",""],["name","logo-twitter"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(45,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(46,{color:0}),t.Y(47,147456,[[6,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(-1,2,["\n        "])),(l()(),t.Z(49,0,null,2,3,"span",[],null,null,null,null,null)),t.Y(50,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(51,{color:0}),(l()(),t._18(-1,null,["Twitter"])),(l()(),t._18(-1,2,["\n    "])),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(55,0,null,2,16,"button",[["class","item item-block"],["ion-item",""],["onclick","window.open('https://www.instagram.com/turismevalldelord/', '_system', 'location=yes'); return false;"]],null,null,null,R.b,R.a)),t.Y(56,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,7,{contentLabel:0}),t._16(603979776,8,{_buttons:1}),t._16(603979776,9,{_icons:1}),t.Y(60,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n      "])),(l()(),t.Z(62,0,null,2,3,"ion-icon",[["item",""],["name","logo-instagram"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(63,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(64,{color:0}),t.Y(65,147456,[[9,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(-1,2,["\n        "])),(l()(),t.Z(67,0,null,2,3,"span",[],null,null,null,null,null)),t.Y(68,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(69,{color:0}),(l()(),t._18(-1,null,["Instagram"])),(l()(),t._18(-1,2,["\n    "])),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(73,0,null,2,16,"button",[["class","item item-block"],["ion-item",""],["onclick","window.open('https://www.facebook.com/turismevalldelord', '_system', 'location=yes'); return false;"]],null,null,null,R.b,R.a)),t.Y(74,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,10,{contentLabel:0}),t._16(603979776,11,{_buttons:1}),t._16(603979776,12,{_icons:1}),t.Y(78,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n      "])),(l()(),t.Z(80,0,null,2,3,"ion-icon",[["item",""],["name","logo-facebook"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(81,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(82,{color:0}),t.Y(83,147456,[[12,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(-1,2,["\n        "])),(l()(),t.Z(85,0,null,2,3,"span",[],null,null,null,null,null)),t.Y(86,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(87,{color:0}),(l()(),t._18(-1,null,["Faceboock"])),(l()(),t._18(-1,2,["\n    "])),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(91,0,null,2,16,"button",[["class","item item-block"],["ion-item",""],["onclick","window.open('http://lavalldelord.com', '_system', 'location=yes'); return false;"]],null,null,null,R.b,R.a)),t.Y(92,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,13,{contentLabel:0}),t._16(603979776,14,{_buttons:1}),t._16(603979776,15,{_icons:1}),t.Y(96,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n      "])),(l()(),t.Z(98,0,null,2,3,"ion-icon",[["item",""],["name","logo-wordpress"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(99,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(100,{color:0}),t.Y(101,147456,[[15,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(-1,2,["\n        "])),(l()(),t.Z(103,0,null,2,3,"span",[],null,null,null,null,null)),t.Y(104,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(105,{color:0}),(l()(),t._18(-1,null,["Web de la Val de Lord"])),(l()(),t._18(-1,2,["\n    "])),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(109,0,null,2,0,"br",[],null,null,null,null,null)),(l()(),t._18(-1,2,["\n    "])),(l()(),t.Z(111,0,null,2,10,"h3",[],null,null,null,null,null)),(l()(),t.Z(112,0,null,null,1,"strong",[],null,null,null,null,null)),(l()(),t._18(-1,null,["Associació Turisme Vall de Lord"])),(l()(),t.Z(114,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),t._18(-1,null,["\n    "])),(l()(),t.Z(116,0,null,null,5,"span",[],null,null,null,null,null)),(l()(),t._18(-1,null,["Oficina de turisme de la Vall de Lord"])),(l()(),t.Z(118,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),t._18(-1,null,["\n    25282 St. Llorenç de Morunys"])),(l()(),t.Z(120,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),t._18(-1,null,["\n    info@lavalldelord.com"])),(l()(),t._18(-1,2,["\n  "])),(l()(),t._18(-1,1,["\n"])),(l()(),t._18(-1,null,["\n"]))],function(l,n){l(n,45,0,l(n,46,0,"blue")),l(n,47,0,"logo-twitter"),l(n,50,0,l(n,51,0,"blue")),l(n,63,0,l(n,64,0,"blue")),l(n,65,0,"logo-instagram"),l(n,68,0,l(n,69,0,"blue")),l(n,81,0,l(n,82,0,"blue")),l(n,83,0,"logo-facebook"),l(n,86,0,l(n,87,0,"blue")),l(n,99,0,l(n,100,0,"blue")),l(n,101,0,"logo-wordpress"),l(n,104,0,l(n,105,0,"blue"))},function(l,n){l(n,4,0,t._13(n,5)._hidden,t._13(n,5)._sbPadding),l(n,15,0,t._13(n,16).statusbarPadding,t._13(n,16)._hasRefresher),l(n,44,0,t._13(n,47)._hidden),l(n,62,0,t._13(n,65)._hidden),l(n,80,0,t._13(n,83)._hidden),l(n,98,0,t._13(n,101)._hidden)})},Yl)),t.Y(1,49152,null,0,d,[w.a],null,null)],null,null)},{},{},[]),jl=t.X({encapsulation:2,styles:[],data:{}}),Il=t.V("page-home",g,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,1,"page-home",[],null,null,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,12,"ion-header",[],null,null,null,null,null)),t.Y(1,16384,null,0,nl.a,[F.a,t.j,t.z,[2,L.a]],null,null),(l()(),t._18(-1,null,["\n  "])),(l()(),t.Z(3,0,null,null,8,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,ul.b,ul.a)),t.Y(4,49152,null,0,al.a,[$.a,[2,L.a],[2,w.a],F.a,t.j,t.z],null,null),(l()(),t._18(-1,3,["\n    "])),(l()(),t.Z(6,0,null,3,4,"ion-title",[],null,null,null,tl.b,tl.a)),t.Y(7,49152,null,0,el.a,[F.a,t.j,t.z,[2,il.a],[2,al.a]],null,null),(l()(),t._18(-1,0,["\n        "])),(l()(),t.Z(9,0,null,0,0,"img",[["class","left"],["src","assets/imgs/logo-vdl-mini.png"]],null,null,null,null,null)),(l()(),t._18(-1,0,["\n    "])),(l()(),t._18(-1,3,["\n  "])),(l()(),t._18(-1,null,["\n"])),(l()(),t._18(-1,null,["\n\n"])),(l()(),t.Z(14,0,null,null,17,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,sl.b,sl.a)),t.Y(15,4374528,null,0,ml.a,[F.a,P.a,q.a,t.j,t.z,$.a,dl.a,t.u,[2,L.a],[2,w.a]],null,null),(l()(),t._18(-1,1,["\n  "])),(l()(),t.Z(17,0,null,1,1,"h2",[],null,null,null,null,null)),(l()(),t._18(-1,null,["Benvinguts a l'App de la Vall de Lord"])),(l()(),t._18(-1,1,["\n  "])),(l()(),t.Z(20,0,null,1,1,"h3",[],null,null,null,null,null)),(l()(),t._18(-1,null,["\n    Associació Turisme Vall de Lord\n\n  "])),(l()(),t._18(-1,1,["\n  "])),(l()(),t.Z(23,0,null,1,1,"p",[],null,null,null,null,null)),(l()(),t._18(-1,null,["\n    Oficina de turisme de la Vall de Lord\n  "])),(l()(),t._18(-1,1,["\n  "])),(l()(),t.Z(26,0,null,1,1,"p",[],null,null,null,null,null)),(l()(),t._18(-1,null,["\n    25282 St. Llorenç de Morunys\n  "])),(l()(),t._18(-1,1,["\n  "])),(l()(),t.Z(29,0,null,1,1,"p",[],null,null,null,null,null)),(l()(),t._18(-1,null,["\n    info@lavalldelord.com\n  "])),(l()(),t._18(-1,1,["\n"])),(l()(),t._18(-1,null,["\n"]))],null,function(l,n){l(n,3,0,t._13(n,4)._hidden,t._13(n,4)._sbPadding),l(n,14,0,t._13(n,15).statusbarPadding,t._13(n,15)._hasRefresher)})},jl)),t.Y(1,49152,null,0,g,[w.a],null,null)],null,null)},{},{},[]),yl=u(249),zl=u(48),kl=u(250),vl=u(81),Dl=t.X({encapsulation:2,styles:[],data:{}}),xl=t.V("ng-component",b,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,1,"ng-component",[],null,null,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,10,"ion-tabs",[["class","tabs-icon"]],null,null,null,yl.b,yl.a)),t._15(6144,null,S.a,null,[zl.a]),t.Y(2,4374528,null,0,zl.a,[[2,w.a],[2,L.a],$.a,F.a,t.j,P.a,t.z,H.a,dl.a],null,null),(l()(),t._18(-1,0,["\n  "])),(l()(),t._18(-1,0,["\n  "])),(l()(),t.Z(5,0,null,0,1,"ion-tab",[["role","tabpanel"],["tabIcon","ios-restaurant"],["tabTitle","Restaurants"]],[[1,"id",0],[1,"aria-labelledby",0]],null,null,kl.b,kl.a)),t.Y(6,245760,null,0,vl.a,[zl.a,$.a,F.a,P.a,t.j,t.u,t.z,t.i,t.g,A.l,U.a,[2,H.a],q.a,t.k],{root:[0,"root"],tabTitle:[1,"tabTitle"],tabIcon:[2,"tabIcon"]},null),(l()(),t._18(-1,0,["\n  "])),(l()(),t.Z(8,0,null,0,1,"ion-tab",[["role","tabpanel"],["tabIcon","information-circle"],["tabTitle","Informació"]],[[1,"id",0],[1,"aria-labelledby",0]],null,null,kl.b,kl.a)),t.Y(9,245760,null,0,vl.a,[zl.a,$.a,F.a,P.a,t.j,t.u,t.z,t.i,t.g,A.l,U.a,[2,H.a],q.a,t.k],{root:[0,"root"],tabTitle:[1,"tabTitle"],tabIcon:[2,"tabIcon"]},null),(l()(),t._18(-1,0,["\n"])),(l()(),t._18(-1,null,["\n"]))],function(l,n){var u=n.component;l(n,6,0,u.tab2Root,"Restaurants","ios-restaurant"),l(n,9,0,u.tab3Root,"Informació","information-circle")},function(l,n){l(n,5,0,t._13(n,6)._tabId,t._13(n,6)._btnId),l(n,8,0,t._13(n,9)._tabId,t._13(n,9)._btnId)})},Dl)),t.Y(1,49152,null,0,b,[],null,null)],null,null)},{},{},[]),Sl=u(106),Cl=u(251),Ll=u(67),wl=u(252),$l=u(45),Fl=t.X({encapsulation:2,styles:[],data:{}}),Pl=t.V("page-info-restaurant",s,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,1,"page-info-restaurant",[],null,null,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,12,"ion-header",[],null,null,null,null,null)),t.Y(1,16384,null,0,nl.a,[F.a,t.j,t.z,[2,L.a]],null,null),(l()(),t._18(-1,null,["\n  "])),(l()(),t.Z(3,0,null,null,8,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,ul.b,ul.a)),t.Y(4,49152,null,0,al.a,[$.a,[2,L.a],[2,w.a],F.a,t.j,t.z],null,null),(l()(),t._18(-1,3,["\n    "])),(l()(),t.Z(6,0,null,3,4,"ion-title",[],null,null,null,tl.b,tl.a)),t.Y(7,49152,null,0,el.a,[F.a,t.j,t.z,[2,il.a],[2,al.a]],null,null),(l()(),t._18(-1,0,["\n        "])),(l()(),t.Z(9,0,null,0,0,"img",[["src","assets/imgs/logo-vdl-mini.png"]],null,null,null,null,null)),(l()(),t._18(-1,0,["\n    "])),(l()(),t._18(-1,3,["\n  "])),(l()(),t._18(-1,null,["\n"])),(l()(),t._18(-1,null,["\n\n\n\n"])),(l()(),t.Z(14,0,null,null,5,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,sl.b,sl.a)),t.Y(15,4374528,null,0,ml.a,[F.a,P.a,q.a,t.j,t.z,$.a,dl.a,t.u,[2,L.a],[2,w.a]],null,null),(l()(),t._18(-1,1,["\n  "])),(l()(),t.U(16777216,null,1,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,122,"ion-card",[],null,null,null,null,null)),t.Y(1,16384,null,0,Sl.a,[F.a,t.j,t.z],null,null),(l()(),t._18(-1,null,["\n    "])),(l()(),t.Z(3,0,null,null,94,"ion-grid",[["class","grid"]],null,null,null,null,null)),t.Y(4,16384,null,0,G.a,[],null,null),(l()(),t._18(-1,null,["\n      "])),(l()(),t.Z(6,0,null,null,90,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(7,16384,null,0,W.a,[],null,null),(l()(),t._18(-1,null,["\n        "])),(l()(),t.Z(9,0,null,null,17,"ion-col",[["class","col"],["col-12",""],["col-sm",""]],null,null,null,null,null)),t.Y(10,16384,null,0,K.a,[],null,null),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(12,0,null,null,0,"img",[],[[8,"src",4]],null,null,null,null)),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(14,0,null,null,11,"ion-fab",[["right",""],["top",""]],null,null,null,Cl.b,Cl.a)),t.Y(15,1228800,null,2,Ll.a,[P.a],null,null),t._16(335544320,1,{_mainButton:0}),t._16(603979776,2,{_fabLists:1}),(l()(),t._18(-1,0,["\n            "])),(l()(),t.Z(19,0,null,0,5,"button",[["ion-fab",""]],null,[[null,"click"]],function(l,n,u){var a=!0,t=l.component;return"click"===n&&(a=!1!==t.obreMaps(t.data.direccio,t.data.poblacio)&&a),a},wl.b,wl.a)),t.Y(20,49152,[[1,4]],0,$l.a,[F.a,t.j,t.z],null,null),(l()(),t._18(-1,0,["\n              "])),(l()(),t.Z(22,0,null,0,1,"ion-icon",[["name","pin"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(23,147456,null,0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(-1,0,["\n            "])),(l()(),t._18(-1,0,["\n          "])),(l()(),t._18(-1,null,["\n        "])),(l()(),t._18(-1,null,["\n        "])),(l()(),t.Z(28,0,null,null,67,"ion-col",[["class","col"],["col-12",""],["col-sm",""]],null,null,null,null,null)),t.Y(29,16384,null,0,K.a,[],null,null),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(31,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(32,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,3,{contentLabel:0}),t._16(603979776,4,{_buttons:1}),t._16(603979776,5,{_icons:1}),t.Y(36,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n            "])),(l()(),t.Z(38,0,null,2,4,"h1",[],null,null,null,null,null)),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(40,0,null,null,1,"strong",[],null,null,null,null,null)),(l()(),t._18(41,null,["",""])),(l()(),t._18(-1,null,["\n            "])),(l()(),t._18(-1,2,["\n          "])),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(45,0,null,null,9,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(46,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,6,{contentLabel:0}),t._16(603979776,7,{_buttons:1}),t._16(603979776,8,{_icons:1}),t.Y(50,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n            "])),(l()(),t.Z(52,0,null,2,1,"ion-icon",[["item",""],["name","logo-euro"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(53,147456,[[8,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(54,2,[" Des de ","€\n          "])),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(56,0,null,null,10,"ion-item",[["class","item item-block"],["no-lines",""]],null,null,null,R.b,R.a)),t.Y(57,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,9,{contentLabel:0}),t._16(603979776,10,{_buttons:1}),t._16(603979776,11,{_icons:1}),t.Y(61,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n            "])),(l()(),t.Z(63,0,null,2,2,"ion-icon",[["item",""],["name","locate"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(64,147456,[[11,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(65,null,[" ",""])),(l()(),t._18(-1,2,["\n          "])),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(68,0,null,null,13,"ion-item",[["class","item item-block"],["no-lines",""]],null,null,null,R.b,R.a)),t.Y(69,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,12,{contentLabel:0}),t._16(603979776,13,{_buttons:1}),t._16(603979776,14,{_icons:1}),t.Y(73,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n            "])),(l()(),t.Z(75,0,null,2,4,"ion-icon",[["item",""],["name","clock"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(76,147456,[[14,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(77,null,[" Cuina de ","h a ","h i "])),(l()(),t.Z(78,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),t._18(79,null,[" de ","h a ","h"])),(l()(),t.Z(80,0,null,2,0,"br",[],null,null,null,null,null)),(l()(),t._18(-1,2,["\n          "])),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(83,0,null,null,11,"ion-item",[["class","item item-block"],["no-lines",""]],null,null,null,R.b,R.a)),t.Y(84,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,15,{contentLabel:0}),t._16(603979776,16,{_buttons:1}),t._16(603979776,17,{_icons:1}),t.Y(88,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n            "])),(l()(),t.Z(90,0,null,2,3,"a",[],[[8,"href",4]],null,null,null,null)),(l()(),t.Z(91,0,null,null,2,"ion-icon",[["item",""],["name","call"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(92,147456,[[17,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(93,null,[" ",""])),(l()(),t._18(-1,2,["\n          "])),(l()(),t._18(-1,null,["\n        "])),(l()(),t._18(-1,null,["\n      "])),(l()(),t._18(-1,null,["\n    "])),(l()(),t._18(-1,null,["\n    "])),(l()(),t.Z(99,0,null,null,22,"ion-grid",[["class","grid"]],null,null,null,null,null)),t.Y(100,16384,null,0,G.a,[],null,null),(l()(),t._18(-1,null,["\n      "])),(l()(),t.Z(102,0,null,null,18,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(103,16384,null,0,W.a,[],null,null),(l()(),t._18(-1,null,["\n        "])),(l()(),t.Z(105,0,null,null,14,"ion-col",[["class","col"],["col-12",""],["col-sm",""]],null,null,null,null,null)),t.Y(106,16384,null,0,K.a,[],null,null),(l()(),t._18(-1,null,["\n          "])),(l()(),t.U(16777216,null,null,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,152,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(1,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,18,{contentLabel:0}),t._16(603979776,19,{_buttons:1}),t._16(603979776,20,{_icons:1}),t.Y(5,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n            "])),(l()(),t.Z(7,0,null,2,144,"ion-list",[["inset",""]],null,null,null,null,null)),t.Y(8,16384,null,0,J.a,[F.a,t.j,t.z,P.a,A.l,q.a],null,null),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(10,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(11,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,21,{contentLabel:0}),t._16(603979776,22,{_buttons:1}),t._16(603979776,23,{_icons:1}),t.Y(15,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n                Menú\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[23,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"green")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Menu,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(18,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[23,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"red")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Menu,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(21,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n              "])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(24,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(25,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,24,{contentLabel:0}),t._16(603979776,25,{_buttons:1}),t._16(603979776,26,{_icons:1}),t.Y(29,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n                Menu infantil\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[26,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"green")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.MenuInfantil,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(32,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[26,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"red")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.MenuInfantil,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(35,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n              "])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(38,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(39,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,27,{contentLabel:0}),t._16(603979776,28,{_buttons:1}),t._16(603979776,29,{_icons:1}),t.Y(43,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n                Carta\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[29,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"green")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Carta,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(46,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[29,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"red")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Carta,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(49,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n              "])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(52,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(53,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,30,{contentLabel:0}),t._16(603979776,31,{_buttons:1}),t._16(603979776,32,{_icons:1}),t.Y(57,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n                Cuina Catalana\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[32,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"green")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.CuinaCatalana,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(60,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[32,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"red")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.CuinaCatalana,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(63,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n              "])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(66,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(67,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,33,{contentLabel:0}),t._16(603979776,34,{_buttons:1}),t._16(603979776,35,{_icons:1}),t.Y(71,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n                Pizza\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[35,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"green")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Pizza,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(74,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[35,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"red")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Pizza,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(77,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n              "])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(80,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(81,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,36,{contentLabel:0}),t._16(603979776,37,{_buttons:1}),t._16(603979776,38,{_icons:1}),t.Y(85,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n                Plats combinats\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[38,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"green")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.PlatsCombinats,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(88,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[38,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"red")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.PlatsCombinats,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(91,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n              "])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(94,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(95,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,39,{contentLabel:0}),t._16(603979776,40,{_buttons:1}),t._16(603979776,41,{_icons:1}),t.Y(99,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n                Entrepans\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[41,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"green")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Entrepans,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(102,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[41,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"red")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Entrepans,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(105,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n              "])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(108,0,null,null,13,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(109,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,42,{contentLabel:0}),t._16(603979776,43,{_buttons:1}),t._16(603979776,44,{_icons:1}),t.Y(113,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n                "])),(l()(),t._18(-1,2,["\n                Brasa\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[44,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"green")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Brasa,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(117,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[44,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"red")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Brasa,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(120,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n              "])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(123,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(124,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,45,{contentLabel:0}),t._16(603979776,46,{_buttons:1}),t._16(603979776,47,{_icons:1}),t.Y(128,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n                Terrassa\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[47,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"green")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Terrasa,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(131,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[47,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"red")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Terrasa,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(134,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n              "])),(l()(),t._18(-1,null,["\n              "])),(l()(),t.Z(137,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,R.b,R.a)),t.Y(138,1097728,null,3,V.a,[O.a,F.a,t.j,t.z,[2,E.a]],null,null),t._16(335544320,48,{contentLabel:0}),t._16(603979776,49,{_buttons:1}),t._16(603979776,50,{_icons:1}),t.Y(142,16384,null,0,B.a,[],null,null),(l()(),t._18(-1,2,["\n                Tapes\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[50,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"green")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Tapes,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(145,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n                "])),(l()(),t.U(16777216,null,4,1,null,function(l){return t._19(0,[(l()(),t.Z(0,0,null,null,3,"ion-icon",[["item-end",""],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(1,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(2,{color:0}),t.Y(3,147456,[[50,4]],0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null)],function(l,n){l(n,1,0,l(n,2,0,"red")),l(n,3,0,t._2(1,"",n.parent.context.$implicit.Tapes,""))},function(l,n){l(n,0,0,t._13(n,3)._hidden)})})),t.Y(148,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,2,["\n              "])),(l()(),t._18(-1,null,["\n              "])),(l()(),t._18(-1,null,["\n            "])),(l()(),t._18(-1,2,["\n          "]))],function(l,n){l(n,18,0,"checkmark-circle"===n.context.$implicit.Menu),l(n,21,0,"close-circle"===n.context.$implicit.Menu),l(n,32,0,"checkmark-circle"===n.context.$implicit.MenuInfantil),l(n,35,0,"close-circle"===n.context.$implicit.MenuInfantil),l(n,46,0,"checkmark-circle"===n.context.$implicit.Carta),l(n,49,0,"close-circle"===n.context.$implicit.Carta),l(n,60,0,"checkmark-circle"===n.context.$implicit.CuinaCatalana),l(n,63,0,"close-circle"===n.context.$implicit.CuinaCatalana),l(n,74,0,"checkmark-circle"===n.context.$implicit.Pizza),l(n,77,0,"close-circle"===n.context.$implicit.Pizza),l(n,88,0,"checkmark-circle"===n.context.$implicit.PlatsCombinats),l(n,91,0,"close-circle"===n.context.$implicit.PlatsCombinats),l(n,102,0,"checkmark-circle"===n.context.$implicit.Entrepans),l(n,105,0,"close-circle"===n.context.$implicit.Entrepans),l(n,117,0,"checkmark-circle"===n.context.$implicit.Brasa),l(n,120,0,"close-circle"===n.context.$implicit.Brasa),l(n,131,0,"checkmark-circle"===n.context.$implicit.Terrasa),l(n,134,0,"close-circle"===n.context.$implicit.Terrasa),l(n,145,0,"checkmark-circle"===n.context.$implicit.Tapes),l(n,148,0,"close-circle"===n.context.$implicit.Tapes)},null)})),t.Y(109,802816,null,0,X.h,[t.I,t.F,t.p],{ngForOf:[0,"ngForOf"]},null),(l()(),t._18(-1,null,["\n          "])),(l()(),t.Z(111,0,null,null,7,"button",[["full",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var a=!0,t=l.component;return"click"===n&&(a=!1!==t.obreMapsIndicacions(t.data.direccio,t.data.poblacio)&&a),a},Q.b,Q.a)),t.Y(112,1097728,null,0,ll.a,[[8,""],F.a,t.j,t.z],{full:[0,"full"]},null),(l()(),t._18(-1,0,["\n            "])),(l()(),t.Z(114,0,null,0,3,"ion-icon",[["name","navigate"],["role","img"],["text-center",""]],[[2,"hide",null]],null,null,null,null)),t.Y(115,278528,null,0,X.l,[t.q,t.j,t.A],{ngStyle:[0,"ngStyle"]},null),t._14(116,{"font-size":0}),t.Y(117,147456,null,0,N.a,[F.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._18(-1,0,[" Com arribar\n          "])),(l()(),t._18(-1,null,["\n        "])),(l()(),t._18(-1,null,["\n      "])),(l()(),t._18(-1,null,["\n    "])),(l()(),t._18(-1,null,["\n  "]))],function(l,n){var u=n.component;l(n,23,0,"pin"),l(n,53,0,"logo-euro"),l(n,64,0,"locate"),l(n,76,0,"clock"),l(n,92,0,"call"),l(n,109,0,u.items),l(n,112,0,""),l(n,115,0,l(n,116,0,"40px")),l(n,117,0,"navigate")},function(l,n){var u=n.component;l(n,12,0,t._2(1,"http://lavalldelord.com/appvallLord/storage/app/images/",u.data.imatgeSecundaria,"")),l(n,22,0,t._13(n,23)._hidden),l(n,41,0,u.data.nom),l(n,52,0,t._13(n,53)._hidden),l(n,54,0,u.data.preu),l(n,63,0,t._13(n,64)._hidden),l(n,65,0,u.data.poblacio),l(n,75,0,t._13(n,76)._hidden),l(n,77,0,u.data.obertura_dia,u.data.tancament_dia),l(n,79,0,u.data.obertura_nit,u.data.tancament_nit),l(n,90,0,t._2(1,"tel:",u.data.telefon,"")),l(n,91,0,t._13(n,92)._hidden),l(n,93,0,u.data.telefon),l(n,114,0,t._13(n,117)._hidden)})})),t.Y(18,16384,null,0,X.i,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._18(-1,1,["\n"])),(l()(),t._18(-1,null,["\n"]))],function(l,n){l(n,18,0,n.component.data)},function(l,n){l(n,3,0,t._13(n,4)._hidden,t._13(n,4)._sbPadding),l(n,14,0,t._13(n,15).statusbarPadding,t._13(n,15)._hasRefresher)})},Fl)),t.Y(1,49152,null,0,s,[r,w.a,gl.a],null,null)],null,null)},{},{},[]),Al=u(128),Ul=u(102),Hl=u(104),ql=u(125),Ml=u(39),Tl=u(194),Rl=u(54),Vl=u(47),Ol=u(112),El=u(65),Bl=u(116),Xl=u(124),Nl=u(60),Jl=u(130),Gl=u(131),Wl=u(89),Kl=u(193),Ql=u(126),ln=u(35),nn=u(111),un=u(127),an=u(197),tn=t.W(f,[h.b],function(l){return t._10([t._11(512,t.i,t.S,[[8,[Y.a,Z.a,j.a,I.a,y.a,z.a,k.a,v.a,D.a,T,hl,Zl,Il,xl,Pl]],[3,t.i],t.s]),t._11(5120,t.r,t._9,[[3,t.r]]),t._11(4608,X.k,X.j,[t.r,[2,X.s]]),t._11(5120,t.b,t._0,[]),t._11(5120,t.p,t._6,[]),t._11(5120,t.q,t._7,[]),t._11(4608,a.c,a.q,[X.c]),t._11(6144,t.D,null,[a.c]),t._11(4608,a.f,Al.a,[]),t._11(5120,a.d,function(l,n,u,t,e){return[new a.k(l,n),new a.o(u),new a.n(t,e)]},[X.c,t.u,X.c,X.c,a.f]),t._11(4608,a.e,a.e,[a.d,t.u]),t._11(135680,a.m,a.m,[X.c]),t._11(4608,a.l,a.l,[a.e,a.m]),t._11(6144,t.B,null,[a.l]),t._11(6144,a.p,null,[a.m]),t._11(4608,t.G,t.G,[t.u]),t._11(4608,a.h,a.h,[X.c]),t._11(4608,a.i,a.i,[X.c]),t._11(4608,_l.k,_l.k,[]),t._11(4608,_l.c,_l.c,[]),t._11(4608,c.c,c.c,[]),t._11(4608,c.g,c.b,[]),t._11(5120,c.i,c.j,[]),t._11(4608,c.h,c.h,[c.c,c.g,c.i]),t._11(4608,c.f,c.a,[]),t._11(5120,c.d,c.k,[c.h,c.f]),t._11(4608,Ul.a,Ul.a,[$.a,F.a]),t._11(4608,Hl.a,Hl.a,[$.a,F.a]),t._11(4608,ql.a,ql.a,[]),t._11(4608,O.a,O.a,[]),t._11(4608,Ml.a,Ml.a,[P.a]),t._11(4608,dl.a,dl.a,[F.a,P.a,t.u,q.a]),t._11(4608,pl.a,pl.a,[$.a,F.a]),t._11(5120,X.f,Tl.b,[X.q,[2,X.a],F.a]),t._11(4608,X.e,X.e,[X.f]),t._11(5120,Rl.b,Rl.d,[$.a,Rl.a]),t._11(5120,H.a,H.b,[$.a,Rl.b,X.e,Vl.b,t.i]),t._11(4608,Ol.a,Ol.a,[$.a,F.a,H.a]),t._11(4608,El.a,El.a,[$.a,F.a]),t._11(4608,Bl.a,Bl.a,[$.a,F.a,H.a]),t._11(4608,Xl.a,Xl.a,[F.a,P.a,q.a,$.a,A.l]),t._11(4608,bl.a,bl.a,[$.a,F.a]),t._11(4608,U.a,U.a,[P.a,F.a]),t._11(4608,Nl.a,Nl.a,[]),t._11(4608,Jl.a,Jl.a,[]),t._11(4608,Gl.a,Gl.a,[]),t._11(4608,Wl.a,Wl.a,[Nl.a,Jl.a,Gl.a,P.a]),t._11(4608,e.a,e.a,[]),t._11(4608,i.a,i.a,[]),t._11(4608,r,r,[c.d]),t._11(4608,o.a,o.a,[]),t._11(512,X.b,X.b,[]),t._11(512,t.k,Kl.a,[]),t._11(256,F.b,{},[]),t._11(1024,Ql.a,Ql.b,[]),t._11(1024,P.a,P.b,[a.b,Ql.a,t.u]),t._11(1024,F.a,F.c,[F.b,P.a]),t._11(512,q.a,q.a,[P.a]),t._11(512,ln.a,ln.a,[]),t._11(512,$.a,$.a,[F.a,P.a,[2,ln.a]]),t._11(512,A.l,A.l,[$.a]),t._11(256,Rl.a,{links:[]},[]),t._11(512,t.h,t.h,[]),t._11(512,nn.a,nn.a,[t.h]),t._11(1024,Vl.b,Vl.c,[nn.a,t.o]),t._11(1024,t.c,function(l,n,u,t,e,i,o,c,_,r,s,m,d){return[a.s(l),un.a(n),ql.b(u,t),Xl.b(e,i,o,c,_),Vl.d(r,s,m,d)]},[[2,t.t],F.a,P.a,q.a,F.a,P.a,q.a,$.a,A.l,F.a,Rl.a,Vl.b,t.u]),t._11(512,t.d,t.d,[[2,t.c]]),t._11(131584,t.f,t.f,[t.u,t.T,t.o,t.k,t.i,t.d]),t._11(512,t.e,t.e,[t.f]),t._11(512,a.a,a.a,[[3,a.a]]),t._11(512,_l.j,_l.j,[]),t._11(512,_l.d,_l.d,[]),t._11(512,_l.i,_l.i,[]),t._11(512,Tl.a,Tl.a,[]),t._11(512,c.e,c.e,[]),t._11(512,an.a,an.a,[]),t._11(512,f,f,[]),t._11(256,h.a,p,[]),t._11(256,X.a,"/",[])])});Object(t.M)(),Object(a.j)().bootstrapModuleFactory(tn)}},[199]);
+webpackJsonp([0],{
+
+/***/ 101:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatabaseProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__constants__ = __webpack_require__(286);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/*
+  Generated class for the DatabaseProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var DatabaseProvider = (function () {
+    function DatabaseProvider(http, device) {
+        this.http = http;
+        this.device = device;
+        console.log('Hello DatabaseProvider Provider');
+    }
+    Object.defineProperty(DatabaseProvider, "parameters", {
+        get: function () {
+            return [[__WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]]];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    //Obté informació dels diferents restaurants
+    DatabaseProvider.prototype.getResaturant = function () {
+        //SERVER_NAME_APP_TEST servidor online
+        //SERVER_NAME_LOCAL servudor local
+        //SERVER_NAME_PROXY proxy
+        var url = __WEBPACK_IMPORTED_MODULE_4__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/';
+        //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
+        //TODO funciona var response = this.http.get(url+lat+'/'+lon);
+        var response = this.http.get(url);
+        console.log(url);
+        //alert(response);
+        return response;
+    };
+    DatabaseProvider.prototype.getResaturantDia = function () {
+        //SERVER_NAME_APP_TEST servidor online
+        //SERVER_NAME_LOCAL servudor local
+        //SERVER_NAME_PROXY proxy
+        var url = __WEBPACK_IMPORTED_MODULE_4__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/';
+        //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
+        //TODO funciona var response = this.http.get(url+lat+'/'+lon);
+        var response = this.http.get(url);
+        console.log(url);
+        //alert(response);
+        return response;
+    };
+    DatabaseProvider.prototype.getResaturantFiltre = function (dia) {
+        //SERVER_NAME_APP_TEST servidor online
+        //SERVER_NAME_LOCAL servudor local
+        //SERVER_NAME_PROXY proxy
+        var url = __WEBPACK_IMPORTED_MODULE_4__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/' + dia;
+        //alert(url);
+        //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
+        //TODO funciona var response = this.http.get(url+lat+'/'+lon);
+        var response = this.http.get(url);
+        console.log(url);
+        //alert(response);
+        return response;
+    };
+    DatabaseProvider.prototype.getItems = function ($id) {
+        //alert("databaseprovider"+$id);
+        var url = __WEBPACK_IMPORTED_MODULE_4__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/item/' + $id;
+        var response = this.http.get(url);
+        return response;
+    };
+    DatabaseProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__["a" /* Device */]])
+    ], DatabaseProvider);
+    return DatabaseProvider;
+}());
+
+//# sourceMappingURL=database.js.map
+
+/***/ }),
+
+/***/ 114:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 114;
+
+/***/ }),
+
+/***/ 156:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 156;
+
+/***/ }),
+
+/***/ 199:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__restaurant_restaurant__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__informacio_informacio__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(206);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+//import { InformacioPage } from '../details-restaurant/details-restaurant';
+var TabsPage = (function () {
+    function TabsPage() {
+        this.tab1Root = __WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */];
+        this.tab2Root = __WEBPACK_IMPORTED_MODULE_1__restaurant_restaurant__["a" /* RestaurantPage */];
+        this.tab3Root = __WEBPACK_IMPORTED_MODULE_2__informacio_informacio__["a" /* InformacioPage */];
+    }
+    TabsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/tabs/tabs.html"*/`<ion-tabs class="tabs-icon">\n  <!--<ion-tab [root]="tab1Root" tabTitle="Inici" tabIcon="home"></ion-tab>-->\n  <ion-tab [root]="tab2Root" tabTitle="Restaurants" tabIcon="ios-restaurant"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Informació" tabIcon="information-circle"></ion-tab>\n</ion-tabs>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/tabs/tabs.html"*/
+        }),
+        __metadata("design:paramtypes", [])
+    ], TabsPage);
+    return TabsPage;
+}());
+
+//# sourceMappingURL=tabs.js.map
+
+/***/ }),
+
+/***/ 200:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_network__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_info_restaurant_info_restaurant__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_database_database__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var RestaurantPage = (function () {
+    function RestaurantPage(DatabaseProvider, navCtrl, navParams, network, toastCtrl, platform, loadingController) {
+        var _this = this;
+        this.DatabaseProvider = DatabaseProvider;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.network = network;
+        this.toastCtrl = toastCtrl;
+        this.platform = platform;
+        this.loadingController = loadingController;
+        platform.ready().then(function () {
+            //missatge de no connexió
+            /*let disconnectSub = network.onDisconnect().subscribe(() => {
+              this.offLine();
+            });
+      
+            let connectSub = network.onConnect().subscribe(()=> {
+              this.onLine();
+            });*/
+            //si tenim connexio carreguem pagina i mostrem missatge
+            if (_this.network.type != 'none') {
+                _this.onLine();
+            }
+            else {
+                _this.offLine();
+            }
+        });
+    }
+    RestaurantPage.prototype.onLine = function () {
+        var toast = this.toastCtrl.create({
+            message: 'S\'està connectant',
+            duration: 2000,
+            position: 'bottom'
+        });
+        // La plataforma esta lista y ya tenemos acceso a los plugins.
+        //toastCtrl.present();
+        this.loading = this.loadingController.create({
+            content: 'Carregant...'
+        });
+        this.loading.present();
+        this.searchRestaurant();
+        toast.present();
+    };
+    RestaurantPage.prototype.offLine = function () {
+        var toast = this.toastCtrl.create({
+            message: 'No hi ha connexió',
+            duration: 3000,
+            position: 'bottom'
+        });
+        toast.present();
+    };
+    RestaurantPage.prototype.searchRestaurant = function () {
+        var _this = this;
+        this.DatabaseProvider.getResaturant().subscribe(function (data) {
+            _this.items = JSON.parse(data['_body']);
+            _this.loading.dismiss();
+        }, function (err) {
+            console.log("Error: " + err);
+        }, function () { return console.log('Busqueda restaurant completada'); });
+    };
+    RestaurantPage.prototype.changePage = function (data) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_info_restaurant_info_restaurant__["a" /* InfoRestaurantPage */], {
+            comData: data
+        });
+    };
+    RestaurantPage.prototype.onChangeDia = function (dia) {
+        var data;
+        if (this.tmpHora) {
+            if (dia == 0) {
+                //obtenim dades segons data actual
+                data = this.dataDiaHoraActual();
+            }
+            else {
+                //obtenim dades segons dia
+                data = this.dataDiaHora(dia);
+            }
+        }
+        else {
+            if (dia == 0) {
+                //obtenim dades segons data actual
+                data = this.dataDiaActual();
+            }
+            else {
+                //obtenim dades segons dia
+                data = this.dataDia(dia);
+            }
+        }
+        this.sendData(data);
+    };
+    RestaurantPage.prototype.onChangeHora = function (hora) {
+        var data;
+        if (this.tmpDia) {
+            if (hora == 'Hora actual') {
+                data = this.dataHoraDiaActual();
+            }
+            else {
+                data = this.dataHoraDia(hora);
+            }
+        }
+        else {
+            if (hora == 'Hora actual') {
+                data = this.dataHoraActual();
+            }
+            else {
+                data = this.dataHora(hora);
+            }
+        }
+        this.sendData(data);
+    };
+    RestaurantPage.prototype.sendData = function (data) {
+        var _this = this;
+        this.DatabaseProvider.getResaturantFiltre(data).subscribe(function (data) {
+            _this.items = JSON.parse(data['_body']);
+            _this.loading.dismiss();
+        }, function (err) {
+            console.log("Error: " + err);
+        }, function () { return console.log('Movie Search Complete'); });
+    };
+    RestaurantPage.prototype.dataDia = function (dia) {
+        this.tmpDia = dia;
+        return "dia/" + dia;
+    };
+    RestaurantPage.prototype.dataDiaActual = function () {
+        var String = new Date();
+        this.tmpDia = String.getDay();
+        return "dia/" + this.tmpDia;
+    };
+    RestaurantPage.prototype.dataHora = function (hora) {
+        this.tmpHora = hora;
+        return "hora/" + hora;
+    };
+    RestaurantPage.prototype.dataHoraActual = function () {
+        var String = new Date();
+        this.tmpHora = String.getHours();
+        return "hora/" + this.tmpHora;
+    };
+    RestaurantPage.prototype.dataDiaHora = function (dia) {
+        this.tmpDia = dia;
+        return "diahora/" + this.tmpDia + "/" + this.tmpHora;
+    };
+    RestaurantPage.prototype.dataDiaHoraActual = function () {
+        var String = new Date();
+        this.tmpDia = String.getDay();
+        return "diahora/" + this.tmpDia + "/" + this.tmpHora;
+    };
+    RestaurantPage.prototype.dataHoraDia = function (hora) {
+        this.tmpHora = hora;
+        return "diahora/" + this.tmpDia + "/" + this.tmpHora;
+    };
+    RestaurantPage.prototype.dataHoraDiaActual = function () {
+        var String = new Date();
+        this.tmpHora = String.getHours();
+        return "diahora/" + this.tmpDia + "/" + this.tmpHora;
+    };
+    RestaurantPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-restaurant',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/`<ion-header>\n  <ion-navbar>\n        <ion-title>\n      <ion-grid class="graellaHeader">\n        <ion-row align-items-start class="filaHeader">\n          <ion-col col-2 class="imageHeader">\n          <img src="assets/imgs/logo-vdl-no-text.png"/>\n          </ion-col>\n          <ion-col col-10 class="colSelectHeader">\n          <ion-item class="selecHeader" no-lines>\n            <ion-select [(ngModel)]="dia" (ionChange)="onChangeDia(dia)" action-sheet placeholder="Dia Obert">\n              <ion-option value="0">Dia actual</ion-option>\n              <ion-option value="1">Dilluns</ion-option>\n              <ion-option value="2">Dimarts</ion-option>\n              <ion-option value="3">Dimecres</ion-option>\n              <ion-option value="4">Dijous</ion-option>\n              <ion-option value="5">Divendres</ion-option>\n              <ion-option value="6">Dissabte</ion-option>\n              <ion-option value="7">Diumenge</ion-option>\n            </ion-select>\n            <ion-select [(ngModel)]="hora" (ionChange)="onChangeHora(hora)" action-sheet   placeholder="Hora Cuina">\n              <ion-option>Hora actual</ion-option>\n              <ion-option>08:00</ion-option>\n              <ion-option>09:00</ion-option>\n              <ion-option>10:00</ion-option>\n              <ion-option>11:00</ion-option>\n              <ion-option>12:00</ion-option>\n              <ion-option>13:00</ion-option>\n              <ion-option>14:00</ion-option>\n              <ion-option>15:00</ion-option>\n              <ion-option>16:00</ion-option>\n              <ion-option>17:00</ion-option>\n              <ion-option>18:00</ion-option>\n              <ion-option>19:00</ion-option>\n              <ion-option>20:00</ion-option>\n              <ion-option>21:00</ion-option>\n              <ion-option>22:00</ion-option>\n              <ion-option>23:00</ion-option>\n              <ion-option>00:00</ion-option>\n            </ion-select>\n          </ion-item>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="restaurant_background">\n  <ion-item *ngIf="items?.length == 0" text-center>\n    <ion-item text-center no-lines><ion-icon name="warning" [ngStyle]="{\'color\': \'red\', \'font-size\': \'50px\'}"></ion-icon></ion-item>\n    <ion-item text-center no-lines>No hi ha dades disponibles</ion-item>\n    <ion-item *ngIf="dia==0" text-center no-lines>Dia: Avui</ion-item>\n    <ion-item *ngIf="dia==1" text-center no-lines>Dia: Dilluns</ion-item>\n    <ion-item *ngIf="dia==2" text-center no-lines>Dia: Dimarts</ion-item>\n    <ion-item *ngIf="dia==3" text-center no-lines>Dia: Dimecres</ion-item>\n    <ion-item *ngIf="dia==4" text-center no-lines>Dia: Dijous</ion-item>\n    <ion-item *ngIf="dia==5" text-center no-lines>Dia: Divendres</ion-item>\n    <ion-item *ngIf="dia==6" text-center no-lines>Dia: Dissabte</ion-item>\n    <ion-item *ngIf="dia==7" text-center no-lines>Dia: Diumenge</ion-item>\n   <ion-item *ngIf="hora" text-center no-lines>Hora: {{hora}} </ion-item>\n  </ion-item>\n  <ion-item *ngFor="let item of items">\n    <ion-item no-lines>\n      <ion-icon name="restaurant" item-left></ion-icon>\n      <h1>{{item.nom}}</h1>\n    </ion-item>\n    <ion-list>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-12 col-sm>\n            <img (click)="changePage(item)" src="http://lavalldelord.com/appvallLord/storage/app/images/{{item.imatgePrincipal}}" class="img_thumbnail">\n          </ion-col>\n          <ion-col col-12 col-sm>\n            <ion-item no-lines>\n              <ion-icon name="locate" item> {{item.poblacio}}</ion-icon>\n            </ion-item>\n            <ion-item no-lines>\n              <ion-icon name="clock" item>\n                <ng-container *ngIf="item.obertura_dia">Cuina de {{item.obertura_dia}}h a {{item.tancament_dia}}h i </ng-container>\n                <ng-container *ngIf="!item.obertura_dia">Dinars tancat i </ng-container>\n                <ng-container *ngIf="item.obertura_nit">de {{item.obertura_nit}}h a {{item.tancament_nit}}h</ng-container>\n                <ng-container *ngIf="!item.obertura_nit">Sopars tancat</ng-container>\n              </ion-icon><br />\n            </ion-item>\n            <ion-item no-lines>\n              <a href="tel:{{item.telefon}}"><ion-icon name="call" item> {{item.telefon}}</ion-icon></a>\n            </ion-item>\n          </ion-col>\n            <button ion-button full (click)="changePage(item)">Detalls</button>\n        </ion-row>\n      </ion-grid>\n    </ion-list>\n  </ion-item>\n\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/restaurant/restaurant.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__providers_database_database__["a" /* DatabaseProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_network__["a" /* Network */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */]])
+    ], RestaurantPage);
+    return RestaurantPage;
+}());
+
+//# sourceMappingURL=restaurant.js.map
+
+/***/ }),
+
+/***/ 202:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoRestaurantPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_database_database__ = __webpack_require__(101);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the InfoRestaurantPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var InfoRestaurantPage = (function () {
+    function InfoRestaurantPage(DatabaseProvider, navCtrl, navParams) {
+        this.DatabaseProvider = DatabaseProvider;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.checkmark = '#f53d3d';
+    }
+    InfoRestaurantPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        console.log('ionViewDidLoad InfoRestaurantPage');
+        this.data = this.navParams.get('comData');
+        this.DatabaseProvider.getItems(this.data.id).subscribe(function (data) {
+            _this.items = JSON.parse(data['_body']);
+            _this.loading.dismiss();
+        }, function (err) {
+            console.log("Error: " + err);
+        }, function () { return console.log('Movie Search Complete'); });
+    };
+    InfoRestaurantPage.prototype.obreMaps = function (direccio, poblacio) {
+        window.open('https://www.google.com/maps/search/' + direccio + ',' + poblacio + '/', '_system', 'location=yes');
+    };
+    InfoRestaurantPage.prototype.obreMapsIndicacions = function (direccio, poblacio) {
+        window.open('https://www.google.com/maps/dir//' + direccio + ',' + poblacio + '/', '_system', 'location=yes');
+    };
+    InfoRestaurantPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-info-restaurant',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/info-restaurant/info-restaurant.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n\n<ion-content padding>\n  <ion-card *ngIf="data">\n    <ion-grid>\n      <ion-row>\n        <ion-col col-12 col-sm>\n          <img src="http://lavalldelord.com/appvallLord/storage/app/images/{{data.imatgeSecundaria}}">\n          <ion-fab right top>\n            <button ion-fab (click)="obreMaps(data.direccio,data.poblacio)">\n              <ion-icon name="pin"></ion-icon>\n            </button>\n          </ion-fab>\n        </ion-col>\n        <ion-col col-12 col-sm>\n          <ion-item>\n            <h1>\n              <strong>{{data.nom}}</strong>\n            </h1>\n          </ion-item>\n          <ion-item>\n            <ion-icon name="logo-euro" item></ion-icon> Des de {{data.preu}}€\n          </ion-item>\n          <ion-item no-lines>\n            <ion-icon name="locate" item> {{data.poblacio}}</ion-icon>\n          </ion-item>\n          <ion-item no-lines>\n            <ion-icon name="clock" item> Cuina de {{data.obertura_dia}}h a {{data.tancament_dia}}h i <br /> de {{data.obertura_nit}}h a {{data.tancament_nit}}h</ion-icon><br />\n          </ion-item>\n          <ion-item no-lines>\n            <a href="tel:{{data.telefon}}"><ion-icon name="call" item> {{data.telefon}}</ion-icon></a>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-grid>\n      <ion-row>\n        <ion-col col-12 col-sm>\n          <ion-item *ngFor="let item of items">\n            <ion-list inset>\n              <ion-item>\n                Menú\n                <ion-icon *ngIf="item.Menu===\'checkmark-circle\'" name={{item.Menu}}  [ngStyle]="{\'color\': \'green\'}" item-end></ion-icon>\n                <ion-icon *ngIf="item.Menu===\'close-circle\'" name={{item.Menu}}  [ngStyle]="{\'color\': \'red\'}" item-end></ion-icon>\n              </ion-item>\n              <ion-item>\n                Menu infantil\n                <ion-icon *ngIf="item.MenuInfantil===\'checkmark-circle\'" name={{item.MenuInfantil}}  [ngStyle]="{\'color\': \'green\'}" item-end></ion-icon>\n                <ion-icon *ngIf="item.MenuInfantil===\'close-circle\'" name={{item.MenuInfantil}}  [ngStyle]="{\'color\': \'red\'}" item-end></ion-icon>\n              </ion-item>\n              <ion-item>\n                Carta\n                <ion-icon *ngIf="item.Carta===\'checkmark-circle\'" name={{item.Carta}}  [ngStyle]="{\'color\': \'green\'}" item-end></ion-icon>\n                <ion-icon *ngIf="item.Carta===\'close-circle\'" name={{item.Carta}}  [ngStyle]="{\'color\': \'red\'}" item-end></ion-icon>\n              </ion-item>\n              <ion-item>\n                Cuina Catalana\n                <ion-icon *ngIf="item.CuinaCatalana===\'checkmark-circle\'" name={{item.CuinaCatalana}}  [ngStyle]="{\'color\': \'green\'}" item-end></ion-icon>\n                <ion-icon *ngIf="item.CuinaCatalana===\'close-circle\'" name={{item.CuinaCatalana}}  [ngStyle]="{\'color\': \'red\'}" item-end></ion-icon>\n              </ion-item>\n              <ion-item>\n                Pizza\n                <ion-icon *ngIf="item.Pizza===\'checkmark-circle\'" name={{item.Pizza}}  [ngStyle]="{\'color\': \'green\'}" item-end></ion-icon>\n                <ion-icon *ngIf="item.Pizza===\'close-circle\'" name={{item.Pizza}}  [ngStyle]="{\'color\': \'red\'}" item-end></ion-icon>\n              </ion-item>\n              <ion-item>\n                Plats combinats\n                <ion-icon *ngIf="item.PlatsCombinats===\'checkmark-circle\'" name={{item.PlatsCombinats}}  [ngStyle]="{\'color\': \'green\'}" item-end></ion-icon>\n                <ion-icon *ngIf="item.PlatsCombinats===\'close-circle\'" name={{item.PlatsCombinats}}  [ngStyle]="{\'color\': \'red\'}" item-end></ion-icon>\n              </ion-item>\n              <ion-item>\n                Entrepans\n                <ion-icon *ngIf="item.Entrepans===\'checkmark-circle\'" name={{item.Entrepans}}  [ngStyle]="{\'color\': \'green\'}" item-end></ion-icon>\n                <ion-icon *ngIf="item.Entrepans===\'close-circle\'" name={{item.Entrepans}}  [ngStyle]="{\'color\': \'red\'}" item-end></ion-icon>\n              </ion-item>\n              <ion-item>\n                <!--<ion-icon name="eye" [ngStyle]="{\'color\': \'orange\'}" item> </ion-icon>-->\n                Brasa\n                <ion-icon *ngIf="item.Brasa===\'checkmark-circle\'" name={{item.Brasa}}  [ngStyle]="{\'color\': \'green\'}" item-end></ion-icon>\n                <ion-icon *ngIf="item.Brasa===\'close-circle\'" name={{item.Brasa}}  [ngStyle]="{\'color\': \'red\'}" item-end></ion-icon>\n              </ion-item>\n              <ion-item>\n                Terrassa\n                <ion-icon *ngIf="item.Terrasa===\'checkmark-circle\'" name={{item.Terrasa}}  [ngStyle]="{\'color\': \'green\'}" item-end></ion-icon>\n                <ion-icon *ngIf="item.Terrasa===\'close-circle\'" name={{item.Terrasa}}  [ngStyle]="{\'color\': \'red\'}" item-end></ion-icon>\n              </ion-item>\n              <ion-item>\n                Tapes\n                <ion-icon *ngIf="item.Tapes===\'checkmark-circle\'" name={{item.Tapes}}  [ngStyle]="{\'color\': \'green\'}" item-end></ion-icon>\n                <ion-icon *ngIf="item.Tapes===\'close-circle\'" name={{item.Tapes}}  [ngStyle]="{\'color\': \'red\'}" item-end></ion-icon>\n              </ion-item>\n              <!--<ion-item>\n              <ion-icon name="eye" [ngStyle]="{\'color\': \'orange\'}" item> </ion-icon> <i>Trucar prèviament</i>\n              </ion-item>-->\n            </ion-list>\n          </ion-item>\n          <button ion-button full (click)="obreMapsIndicacions(data.direccio,data.poblacio)">\n            <ion-icon name="navigate" text-center [ngStyle]="{\'font-size\': \'40px\'}"></ion-icon> Com arribar\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/info-restaurant/info-restaurant.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_database_database__["a" /* DatabaseProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    ], InfoRestaurantPage);
+    return InfoRestaurantPage;
+}());
+
+//# sourceMappingURL=info-restaurant.js.map
+
+/***/ }),
+
+/***/ 205:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InformacioPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var InformacioPage = (function () {
+    function InformacioPage(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.prova = 'ionic';
+    }
+    InformacioPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-informacio',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/informacio/informacio.html"*/`\n<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content  padding class="restaurant_background">\n  <ion-list ion-item>\n    <h2>App de la Vall de Lord</h2>\n    <span>Per qualsevol comentari o problemàtica, poseu-vos en contacte amb l\'Oficina de Turisme de la Vall de Lord</span><br />\n    <h3>Segueix-nos a:</h3><br />\n    <button ion-item onclick="window.open(\'https://twitter.com/valldelord\', \'_system\', \'location=yes\'); return false;">\n      <ion-icon name="logo-twitter" [ngStyle]="{\'color\': \'blue\'}" item></ion-icon>\n        <span [ngStyle]="{\'color\': \'blue\'}">Twitter</span>\n    </button>\n    <button ion-item onclick="window.open(\'https://www.instagram.com/turismevalldelord/\', \'_system\', \'location=yes\'); return false;">\n      <ion-icon name="logo-instagram" [ngStyle]="{\'color\': \'blue\'}" item></ion-icon>\n        <span [ngStyle]="{\'color\': \'blue\'}">Instagram</span>\n    </button>\n    <button ion-item onclick="window.open(\'https://www.facebook.com/turismevalldelord\', \'_system\', \'location=yes\'); return false;">\n      <ion-icon name="logo-facebook" [ngStyle]="{\'color\': \'blue\'}" item></ion-icon>\n        <span [ngStyle]="{\'color\': \'blue\'}">Faceboock</span>\n    </button>\n    <button ion-item onclick="window.open(\'http://lavalldelord.com\', \'_system\', \'location=yes\'); return false;">\n      <ion-icon name="logo-wordpress" [ngStyle]="{\'color\': \'blue\'}" item></ion-icon>\n        <span [ngStyle]="{\'color\': \'blue\'}">Web de la Val de Lord</span>\n    </button>\n    <br />\n    <h3><strong>Associació Turisme Vall de Lord</strong><br />\n    <span>Oficina de turisme de la Vall de Lord<br />\n    25282 St. Llorenç de Morunys<br />\n    info@lavalldelord.com</span></h3>\n  </ion-list>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/informacio/informacio.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], InformacioPage);
+    return InformacioPage;
+}());
+
+//# sourceMappingURL=informacio.js.map
+
+/***/ }),
+
+/***/ 206:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var HomePage = (function () {
+    function HomePage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/pages/home/home.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img class="left" src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2>Benvinguts a l\'App de la Vall de Lord</h2>\n  <h3>\n    Associació Turisme Vall de Lord\n\n  </h3>\n  <p>\n    Oficina de turisme de la Vall de Lord\n  </p>\n  <p>\n    25282 St. Llorenç de Morunys\n  </p>\n  <p>\n    info@lavalldelord.com\n  </p>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/pages/home/home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], HomePage);
+    return HomePage;
+}());
+
+//# sourceMappingURL=home.js.map
+
+/***/ }),
+
+/***/ 210:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(233);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 233:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_image_loader__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_network__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_restaurant_restaurant__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_informacio_informacio__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_info_restaurant_info_restaurant__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_database_database__ = __webpack_require__(101);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+//import { ReversePipe } from 'ngx-pipes/src/app/pipes/array/reverse';
+
+
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_restaurant_restaurant__["a" /* RestaurantPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_informacio_informacio__["a" /* InformacioPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_info_restaurant_info_restaurant__["a" /* InfoRestaurantPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
+                    links: []
+                }),
+                __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_5_ionic_image_loader__["a" /* IonicImageLoader */].forRoot()
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_restaurant_restaurant__["a" /* RestaurantPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_informacio_informacio__["a" /* InformacioPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_info_restaurant_info_restaurant__["a" /* InfoRestaurantPage */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__["a" /* SplashScreen */],
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_14__providers_database_database__["a" /* DatabaseProvider */],
+                //ReversePipe,
+                __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_6__ionic_native_network__["a" /* Network */]
+            ]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 275:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(199);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var MyApp = (function () {
+    function MyApp(platform, statusBar, splashScreen) {
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__["a" /* TabsPage */];
+        platform.ready().then(function () {
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            statusBar.styleDefault();
+            splashScreen.hide();
+        });
+    }
+    MyApp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/oriol/ValldeLord/appValldeLord/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/oriol/ValldeLord/appValldeLord/src/app/app.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    ], MyApp);
+    return MyApp;
+}());
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 286:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SERVER_NAME_APP_TEST; });
+/* unused harmony export SERVER_NAME_LOCAL */
+/* unused harmony export SERVER_NAME_LOCAL2 */
+/* unused harmony export SERVER_NAME_PROXY */
+/* unused harmony export SERVER_NAME_APP_PUB_IMG */
+var SERVER_NAME_APP_TEST = "http://lavalldelord.com/appvallLord/public/";
+var SERVER_NAME_LOCAL = "http://lavalldelord.com/appvallLordbeta/public/";
+var SERVER_NAME_LOCAL2 = "http://localhost/";
+var SERVER_NAME_PROXY = "";
+var SERVER_NAME_APP_PUB_IMG = "http://lavalldelord.com/appvallLord/storage/app/images/";
+//# sourceMappingURL=constants.js.map
+
+/***/ })
+
+},[210]);
+//# sourceMappingURL=main.js.map
