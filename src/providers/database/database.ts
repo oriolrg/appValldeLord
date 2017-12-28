@@ -1,7 +1,6 @@
 import 'rxjs/add/operator/map';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Device } from '@ionic-native/device';
 import * as Constant from '../constants';
 
 /*
@@ -15,9 +14,7 @@ export class DatabaseProvider {
     static get parameters() {
               return [[Http]];
           }
-    constructor(
-      public http: Http,
-      private device: Device) {
+    constructor(public http: Http) {
       console.log('Hello DatabaseProvider Provider');
     }
     //Obté informació dels diferents restaurants
