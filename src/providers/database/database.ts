@@ -18,11 +18,11 @@ export class DatabaseProvider {
       console.log('Hello DatabaseProvider Provider');
     }
     //Obté informació dels diferents restaurants
-    getResaturant() {
+    getResaturant(device) {
         //SERVER_NAME_APP_TEST servidor online
         //SERVER_NAME_LOCAL servudor local
         //SERVER_NAME_PROXY proxy
-        var url = Constant.SERVER_NAME_APP_TEST+'restaurant/';
+        var url = Constant.SERVER_NAME_APP_TEST+'restaurant/'+device;
         //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
         //TODO funciona var response = this.http.get(url+lat+'/'+lon);
         var response = this.http.get(url);
