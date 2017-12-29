@@ -4,6 +4,7 @@ import { Platform } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { Network } from '@ionic-native/network';
 import { ToastController } from 'ionic-angular';
+import { Device } from '@ionic-native/device';
 
 import { InfoRestaurantPage } from '../../pages/info-restaurant/info-restaurant';
 import { DatabaseProvider } from '../../providers/database/database';
@@ -30,7 +31,8 @@ export class RestaurantPage {
     private network: Network,
     private toastCtrl: ToastController,
     public  platform: Platform,
-    public loadingController: LoadingController
+    public loadingController: LoadingController,
+    public device: Device
   ) {
     platform.ready().then(() => {
       //missatge de no connexió
@@ -77,7 +79,7 @@ export class RestaurantPage {
     toast.present();
   }
   searchRestaurant(){
-    this.DatabaseProvider.getResaturant().subscribe(
+    this.DatabaseProvider.getResaturant(this.device.uuid).subscribe(
       data => {
         this.items = JSON.parse(data['_body']);
         this.loading.dismiss();

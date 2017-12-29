@@ -5,7 +5,7 @@ import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import { IonicImageLoader } from 'ionic-image-loader';
 import { Network } from '@ionic-native/network';
-//import { ReversePipe } from 'ngx-pipes/src/app/pipes/array/reverse';
+import { Device } from '@ionic-native/device';
 
 import { RestaurantPage } from '../pages/restaurant/restaurant';
 import { InformacioPage } from '../pages/informacio/informacio';
@@ -46,7 +46,7 @@ import { DatabaseProvider } from '../providers/database/database';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DatabaseProvider,
-    //ReversePipe,
+    Device,
     HttpModule,
     Network
   ]
