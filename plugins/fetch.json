@@ -18,7 +18,7 @@
   "cordova-plugin-device": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-device@1.1.4"
+      "id": "cordova-plugin-device@^1.1.4"
     },
     "is_top_level": true,
     "variables": {}
@@ -67,6 +67,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-network-information"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-email": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-email"
     },
     "is_top_level": true,
     "variables": {}

@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { IonicImageLoader } from 'ionic-image-loader';
 import { Network } from '@ionic-native/network';
 import { Device } from '@ionic-native/device';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import { RestaurantPage } from '../pages/restaurant/restaurant';
 import { InformacioPage } from '../pages/informacio/informacio';
@@ -48,7 +49,8 @@ import { DatabaseProvider } from '../providers/database/database';
     DatabaseProvider,
     Device,
     HttpModule,
-    Network
+    Network,
+    EmailComposer,
   ]
 })
 export class AppModule {}

@@ -30,6 +30,9 @@
     },
     "cordova-plugin-network-information": {
       "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "cordova-plugin-email": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     }
   },
   "dependent_plugins": {}

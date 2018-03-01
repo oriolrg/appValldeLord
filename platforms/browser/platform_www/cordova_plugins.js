@@ -239,6 +239,21 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-email/www/email_composer.js",
+        "id": "cordova-plugin-email.EmailComposer",
+        "pluginId": "cordova-plugin-email",
+        "clobbers": [
+            "cordova.plugins.email",
+            "plugin.email"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-email/src/browser/EmailComposerProxy.js",
+        "id": "cordova-plugin-email.EmailComposerProxy",
+        "pluginId": "cordova-plugin-email",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -251,7 +266,8 @@ module.exports.metadata =
     "cordova-plugin-ionic-webview": "1.1.16",
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-whitelist": "1.3.1",
-    "ionic-plugin-keyboard": "2.2.1"
+    "ionic-plugin-keyboard": "2.2.1",
+    "cordova-plugin-email": "1.2.6"
 }
 // BOTTOM OF METADATA
 });
