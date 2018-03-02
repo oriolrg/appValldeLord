@@ -254,6 +254,14 @@ module.exports = [
         "id": "cordova-plugin-email.EmailComposerProxy",
         "pluginId": "cordova-plugin-email",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-mauron85-background-geolocation/www/backgroundGeolocation.js",
+        "id": "cordova-plugin-mauron85-background-geolocation.backgroundGeolocation",
+        "pluginId": "cordova-plugin-mauron85-background-geolocation",
+        "clobbers": [
+            "backgroundGeolocation"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -267,7 +275,9 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-whitelist": "1.3.1",
     "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-email": "1.2.6"
+    "cordova-plugin-email": "1.2.6",
+    "cordova-plugin-mauron85-background-geolocation": "2.3.3",
+    "cordova-plugin-geolocation": "4.0.1"
 }
 // BOTTOM OF METADATA
 });

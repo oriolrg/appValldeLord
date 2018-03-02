@@ -33,6 +33,19 @@
     },
     "cordova-plugin-email": {
       "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "cordova-plugin-mauron85-background-geolocation": {
+      "GOOGLE_PLAY_SERVICES_VERSION": "+",
+      "ICON": "@mipmap/icon",
+      "SMALL_ICON": "@mipmap/icon",
+      "ACCOUNT_NAME": "@string/app_name",
+      "ACCOUNT_LABEL": "@string/app_name",
+      "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
+      "CONTENT_AUTHORITY": "$PACKAGE_NAME",
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     }
   },
   "dependent_plugins": {}
