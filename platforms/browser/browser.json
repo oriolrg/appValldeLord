@@ -55,9 +55,6 @@
     "cordova-plugin-email": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
-    "cordova-plugin-mauron85-background-geolocation": {
-      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
-    },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     }
@@ -318,14 +315,6 @@
       "id": "cordova-plugin-email.EmailComposerProxy",
       "pluginId": "cordova-plugin-email",
       "runs": true
-    },
-    {
-      "file": "plugins/cordova-plugin-mauron85-background-geolocation/www/backgroundGeolocation.js",
-      "id": "cordova-plugin-mauron85-background-geolocation.backgroundGeolocation",
-      "pluginId": "cordova-plugin-mauron85-background-geolocation",
-      "clobbers": [
-        "backgroundGeolocation"
-      ]
     }
   ],
   "plugin_metadata": {
@@ -338,7 +327,6 @@
     "cordova-plugin-whitelist": "1.3.1",
     "ionic-plugin-keyboard": "2.2.1",
     "cordova-plugin-email": "1.2.6",
-    "cordova-plugin-mauron85-background-geolocation": "2.3.3",
     "cordova-plugin-geolocation": "4.0.1"
   }
 }

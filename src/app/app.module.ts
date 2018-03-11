@@ -57,6 +57,6 @@ import { GeolocationProvider } from '../providers/geolocation/geolocation';
     EmailComposer,
     Geolocation,
     GeolocationProvider,
-  ]
+]
 })
 export class AppModule {}

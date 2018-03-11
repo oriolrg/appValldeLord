@@ -31,9 +31,6 @@
     "cordova-plugin-email": {
       "PACKAGE_NAME": "io.ionic.starter"
     },
-    "cordova-plugin-mauron85-background-geolocation": {
-      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
-    },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     }
