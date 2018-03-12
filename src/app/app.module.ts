@@ -19,6 +19,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DatabaseProvider } from '../providers/database/database';
 import { GeolocationProvider } from '../providers/geolocation/geolocation';
+import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { GeolocationProvider } from '../providers/geolocation/geolocation';
     EmailComposer,
     Geolocation,
     GeolocationProvider,
+    DeviceOrientation
 ]
 })
 export class AppModule {}

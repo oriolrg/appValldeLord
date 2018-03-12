@@ -88,5 +88,13 @@
     "variables": {
       "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
     }
+  },
+  "cordova-plugin-device-orientation": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device-orientation@1.0.7"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

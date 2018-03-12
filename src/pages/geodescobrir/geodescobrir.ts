@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation, Coordinates} from '@ionic-native/geolocation';
 import { Platform, LoadingController } from 'ionic-angular';
+import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation';
 /**
  * Generated class for the GeodescobrirPage page.
  *
@@ -22,18 +23,20 @@ export class GeodescobrirPage {
     map: any;
     distancia: any;
     angle: any;
+    compass: any = { grad: 0, orient: '' };
     direccioSN: any;
     direccioEW: any;
     dLat: any;
     dLong: any;
     coords : any = { lat: 0, lng: 0 }
-    desticoords : any = { lat: 42.13730167, lng: 1.59154236 }
+    desticoords : any = { lat: 41.741163, lng: 1.851657 }
     constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
       private geolocation: Geolocation,
       public  platform: Platform,
-      public loadingController: LoadingController
+      public loadingController: LoadingController,
+      private deviceOrientation: DeviceOrientation
     ) {
 
       platform.ready().then(() => {
@@ -49,6 +52,31 @@ export class GeodescobrirPage {
       });
     }
     obtenerPosicion():any{
+      // Watch the device compass heading change
+      var compassOptions = {
+          frequency: 3000 // Update every 3 seconds
+      };
+      var subscription = this.deviceOrientation.watchHeading(compassOptions).subscribe(res => {
+        this.compass.grad = res.magneticHeading.toFixed(0);
+        if(this.compass.grad >= 350 && this.compass.grad <= 360|| this.compass.grad <= 10 && this.compass.grad >= 0){
+          this.compass.orient = 'N';
+        }else if(this.compass.grad >= 11 && this.compass.grad <= 79){
+          this.compass.orient = 'NE';
+        }else if(this.compass.grad >= 80 && this.compass.grad <= 100){
+          this.compass.orient = 'E';
+        }else if(this.compass.grad >= 101 && this.compass.grad <= 159){
+          this.compass.orient = 'SE';
+        }else if(this.compass.grad >= 160 && this.compass.grad <= 190){
+          this.compass.orient = 'S';
+        }else if(this.compass.grad >= 191 && this.compass.grad <= 259){
+          this.compass.orient = 'SW';
+        }else if(this.compass.grad >= 260 && this.compass.grad <= 290){
+          this.compass.orient = 'W';
+        }else if(this.compass.grad >= 291 && this.compass.grad <= 349){
+          this.compass.orient = 'NW';
+        }
+      });
+
       this.geolocation.watchPosition().subscribe(res => {
         this.coords.lat = res.coords.latitude;
         this.coords.lng = res.coords.longitude;
@@ -94,9 +122,9 @@ export class GeodescobrirPage {
        Lat= 'N';
      }
      if(difLong < 0){
-       Long= 'E';
-     }else{
        Long= 'W';
+     }else{
+       Long= 'E';
      }
      var angle = Math.atan(( lon2 - lon1 )/( lat2 - lat1 ));
      return [d.toFixed(3), this.radians_to_degrees(angle).toFixed(0), Lat, Long, Math.abs(difLat), Math.abs(difLong)]; //Retorna tres decimales

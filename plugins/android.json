@@ -36,6 +36,9 @@
     },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "cordova-plugin-device-orientation": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     }
   },
   "dependent_plugins": {}

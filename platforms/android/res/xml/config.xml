@@ -32,6 +32,9 @@
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
+    <feature name="Compass">
+        <param name="android-package" value="org.apache.cordova.deviceorientation.CompassListener" />
+    </feature>
     <name>ValldeLord</name>
     <description>Aplicació turisme la Vall de Lord.</description>
     <author email="oriolrg@gmail.com" href="http://tecnolord.com/">Oriol Riu Gispert</author>

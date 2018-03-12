@@ -254,6 +254,36 @@ module.exports = [
         "id": "cordova-plugin-email.EmailComposerProxy",
         "pluginId": "cordova-plugin-email",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-device-orientation/www/CompassError.js",
+        "id": "cordova-plugin-device-orientation.CompassError",
+        "pluginId": "cordova-plugin-device-orientation",
+        "clobbers": [
+            "CompassError"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device-orientation/www/CompassHeading.js",
+        "id": "cordova-plugin-device-orientation.CompassHeading",
+        "pluginId": "cordova-plugin-device-orientation",
+        "clobbers": [
+            "CompassHeading"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device-orientation/www/compass.js",
+        "id": "cordova-plugin-device-orientation.compass",
+        "pluginId": "cordova-plugin-device-orientation",
+        "clobbers": [
+            "navigator.compass"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device-orientation/src/browser/CompassProxy.js",
+        "id": "cordova-plugin-device-orientation.CompassProxy",
+        "pluginId": "cordova-plugin-device-orientation",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -268,7 +298,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.1",
     "ionic-plugin-keyboard": "2.2.1",
     "cordova-plugin-email": "1.2.6",
-    "cordova-plugin-geolocation": "4.0.1"
+    "cordova-plugin-geolocation": "4.0.1",
+    "cordova-plugin-device-orientation": "1.0.7"
 }
 // BOTTOM OF METADATA
 });
