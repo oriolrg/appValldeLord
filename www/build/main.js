@@ -134,9 +134,8 @@ var GeodescobrirPage = (function () {
         this.platform = platform;
         this.loadingController = loadingController;
         this.deviceOrientation = deviceOrientation;
-        this.compass = { grad: 0, orient: '' };
         this.coords = { lat: 0, lng: 0 };
-        this.desticoords = { lat: 41.741163, lng: 1.851657 };
+        this.desticoords = { lat: 42.135690, lng: 1.587751 };
         platform.ready().then(function () {
             // La plataforma esta lista y ya tenemos acceso a los plugins.
             _this.loading = _this.loadingController.create({
@@ -144,53 +143,29 @@ var GeodescobrirPage = (function () {
             });
             _this.obtenerPosicion();
             _this.loading.present();
+            _this.rotateImage();
             //this.searchLocalitzacio(this.coords.lat,this.coords.lng);
         });
     }
     GeodescobrirPage.prototype.obtenerPosicion = function () {
         var _this = this;
         // Watch the device compass heading change
-        var compassOptions = {
-            frequency: 3000 // Update every 3 seconds
+        var PositionOptions = {
+            enableHighAccuracy: true
         };
-        var subscription = this.deviceOrientation.watchHeading(compassOptions).subscribe(function (res) {
-            _this.compass.grad = res.magneticHeading.toFixed(0);
-            if (_this.compass.grad >= 350 && _this.compass.grad <= 360 || _this.compass.grad <= 10 && _this.compass.grad >= 0) {
-                _this.compass.orient = 'N';
-            }
-            else if (_this.compass.grad >= 11 && _this.compass.grad <= 79) {
-                _this.compass.orient = 'NE';
-            }
-            else if (_this.compass.grad >= 80 && _this.compass.grad <= 100) {
-                _this.compass.orient = 'E';
-            }
-            else if (_this.compass.grad >= 101 && _this.compass.grad <= 159) {
-                _this.compass.orient = 'SE';
-            }
-            else if (_this.compass.grad >= 160 && _this.compass.grad <= 190) {
-                _this.compass.orient = 'S';
-            }
-            else if (_this.compass.grad >= 191 && _this.compass.grad <= 259) {
-                _this.compass.orient = 'SW';
-            }
-            else if (_this.compass.grad >= 260 && _this.compass.grad <= 290) {
-                _this.compass.orient = 'W';
-            }
-            else if (_this.compass.grad >= 291 && _this.compass.grad <= 349) {
-                _this.compass.orient = 'NW';
-            }
+        var subscription = this.deviceOrientation.watchHeading().subscribe(function (res) {
+            _this.compass = res.magneticHeading.toFixed(0);
         });
-        this.geolocation.watchPosition().subscribe(function (res) {
+        this.geolocation.watchPosition(PositionOptions).subscribe(function (res) {
             _this.coords.lat = res.coords.latitude;
             _this.coords.lng = res.coords.longitude;
-            _a = _this.getDistance(_this.coords.lat, _this.coords.lng, _this.desticoords.lat, _this.desticoords.lng), _this.distancia = _a[0], _this.angle = _a[1], _this.direccioSN = _a[2], _this.direccioEW = _a[3], _this.dLat = _a[4], _this.dLong = _a[5];
+            _this.getDistance(_this.coords.lat, _this.coords.lng, _this.desticoords.lat, _this.desticoords.lng);
             console.log(_this.coords.lat);
             console.log(_this.coords.lng);
             _this.loading.dismiss();
             var testJson = ['{"id":1,"nom":"portals","latitud":42.137336730957,"longitud":1.5915549993515,"poblacio":"Sant Lloren\u00e7 de Morunys","actiu":1,"imatgePrincipal":"Cal-Tecu.jpg","created_at":"2018-03-07 12:12:14","updated_at":"2018-03-07 12:12:14"},{"id":2,"nom":"P","latitud":42.1338427,"longitud":1.592683,"poblacio":"Dsa","actiu":1,"imatgePrincipal":"jardi.jpg","created_at":"2018-03-07 12:12:51","updated_at":"2018-03-07 12:12:51"}'];
             testJson.push('"distancia":"2.45"');
             console.log(testJson);
-            var _a;
             //this.searchLocalitzacio(this.coords.lat,this.coords.lng);
         });
     };
@@ -201,46 +176,53 @@ var GeodescobrirPage = (function () {
         var dLong = rad(lon2 - lon1);
         var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        var d = R * c;
-        var direccio;
-        var Lat;
-        var Long;
-        if (dLat < 0 && dLong < 0) {
-            //SE
-            direccio = 'SW';
-        }
-        else if (dLat < 0 && dLong > 0) {
-            //NE
-            direccio = 'NW';
-        }
-        else if (dLat > 0 && dLong < 0) {
-            //SW
-            direccio = 'SE';
-        }
-        else if (dLat > 0 && dLong > 0) {
-            //NW
-            direccio = 'NE';
-        }
-        var difLat = (lat2 - lat1) * 100000;
-        var difLong = (lon2 - lon1) * 100000;
-        if (difLat < 0) {
-            Lat = 'S';
-        }
-        else {
-            Lat = 'N';
-        }
-        if (difLong < 0) {
-            Long = 'W';
-        }
-        else {
-            Long = 'E';
-        }
-        var angle = Math.atan((lon2 - lon1) / (lat2 - lat1));
-        return [d.toFixed(3), this.radians_to_degrees(angle).toFixed(0), Lat, Long, Math.abs(difLat), Math.abs(difLong)]; //Retorna tres decimales
+        //var d = R * c;
+        this.distancia = (R * c).toFixed(1);
+        this.dLat = (lat2 - lat1) * 100000;
+        this.dLong = (lon2 - lon1) * 100000;
+        this.getOrientacio();
+        this.getAngle();
+        this.dLat = Math.abs(this.dLat).toFixed(1);
+        this.dLong = Math.abs(this.dLong).toFixed(1);
     };
     GeodescobrirPage.prototype.radians_to_degrees = function (radians) {
         var pi = Math.PI;
         return radians * (180 / pi);
+    };
+    GeodescobrirPage.prototype.getOrientacio = function () {
+        if (this.dLat > 0) {
+            this.direccioSN = 'N';
+        }
+        else {
+            this.direccioSN = 'S';
+        }
+        if (this.dLong > 0) {
+            this.direccioEW = 'E';
+        }
+        else {
+            this.direccioEW = 'W';
+        }
+    };
+    GeodescobrirPage.prototype.getAngle = function () {
+        this.angleGrad = Math.atan2(Math.abs(this.dLat), Math.abs(this.dLong));
+        //if( this.angleGrad <= 0 ){ this.angleGrad = this.angleGrad + ( 2 * Math.PI ) }
+        this.angleGrad = this.radians_to_degrees(this.angleGrad).toFixed(0);
+        if (this.dLat > 0 && this.dLong < 0) {
+            this.angleGrad = parseInt(this.angleGrad) + 270;
+        }
+        else if (this.dLat > 0 && this.dLong > 0) {
+            //this.angleGrad = parseInt(this.angleGrad) +270;
+        }
+        else if (this.dLat < 0 && this.dLong > 0) {
+            this.angleGrad = parseInt(this.angleGrad) + 90;
+        }
+        else if (this.dLat < 0 && this.dLong < 0) {
+            this.angleGrad = 270 - parseInt(this.angleGrad);
+        }
+    };
+    GeodescobrirPage.prototype.rotateImage = function () {
+        var image = document.getElementById('agulla');
+        var canvas = document.getElementById('canvasBrujola');
     };
     GeodescobrirPage.prototype.ionViewDidLoad = function () {
         //alert('ionViewDidLoad LocalitzacionsPage');
@@ -248,7 +230,7 @@ var GeodescobrirPage = (function () {
     };
     GeodescobrirPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-geodescobrir',template:/*ion-inline-start:"/home/oriol/apps/appValldeLord/src/pages/geodescobrir/geodescobrir.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img class="left" src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content  padding class="restaurant_background">\n  <ion-list ion-item>\n    <h2>Descobreix la Vall de Lord jugant</h2>\n    <h2>Distancia: {{distancia}} m</h2>\n    <h2>Direcció</h2>\n    <h2>{{dLat}}m {{direccioSN}}</h2>\n    <h2>{{dLong}}m {{direccioEW}}</h2>\n    <h2>Angle: {{angle}}</h2>\n    <h2>Brujola</h2><h2>{{compass.grad}}{{compass.orient}}</h2>\n\n  </ion-list>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/apps/appValldeLord/src/pages/geodescobrir/geodescobrir.html"*/,
+            selector: 'page-geodescobrir',template:/*ion-inline-start:"/home/oriol/apps/appValldeLord/src/pages/geodescobrir/geodescobrir.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img class="left" src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content  padding class="restaurant_background">\n  <ion-list ion-item>\n    <h2>Descobreix la Vall de Lord jugant</h2>\n    <ion-item>\n      <canvas id="canvasBrujola">\n        <ion-img id="agulla" width="80" height="80" src="assets/imgs/compass-arrow.png"></ion-img>\n      </canvas>\n      <h2>Angle Brujola</h2>\n      <h2>{{compass}}</h2></ion-item>\n    <ion-item>\n      <h2>Distancia: {{distancia}} m</h2>\n      <h2>Angle a destí: {{angleGrad}}</h2>\n    </ion-item>\n\n    <h2>Direcció</h2>\n    <h2>{{dLat}}m {{direccioSN}}</h2>\n    <h2>{{dLong}}m {{direccioEW}}</h2>\n  </ion-list>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/apps/appValldeLord/src/pages/geodescobrir/geodescobrir.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
