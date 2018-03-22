@@ -30576,6 +30576,28 @@ p {
   font-family: 'gotham-light' !important;
 }
 
+page-geodescobrir .brujola {
+  position: relative;
+  top: -10px;
+}
+
+page-geodescobrir .brujola1 {
+  position: relative;
+  top: -18px;
+}
+
+page-geodescobrir .indicador {
+  color: red;
+  font-size: 35px;
+}
+
+page-geodescobrir .graus {
+  position: relative;
+  font-size: 3px;
+  top: -10px;
+  font-weight: bold;
+}
+
 page-info-restaurant ion-icon[name=checkmark-circle] {
   color: green;
 }

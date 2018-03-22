@@ -2,27 +2,30 @@
   <ion-navbar>
     <ion-title>
         <img class="left" src="assets/imgs/logo-vdl-mini.png"/>
+        <h2>Descobreix la Vall de Lord jugant</h2>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content  padding class="restaurant_background">
-  <ion-list ion-item>
-    <h2>Descobreix la Vall de Lord jugant</h2>
-    <ion-item>
-      <canvas id="canvasBrujola">
-        <ion-img id="agulla" width="80" height="80" src="assets/imgs/compass-arrow.png"></ion-img>
-      </canvas>
-      <h2>Angle Brujola</h2>
-      <h2>{{compass}}</h2></ion-item>
-    <ion-item>
-      <h2>Distancia: {{distancia}} m</h2>
-      <h2>Angle a destí: {{angleGrad}}</h2>
-    </ion-item>
 
-    <h2>Direcció</h2>
-    <h2>{{dLat}}m {{direccioSN}}</h2>
-    <h2>{{dLong}}m {{direccioEW}}</h2>
-  </ion-list>
+    <ion-item>
+      <div>
+        <h1 text-center>{{compass}}°</h1>
+        <div class="brujola1">
+          <div text-center>
+            <ion-icon text-center name="md-arrow-dropdown" class="indicador"></ion-icon>
+          </div>
+          <div class="brujola" text-center>
+            <canvas #canvasBrujola></canvas>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item text-center >
+      <h2>Proxim punt a:</h2>
+      <h2> Distancia: {{distancia}} m </h2>
+      <h2> Direcció: {{angleGrad}}°</h2>
+    </ion-item>
 </ion-content>

@@ -1,101 +1,5 @@
 webpackJsonp([1],{
 
-/***/ 103:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatabaseProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(289);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/*
-  Generated class for the DatabaseProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-var DatabaseProvider = (function () {
-    function DatabaseProvider(http) {
-        this.http = http;
-        console.log('Hello DatabaseProvider Provider');
-    }
-    Object.defineProperty(DatabaseProvider, "parameters", {
-        get: function () {
-            return [[__WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]]];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    //Obté informació dels diferents restaurants
-    DatabaseProvider.prototype.getResaturant = function (device) {
-        //SERVER_NAME_APP_TEST servidor online
-        //SERVER_NAME_LOCAL servudor local
-        //SERVER_NAME_PROXY proxy
-        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/' + device;
-        //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
-        //TODO funciona var response = this.http.get(url+lat+'/'+lon);
-        var response = this.http.get(url);
-        console.log(url);
-        //alert(response);
-        return response;
-    };
-    DatabaseProvider.prototype.getResaturantDia = function () {
-        //SERVER_NAME_APP_TEST servidor online
-        //SERVER_NAME_LOCAL servudor local
-        //SERVER_NAME_PROXY proxy
-        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/';
-        //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
-        //TODO funciona var response = this.http.get(url+lat+'/'+lon);
-        var response = this.http.get(url);
-        console.log(url);
-        //alert(response);
-        return response;
-    };
-    DatabaseProvider.prototype.getResaturantFiltre = function (dia) {
-        //SERVER_NAME_APP_TEST servidor online
-        //SERVER_NAME_LOCAL servudor local
-        //SERVER_NAME_PROXY proxy
-        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/' + dia;
-        //alert(url);
-        //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
-        //TODO funciona var response = this.http.get(url+lat+'/'+lon);
-        var response = this.http.get(url);
-        console.log(url);
-        //alert(response);
-        return response;
-    };
-    DatabaseProvider.prototype.getItems = function ($id) {
-        //alert("databaseprovider"+$id);
-        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/item/' + $id;
-        var response = this.http.get(url);
-        return response;
-    };
-    DatabaseProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]])
-    ], DatabaseProvider);
-    return DatabaseProvider;
-}());
-
-//# sourceMappingURL=database.js.map
-
-/***/ }),
-
 /***/ 105:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -103,8 +7,9 @@ var DatabaseProvider = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeodescobrirPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_device_orientation__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_database_database__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -114,6 +19,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -126,27 +32,76 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var GeodescobrirPage = (function () {
-    function GeodescobrirPage(navCtrl, navParams, geolocation, platform, loadingController, deviceOrientation) {
+    function GeodescobrirPage(DatabaseProvider, navCtrl, navParams, geolocation, platform, loadingController, deviceOrientation, renderer) {
         var _this = this;
+        this.DatabaseProvider = DatabaseProvider;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.geolocation = geolocation;
         this.platform = platform;
         this.loadingController = loadingController;
         this.deviceOrientation = deviceOrientation;
+        this.renderer = renderer;
         this.coords = { lat: 0, lng: 0 };
-        this.desticoords = { lat: 42.135690, lng: 1.587751 };
+        this.testJson = [
+            {
+                "id": 1,
+                "nom": "portals",
+                "latitud": 42.136586,
+                "longitud": 1.591382,
+                "poblacio": "Sant Lloren\u00e7 de Morunys",
+                "visitat": 0,
+                "imatgePrincipal": "Cal-Tecu.jpg",
+                "created_at": "2018-03-07 12:12:14",
+                "updated_at": "2018-03-07 12:12:14"
+            },
+            {
+                "id": 2,
+                "nom": "portals",
+                "latitud": 42.137068,
+                "longitud": 1.591888,
+                "poblacio": "Sant Lloren\u00e7 de Morunys",
+                "visitat": 0,
+                "imatgePrincipal": "Cal-Tecu.jpg",
+                "created_at": "2018-03-07 12:12:14",
+                "updated_at": "2018-03-07 12:12:14"
+            },
+            {
+                "id": 3,
+                "nom": "P",
+                "latitud": 42.137535,
+                "longitud": 1.591358,
+                "poblacio": "Dsa",
+                "visitat": 0,
+                "imatgePrincipal": "jardi.jpg",
+                "created_at": "2018-03-07 12:12:51",
+                "updated_at": "2018-03-07 12:12:51"
+            }
+        ];
+        this.desticoords = { lat: 42.182042, lng: 1.581289 };
         platform.ready().then(function () {
             // La plataforma esta lista y ya tenemos acceso a los plugins.
             _this.loading = _this.loadingController.create({
                 content: 'Carregant...'
             });
-            _this.obtenerPosicion();
             _this.loading.present();
-            _this.rotateImage();
-            //this.searchLocalitzacio(this.coords.lat,this.coords.lng);
+            _this.obtenerPosicion();
         });
     }
+    GeodescobrirPage.prototype.initialiseCanvas = function () {
+        if (this._CANVAS.getContext) {
+            this.setupCanvas();
+        }
+    };
+    GeodescobrirPage.prototype.setupCanvas = function () {
+        this._CONTEXT = this._CANVAS.getContext('2d');
+        this._CONTEXT.fillStyle = "#fff";
+        //this._CONTEXT.fillRect(0, 0, 200, 200);
+    };
+    GeodescobrirPage.prototype.clearCanvas = function () {
+        this._CONTEXT.clearRect(0, 0, this._CANVAS.width, this._CANVAS.height);
+        this.setupCanvas();
+    };
     GeodescobrirPage.prototype.obtenerPosicion = function () {
         var _this = this;
         // Watch the device compass heading change
@@ -155,18 +110,22 @@ var GeodescobrirPage = (function () {
         };
         var subscription = this.deviceOrientation.watchHeading().subscribe(function (res) {
             _this.compass = res.magneticHeading.toFixed(0);
+            _this.drawAgulla();
         });
         this.geolocation.watchPosition(PositionOptions).subscribe(function (res) {
             _this.coords.lat = res.coords.latitude;
             _this.coords.lng = res.coords.longitude;
-            _this.getDistance(_this.coords.lat, _this.coords.lng, _this.desticoords.lat, _this.desticoords.lng);
-            console.log(_this.coords.lat);
-            console.log(_this.coords.lng);
-            _this.loading.dismiss();
-            var testJson = ['{"id":1,"nom":"portals","latitud":42.137336730957,"longitud":1.5915549993515,"poblacio":"Sant Lloren\u00e7 de Morunys","actiu":1,"imatgePrincipal":"Cal-Tecu.jpg","created_at":"2018-03-07 12:12:14","updated_at":"2018-03-07 12:12:14"},{"id":2,"nom":"P","latitud":42.1338427,"longitud":1.592683,"poblacio":"Dsa","actiu":1,"imatgePrincipal":"jardi.jpg","created_at":"2018-03-07 12:12:51","updated_at":"2018-03-07 12:12:51"}'];
-            testJson.push('"distancia":"2.45"');
-            console.log(testJson);
-            //this.searchLocalitzacio(this.coords.lat,this.coords.lng);
+            if (_this.testJson.length > 0) {
+                _this.getDistance(_this.coords.lat, _this.coords.lng, _this.testJson[0].latitud, _this.testJson[0].longitud);
+                _this.loading.dismiss();
+            }
+            else {
+                alert("Enorabona has completat el circuit");
+            }
+            if (_this.distancia < 10) {
+                _this.testJson.splice(0, 1);
+                alert("cap al següent punt");
+            }
         });
     };
     GeodescobrirPage.prototype.getDistance = function (lat1, lon1, lat2, lon2) {
@@ -176,7 +135,6 @@ var GeodescobrirPage = (function () {
         var dLong = rad(lon2 - lon1);
         var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong / 2) * Math.sin(dLong / 2);
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        //var d = R * c;
         this.distancia = (R * c).toFixed(1);
         this.dLat = (lat2 - lat1) * 100000;
         this.dLong = (lon2 - lon1) * 100000;
@@ -220,24 +178,43 @@ var GeodescobrirPage = (function () {
             this.angleGrad = 270 - parseInt(this.angleGrad);
         }
     };
-    GeodescobrirPage.prototype.rotateImage = function () {
-        var image = document.getElementById('agulla');
-        var canvas = document.getElementById('canvasBrujola');
+    GeodescobrirPage.prototype.drawAgulla = function () {
+        this._CANVAS = this.canvasEl.nativeElement;
+        this._CANVAS.width = 200;
+        this._CANVAS.height = 200;
+        this.initialiseCanvas();
+        var width = 200;
+        var height = 200;
+        this.clearCanvas();
+        var ctx = this._CONTEXT;
+        ctx.translate(width / 2, height / 2);
+        ctx.fillStyle = "#fff";
+        ctx.rotate((Math.PI / 180) * this.compass);
+        var img = new Image();
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0, 200, 200);
+        };
+        img.src = 'assets/imgs/compass.png';
+        ctx.translate(-width / 2, -height / 2);
     };
     GeodescobrirPage.prototype.ionViewDidLoad = function () {
-        //alert('ionViewDidLoad LocalitzacionsPage');
-        //this.searchLocalitzacio(this.coords.lat,this.coords.lng);
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('canvasBrujola'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */])
+    ], GeodescobrirPage.prototype, "canvasEl", void 0);
     GeodescobrirPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-geodescobrir',template:/*ion-inline-start:"/home/oriol/apps/appValldeLord/src/pages/geodescobrir/geodescobrir.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img class="left" src="assets/imgs/logo-vdl-mini.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content  padding class="restaurant_background">\n  <ion-list ion-item>\n    <h2>Descobreix la Vall de Lord jugant</h2>\n    <ion-item>\n      <canvas id="canvasBrujola">\n        <ion-img id="agulla" width="80" height="80" src="assets/imgs/compass-arrow.png"></ion-img>\n      </canvas>\n      <h2>Angle Brujola</h2>\n      <h2>{{compass}}</h2></ion-item>\n    <ion-item>\n      <h2>Distancia: {{distancia}} m</h2>\n      <h2>Angle a destí: {{angleGrad}}</h2>\n    </ion-item>\n\n    <h2>Direcció</h2>\n    <h2>{{dLat}}m {{direccioSN}}</h2>\n    <h2>{{dLong}}m {{direccioEW}}</h2>\n  </ion-list>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/apps/appValldeLord/src/pages/geodescobrir/geodescobrir.html"*/,
+            selector: 'page-geodescobrir',template:/*ion-inline-start:"/home/oriol/apps/appValldeLord/src/pages/geodescobrir/geodescobrir.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n        <img class="left" src="assets/imgs/logo-vdl-mini.png"/>\n        <h2>Descobreix la Vall de Lord jugant</h2>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content  padding class="restaurant_background">\n\n    <ion-item>\n      <div>\n        <h1 text-center>{{compass}}°</h1>\n        <div class="brujola1">\n          <div text-center>\n            <ion-icon text-center name="md-arrow-dropdown" class="indicador"></ion-icon>\n          </div>\n          <div class="brujola" text-center>\n            <canvas #canvasBrujola></canvas>\n          </div>\n        </div>\n      </div>\n    </ion-item>\n    <ion-item text-center >\n      <h2>Proxim punt a:</h2>\n      <h2> Distancia: {{distancia}} m </h2>\n      <h2> Direcció: {{angleGrad}}°</h2>\n    </ion-item>\n</ion-content>\n`/*ion-inline-end:"/home/oriol/apps/appValldeLord/src/pages/geodescobrir/geodescobrir.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__providers_database_database__["a" /* DatabaseProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_device_orientation__["a" /* DeviceOrientation */]])
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_device_orientation__["a" /* DeviceOrientation */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Renderer */]])
     ], GeodescobrirPage);
     return GeodescobrirPage;
 }());
@@ -288,13 +265,13 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 204:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__restaurant_restaurant__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__restaurant_restaurant__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__informacio_informacio__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__geodescobrir_geodescobrir__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -330,18 +307,18 @@ var TabsPage = (function () {
 
 /***/ }),
 
-/***/ 205:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestaurantPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_network__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_info_restaurant_info_restaurant__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_database_database__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_network__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_device__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_info_restaurant_info_restaurant__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_database_database__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__ = __webpack_require__(163);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -537,14 +514,14 @@ var RestaurantPage = (function () {
 
 /***/ }),
 
-/***/ 208:
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoRestaurantPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_database_database__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_database_database__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -674,21 +651,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(287);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_image_loader__ = __webpack_require__(290);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_network__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_network__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_device__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_email_composer__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_geolocation__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_restaurant_restaurant__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_geolocation__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_restaurant_restaurant__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_informacio_informacio__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_geodescobrir_geodescobrir__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_tabs_tabs__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_info_restaurant_info_restaurant__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_status_bar__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_splash_screen__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_database_database__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_tabs_tabs__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_info_restaurant_info_restaurant__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_status_bar__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_splash_screen__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_database_database__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_geolocation_geolocation__ = __webpack_require__(296);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_device_orientation__ = __webpack_require__(162);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -773,17 +750,37 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 287:
+/***/ 270:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SERVER_NAME_APP_TEST; });
+/* unused harmony export SERVER_NAME_LOCAL */
+/* unused harmony export SERVER_NAME_LOCAL2 */
+/* unused harmony export SERVER_NAME_PROXY */
+/* unused harmony export SERVER_NAME_APP_PUB_IMG */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return SERVER_NAME_GEO; });
+var SERVER_NAME_APP_TEST = "http://lavalldelord.com/appvallLord/public/";
+var SERVER_NAME_LOCAL = "http://lavalldelord.com/appvallLordbeta/public/";
+var SERVER_NAME_LOCAL2 = "http://localhost/";
+var SERVER_NAME_PROXY = "";
+var SERVER_NAME_APP_PUB_IMG = "http://lavalldelord.com/appvallLord/storage/app/images/";
+var SERVER_NAME_GEO = "";
+//# sourceMappingURL=constants.js.map
+
+/***/ }),
+
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(206);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -819,24 +816,6 @@ var MyApp = (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 289:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SERVER_NAME_APP_TEST; });
-/* unused harmony export SERVER_NAME_LOCAL */
-/* unused harmony export SERVER_NAME_LOCAL2 */
-/* unused harmony export SERVER_NAME_PROXY */
-/* unused harmony export SERVER_NAME_APP_PUB_IMG */
-var SERVER_NAME_APP_TEST = "http://lavalldelord.com/appvallLord/public/";
-var SERVER_NAME_LOCAL = "http://lavalldelord.com/appvallLordbeta/public/";
-var SERVER_NAME_LOCAL2 = "http://localhost/";
-var SERVER_NAME_PROXY = "";
-var SERVER_NAME_APP_PUB_IMG = "http://lavalldelord.com/appvallLord/storage/app/images/";
-//# sourceMappingURL=constants.js.map
 
 /***/ }),
 
@@ -877,6 +856,113 @@ var GeolocationProvider = (function () {
 }());
 
 //# sourceMappingURL=geolocation.js.map
+
+/***/ }),
+
+/***/ 47:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatabaseProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(270);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*
+  Generated class for the DatabaseProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var DatabaseProvider = (function () {
+    function DatabaseProvider(http) {
+        this.http = http;
+        console.log('Hello DatabaseProvider Provider');
+    }
+    Object.defineProperty(DatabaseProvider, "parameters", {
+        get: function () {
+            return [[__WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]]];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    //Obté informació dels diferents restaurants
+    DatabaseProvider.prototype.getResaturant = function (device) {
+        //SERVER_NAME_APP_TEST servidor online
+        //SERVER_NAME_LOCAL servudor local
+        //SERVER_NAME_PROXY proxy
+        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/' + device;
+        //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
+        //TODO funciona var response = this.http.get(url+lat+'/'+lon);
+        var response = this.http.get(url);
+        console.log(url);
+        //alert(response);
+        return response;
+    };
+    DatabaseProvider.prototype.getResaturantDia = function () {
+        //SERVER_NAME_APP_TEST servidor online
+        //SERVER_NAME_LOCAL servudor local
+        //SERVER_NAME_PROXY proxy
+        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/';
+        //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
+        //TODO funciona var response = this.http.get(url+lat+'/'+lon);
+        var response = this.http.get(url);
+        console.log(url);
+        //alert(response);
+        return response;
+    };
+    DatabaseProvider.prototype.getResaturantFiltre = function (dia) {
+        //SERVER_NAME_APP_TEST servidor online
+        //SERVER_NAME_LOCAL servudor local
+        //SERVER_NAME_PROXY proxy
+        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/' + dia;
+        //alert(url);
+        //var url = Constant.SERVER_NAME_PROXY+'restaurant/';
+        //TODO funciona var response = this.http.get(url+lat+'/'+lon);
+        var response = this.http.get(url);
+        console.log(url);
+        //alert(response);
+        return response;
+    };
+    DatabaseProvider.prototype.getItems = function ($id) {
+        //alert("databaseprovider"+$id);
+        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["a" /* SERVER_NAME_APP_TEST */] + 'restaurant/item/' + $id;
+        var response = this.http.get(url);
+        return response;
+    };
+    DatabaseProvider.prototype.getRutes = function () {
+        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["b" /* SERVER_NAME_GEO */] + 'rutes/';
+        var response = this.http.get(url);
+        return response;
+    };
+    DatabaseProvider.prototype.getPunts = function ($id) {
+        //alert("databaseprovider"+$id);
+        var url = __WEBPACK_IMPORTED_MODULE_3__constants__["b" /* SERVER_NAME_GEO */] + 'rutes/' + $id;
+        var response = this.http.get(url);
+        return response;
+    };
+    DatabaseProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]])
+    ], DatabaseProvider);
+    return DatabaseProvider;
+}());
+
+//# sourceMappingURL=database.js.map
 
 /***/ })
 

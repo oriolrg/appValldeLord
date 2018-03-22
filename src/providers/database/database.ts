@@ -61,5 +61,16 @@ export class DatabaseProvider {
         var response = this.http.get(url);
         return response;
     }
+    getRutes(){
+      var url = Constant.SERVER_NAME_GEO+'rutes/';
+      var response = this.http.get(url);
+      return response;
+    }
+    getPunts($id){
+        //alert("databaseprovider"+$id);
+        var url = Constant.SERVER_NAME_GEO+'rutes/'+$id;
+        var response = this.http.get(url);
+        return response;
+    }
 
 }
