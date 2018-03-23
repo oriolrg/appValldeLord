@@ -1,6 +1,6 @@
 {
   "name": "appValldeLord",
-  "version": "2.4.0",
+  "version": "2.5.1",
   "author": "Oriol Riu",
   "homepage": "http://ionicframework.com/",
   "private": true,
@@ -20,7 +20,9 @@
     "@angular/http": "5.0.0",
     "@angular/platform-browser": "5.0.0",
     "@angular/platform-browser-dynamic": "5.0.0",
-    "@ionic-native/core": "4.3.2",
+    "@ionic-native/core": "^4.3.2",
+    "@ionic-native/device": "^4.5.3",
+    "@ionic-native/email-composer": "^4.5.3",
     "@ionic-native/file": "^4.3.3",
     "@ionic-native/file-transfer": "^4.3.3",
     "@ionic-native/network": "^4.4.2",
@@ -31,6 +33,7 @@
     "cordova-browser": "~5.0.1",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "^1.1.4",
+    "cordova-plugin-email": "^1.2.6",
     "cordova-plugin-file": "^4.3.3",
     "cordova-plugin-file-transfer": "^1.6.3",
     "cordova-plugin-ionic-webview": "^1.1.16",
@@ -59,7 +62,8 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-file": {},
-      "cordova-plugin-file-transfer": {}
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-email": {}
     },
     "platforms": [
       "android",
