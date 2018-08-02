@@ -1,50 +1,55 @@
 <ion-header>
   <ion-navbar>
-        <ion-title>
-      <ion-grid class="graellaHeader">
-        <ion-row align-items-start class="filaHeader">
-          <ion-col col-2 class="imageHeader">
-          <img src="assets/imgs/logo-vdl-no-text.png"/>
-          </ion-col>
-          <ion-col col-10 class="colSelectHeader">
-          <ion-item class="selecHeader" no-lines>
-            <ion-select [(ngModel)]="dia" (ionChange)="onChangeDia(dia)" action-sheet placeholder="Dia Obert">
-              <ion-option value="0">Dia actual</ion-option>
-              <ion-option value="1">Dilluns</ion-option>
-              <ion-option value="2">Dimarts</ion-option>
-              <ion-option value="3">Dimecres</ion-option>
-              <ion-option value="4">Dijous</ion-option>
-              <ion-option value="5">Divendres</ion-option>
-              <ion-option value="6">Dissabte</ion-option>
-              <ion-option value="7">Diumenge</ion-option>
-            </ion-select>
-            <ion-select [(ngModel)]="hora" (ionChange)="onChangeHora(hora)" action-sheet   placeholder="Hora Cuina">
-              <ion-option>Hora actual</ion-option>
-              <ion-option>08:00</ion-option>
-              <ion-option>09:00</ion-option>
-              <ion-option>10:00</ion-option>
-              <ion-option>11:00</ion-option>
-              <ion-option>12:00</ion-option>
-              <ion-option>13:00</ion-option>
-              <ion-option>14:00</ion-option>
-              <ion-option>15:00</ion-option>
-              <ion-option>16:00</ion-option>
-              <ion-option>17:00</ion-option>
-              <ion-option>18:00</ion-option>
-              <ion-option>19:00</ion-option>
-              <ion-option>20:00</ion-option>
-              <ion-option>21:00</ion-option>
-              <ion-option>22:00</ion-option>
-              <ion-option>23:00</ion-option>
-              <ion-option>00:00</ion-option>
-            </ion-select>
-          </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-title>
+    <ion-grid>
+    <ion-row>
+      <ion-title>
+          <img src="assets/imgs/logo-vdl-mini.png"/>
+      </ion-title>
+
+        <!--<ion-col col-4>
+            <ion-item>
+                <ion-label stacked>Hora</ion-label>
+                <ion-select interface="popover" [(ngModel)]="hora" (ionChange)="onChangeHora(hora)" action-sheet>
+                  <ion-option>Hora actual</ion-option>
+                  <ion-option>08:00</ion-option>
+                  <ion-option>09:00</ion-option>
+                  <ion-option>10:00</ion-option>
+                  <ion-option>11:00</ion-option>
+                  <ion-option>12:00</ion-option>
+                  <ion-option>13:00</ion-option>
+                  <ion-option>14:00</ion-option>
+                  <ion-option>15:00</ion-option>
+                  <ion-option>16:00</ion-option>
+                  <ion-option>17:00</ion-option>
+                  <ion-option>18:00</ion-option>
+                  <ion-option>19:00</ion-option>
+                  <ion-option>20:00</ion-option>
+                  <ion-option>21:00</ion-option>
+                  <ion-option>22:00</ion-option>
+                  <ion-option>23:00</ion-option>
+                  <ion-option>00:00</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-col>-->
+    </ion-row>
+  </ion-grid>
+
   </ion-navbar>
+  <ion-item>
+      <ion-label>Dia</ion-label>
+      <ion-select interface="popover" [(ngModel)]="dia" (ionChange)="onChangeDia(dia)" action-sheet  item item-trns>
+        <ion-option value="0">Dia actual</ion-option>
+        <ion-option value="1">Dilluns</ion-option>
+        <ion-option value="2">Dimarts</ion-option>
+        <ion-option value="3">Dimecres</ion-option>
+        <ion-option value="4">Dijous</ion-option>
+        <ion-option value="5">Divendres</ion-option>
+        <ion-option value="6">Dissabte</ion-option>
+        <ion-option value="7">Diumenge</ion-option>
+      </ion-select>
+  </ion-item>
 </ion-header>
+
 
 <ion-content padding class="restaurant_background">
   <ion-item *ngIf="items?.length == 0" text-center>

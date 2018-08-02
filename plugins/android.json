@@ -7,19 +7,10 @@
     "files": {}
   },
   "installed_plugins": {
-    "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
-    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
-    },
-    "cordova-plugin-ionic-webview": {
+    "cordova-plugin-email": {
       "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     },
     "cordova-plugin-file": {
@@ -28,10 +19,19 @@
     "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
     "cordova-plugin-network-information": {
       "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     },
-    "cordova-plugin-email": {
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "ionic-plugin-keyboard": {
       "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     }
   },

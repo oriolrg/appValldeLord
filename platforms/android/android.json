@@ -9,19 +9,11 @@
         "parents": {
           "/*": [
             {
-              "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
               "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
               "count": 1
             },
             {
-              "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.martinreinhardt.cordova.plugins.email.EmailComposer\" /></feature>",
               "count": 1
             },
             {
@@ -41,7 +33,15 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.martinreinhardt.cordova.plugins.email.EmailComposer\" /></feature>",
+              "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             }
           ]
@@ -49,6 +49,12 @@
       },
       "AndroidManifest.xml": {
         "parents": {
+          "/manifest": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
+              "count": 1
+            }
+          ],
           "/*": [
             {
               "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
@@ -58,57 +64,42 @@
               "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
               "count": 1
             }
-          ],
-          "/manifest": [
-            {
-              "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
-              "count": 1
-            }
           ]
         }
       }
     }
   },
   "installed_plugins": {
-    "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-ionic-webview": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "io.ionic.starter"
-    },
-    "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "io.ionic.starter"
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     },
     "cordova-plugin-email": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
+    },
+    "ionic-plugin-keyboard": {
       "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     }
   },
   "dependent_plugins": {},
   "modules": [
-    {
-      "id": "ionic-plugin-keyboard.keyboard",
-      "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
-      "pluginId": "ionic-plugin-keyboard",
-      "clobbers": [
-        "cordova.plugins.Keyboard"
-      ],
-      "runs": true
-    },
     {
       "id": "cordova-plugin-device.device",
       "file": "plugins/cordova-plugin-device/www/device.js",
@@ -118,11 +109,12 @@
       ]
     },
     {
-      "id": "cordova-plugin-splashscreen.SplashScreen",
-      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-      "pluginId": "cordova-plugin-splashscreen",
+      "id": "cordova-plugin-email.EmailComposer",
+      "file": "plugins/cordova-plugin-email/www/email_composer.js",
+      "pluginId": "cordova-plugin-email",
       "clobbers": [
-        "navigator.splashscreen"
+        "cordova.plugins.email",
+        "plugin.email"
       ]
     },
     {
@@ -332,24 +324,32 @@
       ]
     },
     {
-      "id": "cordova-plugin-email.EmailComposer",
-      "file": "plugins/cordova-plugin-email/www/email_composer.js",
-      "pluginId": "cordova-plugin-email",
+      "id": "cordova-plugin-splashscreen.SplashScreen",
+      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+      "pluginId": "cordova-plugin-splashscreen",
       "clobbers": [
-        "cordova.plugins.email",
-        "plugin.email"
+        "navigator.splashscreen"
       ]
+    },
+    {
+      "id": "ionic-plugin-keyboard.keyboard",
+      "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+      "pluginId": "ionic-plugin-keyboard",
+      "clobbers": [
+        "cordova.plugins.Keyboard"
+      ],
+      "runs": true
     }
   ],
   "plugin_metadata": {
-    "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-whitelist": "1.3.1",
     "cordova-plugin-device": "1.1.4",
-    "cordova-plugin-splashscreen": "4.0.3",
-    "cordova-plugin-ionic-webview": "1.1.16",
+    "cordova-plugin-email": "1.2.6",
     "cordova-plugin-file": "4.3.3",
     "cordova-plugin-file-transfer": "1.6.3",
+    "cordova-plugin-ionic-webview": "1.1.16",
     "cordova-plugin-network-information": "1.3.4",
-    "cordova-plugin-email": "1.2.6"
+    "cordova-plugin-splashscreen": "4.0.3",
+    "cordova-plugin-whitelist": "1.3.1",
+    "ionic-plugin-keyboard": "2.2.1"
   }
 }
