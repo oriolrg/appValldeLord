@@ -30,6 +30,9 @@
     },
     "cordova-plugin-email": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-document-viewer": {
+      "PACKAGE_NAME": "com.tecnolord.appvalldelord"
     }
   },
   "dependent_plugins": {

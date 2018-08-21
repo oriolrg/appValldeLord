@@ -18,6 +18,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DatabaseProvider } from '../providers/database/database';
 
+
 @NgModule({
   declarations: [
     MyApp,

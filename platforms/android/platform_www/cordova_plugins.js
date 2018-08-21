@@ -239,6 +239,15 @@ module.exports = [
       "cordova.plugins.Keyboard"
     ],
     "runs": true
+  },
+  {
+    "id": "cordova-plugin-document-viewer.SitewaertsDocumentViewer",
+    "file": "plugins/cordova-plugin-document-viewer/www/sitewaertsdocumentviewer.js",
+    "pluginId": "cordova-plugin-document-viewer",
+    "clobbers": [
+      "cordova.plugins.SitewaertsDocumentViewer",
+      "SitewaertsDocumentViewer"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -252,7 +261,8 @@ module.exports.metadata =
   "cordova-plugin-network-information": "1.3.4",
   "cordova-plugin-splashscreen": "4.0.3",
   "cordova-plugin-whitelist": "1.3.1",
-  "ionic-plugin-keyboard": "2.2.1"
+  "ionic-plugin-keyboard": "2.2.1",
+  "cordova-plugin-document-viewer": "0.9.10"
 };
 // BOTTOM OF METADATA
 });

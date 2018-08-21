@@ -254,6 +254,15 @@ module.exports = [
         "id": "cordova-plugin-email.EmailComposerProxy",
         "pluginId": "cordova-plugin-email",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-document-viewer/www/sitewaertsdocumentviewer.js",
+        "id": "cordova-plugin-document-viewer.SitewaertsDocumentViewer",
+        "pluginId": "cordova-plugin-document-viewer",
+        "clobbers": [
+            "cordova.plugins.SitewaertsDocumentViewer",
+            "SitewaertsDocumentViewer"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -267,7 +276,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-whitelist": "1.3.1",
     "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-email": "1.2.6"
+    "cordova-plugin-email": "1.2.6",
+    "cordova-plugin-document-viewer": "0.9.10"
 }
 // BOTTOM OF METADATA
 });
